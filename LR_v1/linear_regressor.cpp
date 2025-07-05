@@ -8,12 +8,12 @@
             "-std=c++17"
         ],
         "language": "c++",
-        "name": "linear_regressor",
+        "name": "LR_v1.linear_regressor",
         "sources": [
-            "linear_regressor.pyx"
+            "LR_v1/linear_regressor.pyx"
         ]
     },
-    "module_name": "linear_regressor"
+    "module_name": "LR_v1.linear_regressor"
 }
 END: Cython Metadata */
 
@@ -1141,8 +1141,8 @@ static CYTHON_INLINE float __PYX_NAN() {
     #define __PYX_EXTERN_C extern "C++"
 #endif
 
-#define __PYX_HAVE__linear_regressor
-#define __PYX_HAVE_API__linear_regressor
+#define __PYX_HAVE__LR_v1__linear_regressor
+#define __PYX_HAVE_API__LR_v1__linear_regressor
 /* Early includes */
 #include <math.h>
 #include <string.h>
@@ -1354,7 +1354,8 @@ static const char *__pyx_filename;
 /* #### Code section: filename_table ### */
 
 static const char* const __pyx_f[] = {
-  "linear_regressor.pyx",
+  "LR_v1/linear_regressor.pyx",
+  "<stringsource>",
 };
 /* #### Code section: utility_code_proto_before_types ### */
 /* Atomics.proto */
@@ -1521,6 +1522,30 @@ static const char* const __pyx_f[] = {
 /* #### Code section: type_declarations ### */
 
 /*--- Type declarations ---*/
+struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor;
+
+/* "LR_v1/linear_regressor.pyx":85
+ *     return 0
+ * 
+ * cdef class LinearRegressor:             # <<<<<<<<<<<<<<
+ *     cdef int n_features
+ *     cdef double* beta
+*/
+struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor {
+  PyObject_HEAD
+  struct __pyx_vtabstruct_5LR_v1_16linear_regressor_LinearRegressor *__pyx_vtab;
+  int n_features;
+  double *beta;
+};
+
+
+
+struct __pyx_vtabstruct_5LR_v1_16linear_regressor_LinearRegressor {
+  PyObject *(*fit)(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *, PyObject *, PyObject *, int __pyx_skip_dispatch);
+  PyObject *(*coefficients)(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *, int __pyx_skip_dispatch);
+  PyObject *(*predict)(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *, PyObject *, int __pyx_skip_dispatch);
+};
+static struct __pyx_vtabstruct_5LR_v1_16linear_regressor_LinearRegressor *__pyx_vtabptr_5LR_v1_16linear_regressor_LinearRegressor;
 /* #### Code section: utility_code_proto ### */
 
 /* --- Runtime support code (head) --- */
@@ -1714,27 +1739,38 @@ static CYTHON_INLINE int __Pyx_PyUnicode_Equals(PyObject* s1, PyObject* s2, int 
 #define __Pyx_ArgsSlice_FASTCALL(args, start, stop) PyTuple_GetSlice(args, start, stop)
 #endif
 
-/* RaiseDoubleKeywords.proto */
-static void __Pyx_RaiseDoubleKeywordsError(const char* func_name, PyObject* kw_name);
+/* RaiseArgTupleInvalid.proto */
+static void __Pyx_RaiseArgtupleInvalid(const char* func_name, int exact,
+    Py_ssize_t num_min, Py_ssize_t num_max, Py_ssize_t num_found);
 
-/* ParseKeywords.proto */
-static CYTHON_INLINE int __Pyx_ParseKeywords(
-    PyObject *kwds, PyObject *const *kwvalues, PyObject ** const argnames[],
-    PyObject *kwds2, PyObject *values[],
-    Py_ssize_t num_pos_args, Py_ssize_t num_kwargs,
-    const char* function_name,
-    int ignore_unknown_kwargs
-);
+/* RejectKeywords.proto */
+static void __Pyx_RejectKeywords(const char* function_name, PyObject *kwds);
 
-/* CallCFunction.proto */
-#define __Pyx_CallCFunction(cfunc, self, args)\
-    ((PyCFunction)(void(*)(void))(cfunc)->func)(self, args)
-#define __Pyx_CallCFunctionWithKeywords(cfunc, self, args, kwargs)\
-    ((PyCFunctionWithKeywords)(void(*)(void))(cfunc)->func)(self, args, kwargs)
-#define __Pyx_CallCFunctionFast(cfunc, self, args, nargs)\
-    ((__Pyx_PyCFunctionFast)(void(*)(void))(PyCFunction)(cfunc)->func)(self, args, nargs)
-#define __Pyx_CallCFunctionFastWithKeywords(cfunc, self, args, nargs, kwnames)\
-    ((__Pyx_PyCFunctionFastWithKeywords)(void(*)(void))(PyCFunction)(cfunc)->func)(self, args, nargs, kwnames)
+/* PyDictVersioning.proto */
+#if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_TYPE_SLOTS
+#define __PYX_DICT_VERSION_INIT  ((PY_UINT64_T) -1)
+#define __PYX_GET_DICT_VERSION(dict)  (((PyDictObject*)(dict))->ma_version_tag)
+#define __PYX_UPDATE_DICT_CACHE(dict, value, cache_var, version_var)\
+    (version_var) = __PYX_GET_DICT_VERSION(dict);\
+    (cache_var) = (value);
+#define __PYX_PY_DICT_LOOKUP_IF_MODIFIED(VAR, DICT, LOOKUP) {\
+    static PY_UINT64_T __pyx_dict_version = 0;\
+    static PyObject *__pyx_dict_cached_value = NULL;\
+    if (likely(__PYX_GET_DICT_VERSION(DICT) == __pyx_dict_version)) {\
+        (VAR) = __pyx_dict_cached_value;\
+    } else {\
+        (VAR) = __pyx_dict_cached_value = (LOOKUP);\
+        __pyx_dict_version = __PYX_GET_DICT_VERSION(DICT);\
+    }\
+}
+static CYTHON_INLINE PY_UINT64_T __Pyx_get_tp_dict_version(PyObject *obj);
+static CYTHON_INLINE PY_UINT64_T __Pyx_get_object_dict_version(PyObject *obj);
+static CYTHON_INLINE int __Pyx_object_dict_version_matches(PyObject* obj, PY_UINT64_T tp_dict_version, PY_UINT64_T obj_dict_version);
+#else
+#define __PYX_GET_DICT_VERSION(dict)  (0)
+#define __PYX_UPDATE_DICT_CACHE(dict, value, cache_var, version_var)
+#define __PYX_PY_DICT_LOOKUP_IF_MODIFIED(VAR, DICT, LOOKUP)  (VAR) = (LOOKUP);
+#endif
 
 /* PyFunctionFastCall.proto */
 #if CYTHON_FAST_PYCALL
@@ -1781,57 +1817,8 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallMethO(PyObject *func, PyObject
 #define __Pyx_PyObject_FastCall(func, args, nargs)  __Pyx_PyObject_FastCallDict(func, args, (size_t)(nargs), NULL)
 static CYTHON_INLINE PyObject* __Pyx_PyObject_FastCallDict(PyObject *func, PyObject * const*args, size_t nargs, PyObject *kwargs);
 
-/* UnpackUnboundCMethod.proto */
-typedef struct {
-    PyObject *type;
-    PyObject **method_name;
-#if CYTHON_COMPILING_IN_CPYTHON_FREETHREADING && CYTHON_ATOMICS
-    __pyx_atomic_int_type initialized;
-#endif
-    PyCFunction func;
-    PyObject *method;
-    int flag;
-} __Pyx_CachedCFunction;
-#if CYTHON_COMPILING_IN_CPYTHON_FREETHREADING
-static CYTHON_INLINE int __Pyx_CachedCFunction_GetAndSetInitializing(__Pyx_CachedCFunction *cfunc) {
-#if !CYTHON_ATOMICS
-    return 1;
-#else
-    __pyx_nonatomic_int_type expected = 0;
-    if (__pyx_atomic_int_cmp_exchange(&cfunc->initialized, &expected, 1)) {
-        return 0;
-    }
-    return expected;
-#endif
-}
-static CYTHON_INLINE void __Pyx_CachedCFunction_SetFinishedInitializing(__Pyx_CachedCFunction *cfunc) {
-#if CYTHON_ATOMICS
-    __pyx_atomic_store(&cfunc->initialized, 2);
-#endif
-}
-#else
-#define __Pyx_CachedCFunction_GetAndSetInitializing(cfunc) 2
-#define __Pyx_CachedCFunction_SetFinishedInitializing(cfunc)
-#endif
-
-/* CallUnboundCMethod2.proto */
-CYTHON_UNUSED
-static PyObject* __Pyx__CallUnboundCMethod2(__Pyx_CachedCFunction* cfunc, PyObject* self, PyObject* arg1, PyObject* arg2);
-#if CYTHON_COMPILING_IN_CPYTHON
-static CYTHON_INLINE PyObject *__Pyx_CallUnboundCMethod2(__Pyx_CachedCFunction *cfunc, PyObject *self, PyObject *arg1, PyObject *arg2);
-#else
-#define __Pyx_CallUnboundCMethod2(cfunc, self, arg1, arg2)  __Pyx__CallUnboundCMethod2(cfunc, self, arg1, arg2)
-#endif
-
-/* RaiseArgTupleInvalid.proto */
-static void __Pyx_RaiseArgtupleInvalid(const char* func_name, int exact,
-    Py_ssize_t num_min, Py_ssize_t num_max, Py_ssize_t num_found);
-
-/* ArgTypeTest.proto */
-#define __Pyx_ArgTypeTest(obj, type, none_allowed, name, exact)\
-    ((likely(__Pyx_IS_TYPE(obj, type) | (none_allowed && (obj == Py_None)))) ? 1 :\
-        __Pyx__ArgTypeTest(obj, type, name, exact))
-static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact);
+/* RaiseUnexpectedTypeError.proto */
+static int __Pyx_RaiseUnexpectedTypeError(const char *expected, PyObject *obj);
 
 /* RaiseException.proto */
 static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause);
@@ -1911,6 +1898,76 @@ static CYTHON_INLINE void __Pyx__ExceptionReset(PyThreadState *tstate, PyObject 
 #define __Pyx_ExceptionReset(type, value, tb)  PyErr_SetExcInfo(type, value, tb)
 #endif
 
+/* RaiseDoubleKeywords.proto */
+static void __Pyx_RaiseDoubleKeywordsError(const char* func_name, PyObject* kw_name);
+
+/* ParseKeywords.proto */
+static CYTHON_INLINE int __Pyx_ParseKeywords(
+    PyObject *kwds, PyObject *const *kwvalues, PyObject ** const argnames[],
+    PyObject *kwds2, PyObject *values[],
+    Py_ssize_t num_pos_args, Py_ssize_t num_kwargs,
+    const char* function_name,
+    int ignore_unknown_kwargs
+);
+
+/* CallCFunction.proto */
+#define __Pyx_CallCFunction(cfunc, self, args)\
+    ((PyCFunction)(void(*)(void))(cfunc)->func)(self, args)
+#define __Pyx_CallCFunctionWithKeywords(cfunc, self, args, kwargs)\
+    ((PyCFunctionWithKeywords)(void(*)(void))(cfunc)->func)(self, args, kwargs)
+#define __Pyx_CallCFunctionFast(cfunc, self, args, nargs)\
+    ((__Pyx_PyCFunctionFast)(void(*)(void))(PyCFunction)(cfunc)->func)(self, args, nargs)
+#define __Pyx_CallCFunctionFastWithKeywords(cfunc, self, args, nargs, kwnames)\
+    ((__Pyx_PyCFunctionFastWithKeywords)(void(*)(void))(PyCFunction)(cfunc)->func)(self, args, nargs, kwnames)
+
+/* UnpackUnboundCMethod.proto */
+typedef struct {
+    PyObject *type;
+    PyObject **method_name;
+#if CYTHON_COMPILING_IN_CPYTHON_FREETHREADING && CYTHON_ATOMICS
+    __pyx_atomic_int_type initialized;
+#endif
+    PyCFunction func;
+    PyObject *method;
+    int flag;
+} __Pyx_CachedCFunction;
+#if CYTHON_COMPILING_IN_CPYTHON_FREETHREADING
+static CYTHON_INLINE int __Pyx_CachedCFunction_GetAndSetInitializing(__Pyx_CachedCFunction *cfunc) {
+#if !CYTHON_ATOMICS
+    return 1;
+#else
+    __pyx_nonatomic_int_type expected = 0;
+    if (__pyx_atomic_int_cmp_exchange(&cfunc->initialized, &expected, 1)) {
+        return 0;
+    }
+    return expected;
+#endif
+}
+static CYTHON_INLINE void __Pyx_CachedCFunction_SetFinishedInitializing(__Pyx_CachedCFunction *cfunc) {
+#if CYTHON_ATOMICS
+    __pyx_atomic_store(&cfunc->initialized, 2);
+#endif
+}
+#else
+#define __Pyx_CachedCFunction_GetAndSetInitializing(cfunc) 2
+#define __Pyx_CachedCFunction_SetFinishedInitializing(cfunc)
+#endif
+
+/* CallUnboundCMethod2.proto */
+CYTHON_UNUSED
+static PyObject* __Pyx__CallUnboundCMethod2(__Pyx_CachedCFunction* cfunc, PyObject* self, PyObject* arg1, PyObject* arg2);
+#if CYTHON_COMPILING_IN_CPYTHON
+static CYTHON_INLINE PyObject *__Pyx_CallUnboundCMethod2(__Pyx_CachedCFunction *cfunc, PyObject *self, PyObject *arg1, PyObject *arg2);
+#else
+#define __Pyx_CallUnboundCMethod2(cfunc, self, arg1, arg2)  __Pyx__CallUnboundCMethod2(cfunc, self, arg1, arg2)
+#endif
+
+/* ArgTypeTest.proto */
+#define __Pyx_ArgTypeTest(obj, type, none_allowed, name, exact)\
+    ((likely(__Pyx_IS_TYPE(obj, type) | (none_allowed && (obj == Py_None)))) ? 1 :\
+        __Pyx__ArgTypeTest(obj, type, name, exact))
+static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact);
+
 /* LimitedApiGetTypeDict.proto */
 #if CYTHON_COMPILING_IN_LIMITED_API
 static PyObject *__Pyx_GetTypeDict(PyTypeObject *tp);
@@ -1922,6 +1979,42 @@ static int __Pyx__SetItemOnTypeDict(PyTypeObject *tp, PyObject *k, PyObject *v);
 
 /* FixUpExtensionType.proto */
 static CYTHON_INLINE int __Pyx_fix_up_extension_type_from_spec(PyType_Spec *spec, PyTypeObject *type);
+
+/* PyObjectCallNoArg.proto */
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func);
+
+/* PyObjectCallOneArg.proto */
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg);
+
+/* PyObjectGetMethod.proto */
+static int __Pyx_PyObject_GetMethod(PyObject *obj, PyObject *name, PyObject **method);
+
+/* PyObjectCallMethod0.proto */
+static PyObject* __Pyx_PyObject_CallMethod0(PyObject* obj, PyObject* method_name);
+
+/* ValidateBasesTuple.proto */
+#if CYTHON_COMPILING_IN_CPYTHON || CYTHON_COMPILING_IN_LIMITED_API || CYTHON_USE_TYPE_SPECS
+static int __Pyx_validate_bases_tuple(const char *type_name, Py_ssize_t dictoffset, PyObject *bases);
+#endif
+
+/* PyType_Ready.proto */
+CYTHON_UNUSED static int __Pyx_PyType_Ready(PyTypeObject *t);
+
+/* SetVTable.proto */
+static int __Pyx_SetVtable(PyTypeObject* typeptr , void* vtable);
+
+/* GetVTable.proto */
+static void* __Pyx_GetVtable(PyTypeObject *type);
+
+/* MergeVTables.proto */
+static int __Pyx_MergeVtables(PyTypeObject *type);
+
+/* DelItemOnTypeDict.proto */
+static int __Pyx__DelItemOnTypeDict(PyTypeObject *tp, PyObject *k);
+#define __Pyx_DelItemOnTypeDict(tp, k) __Pyx__DelItemOnTypeDict((PyTypeObject*)tp, k)
+
+/* SetupReduce.proto */
+static int __Pyx_setup_reduce(PyObject* type_obj);
 
 /* FetchSharedCythonModule.proto */
 static PyObject *__Pyx_FetchSharedCythonABIModule(void);
@@ -2046,32 +2139,6 @@ static PyObject *__Pyx_CyFunction_New(PyMethodDef *ml,
                                       PyObject *closure,
                                       PyObject *module, PyObject *globals,
                                       PyObject* code);
-
-/* PyDictVersioning.proto */
-#if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_TYPE_SLOTS
-#define __PYX_DICT_VERSION_INIT  ((PY_UINT64_T) -1)
-#define __PYX_GET_DICT_VERSION(dict)  (((PyDictObject*)(dict))->ma_version_tag)
-#define __PYX_UPDATE_DICT_CACHE(dict, value, cache_var, version_var)\
-    (version_var) = __PYX_GET_DICT_VERSION(dict);\
-    (cache_var) = (value);
-#define __PYX_PY_DICT_LOOKUP_IF_MODIFIED(VAR, DICT, LOOKUP) {\
-    static PY_UINT64_T __pyx_dict_version = 0;\
-    static PyObject *__pyx_dict_cached_value = NULL;\
-    if (likely(__PYX_GET_DICT_VERSION(DICT) == __pyx_dict_version)) {\
-        (VAR) = __pyx_dict_cached_value;\
-    } else {\
-        (VAR) = __pyx_dict_cached_value = (LOOKUP);\
-        __pyx_dict_version = __PYX_GET_DICT_VERSION(DICT);\
-    }\
-}
-static CYTHON_INLINE PY_UINT64_T __Pyx_get_tp_dict_version(PyObject *obj);
-static CYTHON_INLINE PY_UINT64_T __Pyx_get_object_dict_version(PyObject *obj);
-static CYTHON_INLINE int __Pyx_object_dict_version_matches(PyObject* obj, PY_UINT64_T tp_dict_version, PY_UINT64_T obj_dict_version);
-#else
-#define __PYX_GET_DICT_VERSION(dict)  (0)
-#define __PYX_UPDATE_DICT_CACHE(dict, value, cache_var, version_var)
-#define __PYX_PY_DICT_LOOKUP_IF_MODIFIED(VAR, DICT, LOOKUP)  (VAR) = (LOOKUP);
-#endif
 
 /* CLineInTraceback.proto */
 #if CYTHON_CLINE_IN_TRACEBACK && CYTHON_CLINE_IN_TRACEBACK_RUNTIME
@@ -2235,6 +2302,9 @@ static int __Pyx_State_RemoveModule(void*);
 #define __PYX_ABI_MODULE_NAME "_cython_" CYTHON_ABI
 #define __PYX_TYPE_MODULE_PREFIX __PYX_ABI_MODULE_NAME "."
 
+static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_fit(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *__pyx_v_self, PyObject *__pyx_v_X_py, PyObject *__pyx_v_y_py, int __pyx_skip_dispatch); /* proto*/
+static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_coefficients(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *__pyx_v_self, int __pyx_skip_dispatch); /* proto*/
+static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *__pyx_v_self, PyObject *__pyx_v_X_py, int __pyx_skip_dispatch); /* proto*/
 
 /* Module declarations from "libc.math" */
 
@@ -2242,63 +2312,88 @@ static int __Pyx_State_RemoveModule(void*);
 
 /* Module declarations from "libc.stdlib" */
 
-/* Module declarations from "linear_regressor" */
-static void __pyx_f_16linear_regressor_transpose_inplace(double *, double *, int, int); /*proto*/
-static void __pyx_f_16linear_regressor_matmul_c(double *, double *, double *, int, int, int); /*proto*/
-static void __pyx_f_16linear_regressor_matvec_c(double *, double *, double *, int, int); /*proto*/
-static int __pyx_f_16linear_regressor_inverse_2x2(double *, double *); /*proto*/
+/* Module declarations from "LR_v1.linear_regressor" */
+static void __pyx_f_5LR_v1_16linear_regressor_transpose_inplace(double *, double *, int, int); /*proto*/
+static void __pyx_f_5LR_v1_16linear_regressor_matmul_c(double *, double *, double *, int, int, int); /*proto*/
+static void __pyx_f_5LR_v1_16linear_regressor_matvec_c(double *, double *, double *, int, int); /*proto*/
+static int __pyx_f_5LR_v1_16linear_regressor_inverse(double *, double *, int); /*proto*/
 /* #### Code section: typeinfo ### */
 /* #### Code section: before_global_var ### */
-#define __Pyx_MODULE_NAME "linear_regressor"
-extern int __pyx_module_is_main_linear_regressor;
-int __pyx_module_is_main_linear_regressor = 0;
+#define __Pyx_MODULE_NAME "LR_v1.linear_regressor"
+extern int __pyx_module_is_main_LR_v1__linear_regressor;
+int __pyx_module_is_main_LR_v1__linear_regressor = 0;
 
-/* Implementation of "linear_regressor" */
+/* Implementation of "LR_v1.linear_regressor" */
 /* #### Code section: global_var ### */
 static PyObject *__pyx_builtin_range;
 static PyObject *__pyx_builtin_ValueError;
 static PyObject *__pyx_builtin_MemoryError;
+static PyObject *__pyx_builtin_TypeError;
 /* #### Code section: string_decls ### */
 static const char __pyx_k_[] = "?";
-static const char __pyx_k_X[] = "X";
-static const char __pyx_k_i[] = "i";
-static const char __pyx_k_j[] = "j";
-static const char __pyx_k_y[] = "y";
-static const char __pyx_k_X_t[] = "X_t";
+static const char __pyx_k_Q[] = "\200\001\330\004\n\210+\220Q";
+static const char __pyx_k_gc[] = "gc";
+static const char __pyx_k_fit[] = "fit";
 static const char __pyx_k_pop[] = "pop";
 static const char __pyx_k_X_py[] = "X_py";
-static const char __pyx_k_beta[] = "beta";
 static const char __pyx_k_func[] = "__func__";
 static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_name[] = "__name__";
+static const char __pyx_k_self[] = "self";
 static const char __pyx_k_test[] = "__test__";
 static const char __pyx_k_y_py[] = "y_py";
-static const char __pyx_k_X_t_X[] = "X_t_X";
-static const char __pyx_k_X_t_y[] = "X_t_y";
 static const char __pyx_k_range[] = "range";
+static const char __pyx_k_enable[] = "enable";
 static const char __pyx_k_module[] = "__module__";
-static const char __pyx_k_result[] = "result";
+static const char __pyx_k_reduce[] = "__reduce__";
+static const char __pyx_k_disable[] = "disable";
+static const char __pyx_k_predict[] = "predict";
 static const char __pyx_k_add_note[] = "add_note";
+static const char __pyx_k_getstate[] = "__getstate__";
 static const char __pyx_k_qualname[] = "__qualname__";
 static const char __pyx_k_set_name[] = "__set_name__";
-static const char __pyx_k_X_t_X_inv[] = "X_t_X_inv";
-static const char __pyx_k_n_samples[] = "n_samples";
+static const char __pyx_k_setstate[] = "__setstate__";
+static const char __pyx_k_TypeError[] = "TypeError";
+static const char __pyx_k_isenabled[] = "isenabled";
+static const char __pyx_k_pyx_state[] = "__pyx_state";
+static const char __pyx_k_reduce_ex[] = "__reduce_ex__";
 static const char __pyx_k_ValueError[] = "ValueError";
-static const char __pyx_k_n_features[] = "n_features";
+static const char __pyx_k_pyx_vtable[] = "__pyx_vtable__";
+static const char __pyx_k_A_q_E_T_e1D[] = "\200A\330\010\017\210q\220\004\220E\230\021\230#\230T\240\025\240e\2501\250D\260\001";
 static const char __pyx_k_MemoryError[] = "MemoryError";
+static const char __pyx_k_coefficients[] = "coefficients";
 static const char __pyx_k_is_coroutine[] = "_is_coroutine";
-static const char __pyx_k_linear_regressor[] = "linear_regressor";
+static const char __pyx_k_stringsource[] = "<stringsource>";
+static const char __pyx_k_reduce_cython[] = "__reduce_cython__";
+static const char __pyx_k_LinearRegressor[] = "LinearRegressor";
+static const char __pyx_k_setstate_cython[] = "__setstate_cython__";
+static const char __pyx_k_Allocation_failed[] = "Allocation failed";
 static const char __pyx_k_asyncio_coroutines[] = "asyncio.coroutines";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
-static const char __pyx_k_linear_regressor_pyx[] = "linear_regressor.pyx";
-static const char __pyx_k_fit_linear_regression[] = "fit_linear_regression";
-static const char __pyx_k_Could_not_allocate_memory[] = "Could not allocate memory";
-static const char __pyx_k_Matrix_not_invertible_det_0[] = "Matrix not invertible! [det = 0]";
-static const char __pyx_k_AQ_Qd_1_Q_j_YfAZr_Ba_YfAZr_y_a[] = "\200\001\360\016\000\005\032\230\023\230A\230Q\330\004\032\230#\230Q\230d\240!\2401\330\004\007\200{\220#\220Q\330\010\016\210j\230\001\230\021\360\006\000\005\026\220Y\230f\240A\240Z\250r\260\033\270B\270a\330\004\025\220Y\230f\240A\240Z\250r\260\021\330\004\027\220y\240\006\240a\240{\260\"\260J\270b\300\001\330\004\031\230\031\240&\250\001\250\033\260B\260k\300\022\3001\330\004\031\230\031\240&\250\001\250\033\260B\260a\330\004\035\230Y\240f\250A\250[\270\002\270+\300R\300q\330\004\030\230\t\240\026\240q\250\013\2602\260Q\340\004\007\200t\2102\210S\220\004\220B\220c\230\024\230T\240\023\240D\250\006\250c\260\024\260V\2703\270d\300*\310C\310t\320ST\340\010\014\210A\210Q\330\010\014\210A\210Q\330\010\014\210A\210Q\330\010\014\210A\210Q\330\010\014\210A\210Q\330\010\014\210A\210Q\330\010\014\210A\210Q\330\010\016\210k\230\021\230!\360\006\000\005\006\340\010\014\210E\220\025\220a\220q\330\014\020\220\005\220U\230!\2301\330\020\021\220\021\220\"\220B\220k\240\022\2405\250\004\250A\250R\250q\260\001\330\014\r\210Q\210e\2204\220q\230\001\360\006\000\t\032\230\021\230#\230U\240+\250Q\360\006\000\t\021\220\001\220\025\220c\230\027\240\014\250K\260q\360\006\000\t\021\220\001\220\025\220c\230\027\240\014\250A\360\006\000\t\014\210;\220a\220w\230k\250\023\250A\330\014\022\220*\230A\230Q\360\006\000\t\021\220\001\220\033\230G\2406\250\034\260Q\360\006\000\t\022\220\021\220$\220a\220s\230$\230e\2405\250\001\250\021\340\010\017\210q\360\010\000\t\r\210A\210Q\330\010\014\210A\210Q\330\010\014\210A\210Q\330\010\014\210A\210Q\330\010\014\210A\210Q\330\010\014\210A\210Q\330\010\014\210A\210Q";
+static const char __pyx_k_LinearRegressor_fit[] = "LinearRegressor.fit";
+static const char __pyx_k_Matrix_not_invertible[] = "Matrix not invertible";
+static const char __pyx_k_Beta_allocation_failed[] = "Beta allocation failed";
+static const char __pyx_k_LR_v1_linear_regressor[] = "LR_v1.linear_regressor";
+static const char __pyx_k_LinearRegressor_predict[] = "LinearRegressor.predict";
+static const char __pyx_k_LR_v1_linear_regressor_pyx[] = "LR_v1/linear_regressor.pyx";
+static const char __pyx_k_LinearRegressor_coefficients[] = "LinearRegressor.coefficients";
+static const char __pyx_k_A_S_S_1A_AQ_1D_G1_s_5_1_j_m2Q_N[] = "\200A\330\010\035\230S\240\001\240\021\340\010\013\210:\220S\230\003\2301\230A\330\014\022\220*\230A\230Q\340\010 \240\003\2401\240D\250\001\250\021\330\010\014\210G\2201\330\014\017\210s\220!\2205\230\003\2301\330\020\026\220j\240\001\240\021\340\010\036\230m\2502\250Q\330\010\014\210N\230!\360\006\000\t\032\230\031\240&\250\001\250\032\2602\260[\300\002\300!\330\010\031\230\031\240&\250\001\250\032\2602\260Q\330\010\033\2309\240F\250!\250;\260b\270\n\300\"\300A\330\010\035\230Y\240f\250A\250[\270\002\270+\300R\300q\330\010\035\230Y\240f\250A\250[\270\002\270!\330\010!\240\031\250&\260\001\260\033\270B\270k\310\022\3101\340\010\013\2104\210r\220\023\220D\230\002\230#\230T\240\024\240S\250\004\250F\260#\260T\270\026\270s\300$\300a\330\014\020\220\001\220\024\220T\230\021\230$\230d\240!\2406\250\024\250Q\250h\260d\270!\2708\3004\300q\310\001\330\014\022\220+\230Q\230a\340\010\013\2104\210q\330\014\020\220\001\220\024\220Q\330\010\014\210H\220I\230V\2401\240K\250r\260\021\330\010\013\2104\210t\2201\330\014\022\220+\230Q\230a\340\010\t\330\014\020\220\005\220U\230!\2301\330\020\021\220\021\220\"\220B\220k\240\022\2405\250\001\330\020\024\220E\230\025\230a\230q\330\024\025\220Q\220b\230\002\230+\240R\240r\250\022\2505\260\004\260A\260R\260q\270\001\330\020\021\220\021\220%\220t\2301\230A\340\014\035\230Q\230c\240\025\240k\260\021\330\014\024\220A\220U\230#\230W\240L\260\013\2701\330\014\024\220A\220U\230#\230W\240L\260\001\340\014\017\210w\220a\220w\230k\250\034\260S\270\001\330\020\026\220j\240\001\240\021\340\014\024\220A\220[\240\007\240t\2507\260,\270a\340\014\023\2201\220D\230\005\230Q\230c\240\024\240U\250%\250q\260\001\360\006\000\r\021\220\001\220\024\220T\230\021\230$\230d\240!\2406\250\024\250Q\250h\260d\270!\2708\3004\300q\310\001";
+static const char __pyx_k_LinearRegressor___reduce_cython[] = "LinearRegressor.__reduce_cython__";
+static const char __pyx_k_A_S_L_2T_Rq_ivQj_4r_D_T_Qa_U_1_B[] = "\200A\330\010\035\230S\240\001\240\021\330\010 \240\004\240L\260\002\260!\360\006\000\t\032\230\031\240&\250\001\250\032\2602\260T\270\034\300R\300q\330\010\036\230i\240v\250Q\250j\270\002\270!\340\010\013\2104\210r\220\023\220D\230\001\330\014\020\220\001\220\024\220T\230\021\230!\330\014\022\220+\230Q\230a\340\010\t\330\014\020\220\005\220U\230!\2301\330\020\021\220\021\220\"\220B\220d\230,\240b\250\005\250Q\330\020\024\220E\230\025\230a\230q\330\024\025\220Q\220b\230\002\230$\230l\250\"\250B\250b\260\005\260T\270\021\270\"\270A\270Q\340\014\024\220A\220S\230\004\230G\2408\250;\260d\270!\330\014\023\2201\220F\230!\2303\230d\240%\240u\250A\250Q\360\006\000\r\021\220\001\220\024\220T\230\021\230!";
+static const char __pyx_k_All_rows_in_X_must_have_the_same[] = "All rows in X must have the same number of features";
+static const char __pyx_k_LinearRegressor___setstate_cytho[] = "LinearRegressor.__setstate_cython__";
 static const char __pyx_k_Note_that_Cython_is_deliberately[] = "Note that Cython is deliberately stricter than PEP-484 and rejects subclasses of builtin types. If you need to pass subclasses then set the 'annotation_typing' directive to False.";
-static const char __pyx_k_Only_2_features_are_supported_in[] = "Only 2 features are supported in this version.";
+static const char __pyx_k_X_and_y_must_have_the_same_numbe[] = "X and y must have the same number of samples";
+static const char __pyx_k_no_default___reduce___due_to_non[] = "no default __reduce__ due to non-trivial __cinit__";
 /* #### Code section: decls ### */
-static PyObject *__pyx_pf_16linear_regressor_fit_linear_regression(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_X_py, PyObject *__pyx_v_y_py); /* proto */
+static int __pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor___cinit__(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *__pyx_v_self); /* proto */
+static void __pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_2__dealloc__(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_4fit(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *__pyx_v_self, PyObject *__pyx_v_X_py, PyObject *__pyx_v_y_py); /* proto */
+static PyObject *__pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_6coefficients(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_8predict(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *__pyx_v_self, PyObject *__pyx_v_X_py); /* proto */
+static PyObject *__pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_10__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *__pyx_v_self); /* proto */
+static PyObject *__pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_12__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state); /* proto */
+static PyObject *__pyx_tp_new_5LR_v1_16linear_regressor_LinearRegressor(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 /* #### Code section: late_includes ### */
 /* #### Code section: module_state ### */
 /* SmallCodeConfig */
@@ -2337,9 +2432,11 @@ typedef struct {
   #ifdef __Pyx_Coroutine_USED
   PyTypeObject *__pyx_CoroutineType;
   #endif
+  PyObject *__pyx_type_5LR_v1_16linear_regressor_LinearRegressor;
+  PyTypeObject *__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor;
   __Pyx_CachedCFunction __pyx_umethod_PyDict_Type_pop;
-  PyObject *__pyx_codeobj_tab[1];
-  PyObject *__pyx_string_tab[37];
+  PyObject *__pyx_codeobj_tab[5];
+  PyObject *__pyx_string_tab[51];
 /* #### Code section: module_state_contents ### */
 /* CommonTypesMetaclass.module_state_decls */
 PyTypeObject *__pyx_CommonTypesMetaclassType;
@@ -2378,42 +2475,56 @@ static __pyx_mstatetype * const __pyx_mstate_global = &__pyx_mstate_global_stati
 #endif
 /* #### Code section: constant_name_defines ### */
 #define __pyx_kp_u_ __pyx_string_tab[0]
-#define __pyx_kp_u_Could_not_allocate_memory __pyx_string_tab[1]
-#define __pyx_kp_u_Matrix_not_invertible_det_0 __pyx_string_tab[2]
-#define __pyx_n_u_MemoryError __pyx_string_tab[3]
-#define __pyx_kp_u_Note_that_Cython_is_deliberately __pyx_string_tab[4]
-#define __pyx_kp_u_Only_2_features_are_supported_in __pyx_string_tab[5]
-#define __pyx_n_u_ValueError __pyx_string_tab[6]
-#define __pyx_n_u_X __pyx_string_tab[7]
-#define __pyx_n_u_X_py __pyx_string_tab[8]
-#define __pyx_n_u_X_t __pyx_string_tab[9]
-#define __pyx_n_u_X_t_X __pyx_string_tab[10]
-#define __pyx_n_u_X_t_X_inv __pyx_string_tab[11]
-#define __pyx_n_u_X_t_y __pyx_string_tab[12]
-#define __pyx_kp_u_add_note __pyx_string_tab[13]
-#define __pyx_n_u_asyncio_coroutines __pyx_string_tab[14]
-#define __pyx_n_u_beta __pyx_string_tab[15]
-#define __pyx_n_u_cline_in_traceback __pyx_string_tab[16]
-#define __pyx_n_u_fit_linear_regression __pyx_string_tab[17]
-#define __pyx_n_u_func __pyx_string_tab[18]
-#define __pyx_n_u_i __pyx_string_tab[19]
-#define __pyx_n_u_is_coroutine __pyx_string_tab[20]
-#define __pyx_n_u_j __pyx_string_tab[21]
-#define __pyx_n_u_linear_regressor __pyx_string_tab[22]
-#define __pyx_kp_u_linear_regressor_pyx __pyx_string_tab[23]
-#define __pyx_n_u_main __pyx_string_tab[24]
-#define __pyx_n_u_module __pyx_string_tab[25]
-#define __pyx_n_u_n_features __pyx_string_tab[26]
-#define __pyx_n_u_n_samples __pyx_string_tab[27]
-#define __pyx_n_u_name __pyx_string_tab[28]
-#define __pyx_n_u_pop __pyx_string_tab[29]
-#define __pyx_n_u_qualname __pyx_string_tab[30]
-#define __pyx_n_u_range __pyx_string_tab[31]
-#define __pyx_n_u_result __pyx_string_tab[32]
-#define __pyx_n_u_set_name __pyx_string_tab[33]
-#define __pyx_n_u_test __pyx_string_tab[34]
-#define __pyx_n_u_y __pyx_string_tab[35]
-#define __pyx_n_u_y_py __pyx_string_tab[36]
+#define __pyx_kp_u_All_rows_in_X_must_have_the_same __pyx_string_tab[1]
+#define __pyx_kp_u_Allocation_failed __pyx_string_tab[2]
+#define __pyx_kp_u_Beta_allocation_failed __pyx_string_tab[3]
+#define __pyx_n_u_LR_v1_linear_regressor __pyx_string_tab[4]
+#define __pyx_kp_u_LR_v1_linear_regressor_pyx __pyx_string_tab[5]
+#define __pyx_n_u_LinearRegressor __pyx_string_tab[6]
+#define __pyx_n_u_LinearRegressor___reduce_cython __pyx_string_tab[7]
+#define __pyx_n_u_LinearRegressor___setstate_cytho __pyx_string_tab[8]
+#define __pyx_n_u_LinearRegressor_coefficients __pyx_string_tab[9]
+#define __pyx_n_u_LinearRegressor_fit __pyx_string_tab[10]
+#define __pyx_n_u_LinearRegressor_predict __pyx_string_tab[11]
+#define __pyx_kp_u_Matrix_not_invertible __pyx_string_tab[12]
+#define __pyx_n_u_MemoryError __pyx_string_tab[13]
+#define __pyx_kp_u_Note_that_Cython_is_deliberately __pyx_string_tab[14]
+#define __pyx_n_u_TypeError __pyx_string_tab[15]
+#define __pyx_n_u_ValueError __pyx_string_tab[16]
+#define __pyx_kp_u_X_and_y_must_have_the_same_numbe __pyx_string_tab[17]
+#define __pyx_n_u_X_py __pyx_string_tab[18]
+#define __pyx_kp_u_add_note __pyx_string_tab[19]
+#define __pyx_n_u_asyncio_coroutines __pyx_string_tab[20]
+#define __pyx_n_u_cline_in_traceback __pyx_string_tab[21]
+#define __pyx_n_u_coefficients __pyx_string_tab[22]
+#define __pyx_kp_u_disable __pyx_string_tab[23]
+#define __pyx_kp_u_enable __pyx_string_tab[24]
+#define __pyx_n_u_fit __pyx_string_tab[25]
+#define __pyx_n_u_func __pyx_string_tab[26]
+#define __pyx_kp_u_gc __pyx_string_tab[27]
+#define __pyx_n_u_getstate __pyx_string_tab[28]
+#define __pyx_n_u_is_coroutine __pyx_string_tab[29]
+#define __pyx_kp_u_isenabled __pyx_string_tab[30]
+#define __pyx_n_u_main __pyx_string_tab[31]
+#define __pyx_n_u_module __pyx_string_tab[32]
+#define __pyx_n_u_name __pyx_string_tab[33]
+#define __pyx_kp_u_no_default___reduce___due_to_non __pyx_string_tab[34]
+#define __pyx_n_u_pop __pyx_string_tab[35]
+#define __pyx_n_u_predict __pyx_string_tab[36]
+#define __pyx_n_u_pyx_state __pyx_string_tab[37]
+#define __pyx_n_u_pyx_vtable __pyx_string_tab[38]
+#define __pyx_n_u_qualname __pyx_string_tab[39]
+#define __pyx_n_u_range __pyx_string_tab[40]
+#define __pyx_n_u_reduce __pyx_string_tab[41]
+#define __pyx_n_u_reduce_cython __pyx_string_tab[42]
+#define __pyx_n_u_reduce_ex __pyx_string_tab[43]
+#define __pyx_n_u_self __pyx_string_tab[44]
+#define __pyx_n_u_set_name __pyx_string_tab[45]
+#define __pyx_n_u_setstate __pyx_string_tab[46]
+#define __pyx_n_u_setstate_cython __pyx_string_tab[47]
+#define __pyx_kp_u_stringsource __pyx_string_tab[48]
+#define __pyx_n_u_test __pyx_string_tab[49]
+#define __pyx_n_u_y_py __pyx_string_tab[50]
 /* #### Code section: module_state_clear ### */
 #if CYTHON_USE_MODULE_STATE
 static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
@@ -2434,8 +2545,10 @@ static CYTHON_SMALL_CODE int __pyx_m_clear(PyObject *m) {
   #if CYTHON_PEP489_MULTI_PHASE_INIT
   __Pyx_State_RemoveModule(NULL);
   #endif
-  for (int i=0; i<1; ++i) { Py_CLEAR(clear_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<37; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
+  Py_CLEAR(clear_module_state->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor);
+  Py_CLEAR(clear_module_state->__pyx_type_5LR_v1_16linear_regressor_LinearRegressor);
+  for (int i=0; i<5; ++i) { Py_CLEAR(clear_module_state->__pyx_codeobj_tab[i]); }
+  for (int i=0; i<51; ++i) { Py_CLEAR(clear_module_state->__pyx_string_tab[i]); }
   return 0;
 }
 #endif
@@ -2456,22 +2569,24 @@ static CYTHON_SMALL_CODE int __pyx_m_traverse(PyObject *m, visitproc visit, void
   #ifdef __Pyx_FusedFunction_USED
   Py_VISIT(traverse_module_state->__pyx_FusedFunctionType);
   #endif
-  for (int i=0; i<1; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_codeobj_tab[i]); }
-  for (int i=0; i<37; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
+  Py_VISIT(traverse_module_state->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor);
+  Py_VISIT(traverse_module_state->__pyx_type_5LR_v1_16linear_regressor_LinearRegressor);
+  for (int i=0; i<5; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_codeobj_tab[i]); }
+  for (int i=0; i<51; ++i) { __Pyx_VISIT_CONST(traverse_module_state->__pyx_string_tab[i]); }
   return 0;
 }
 #endif
 /* #### Code section: module_code ### */
 
-/* "linear_regressor.pyx":12
+/* "LR_v1/linear_regressor.pyx":12
+ * from cython cimport cclass, cfunc
  * 
- * # Use C arrays instead of Python lists for better performance
  * cdef void transpose_inplace(double* MAT, double* MAT_t, int rows, int cols) nogil:             # <<<<<<<<<<<<<<
- *     """
- *     Transpose matrix MAT of size (rows x cols) into MAT_t (cols x rows).
+ *     cdef int i, j
+ *     for i in range(rows):
 */
 
-static void __pyx_f_16linear_regressor_transpose_inplace(double *__pyx_v_MAT, double *__pyx_v_MAT_t, int __pyx_v_rows, int __pyx_v_cols) {
+static void __pyx_f_5LR_v1_16linear_regressor_transpose_inplace(double *__pyx_v_MAT, double *__pyx_v_MAT_t, int __pyx_v_rows, int __pyx_v_cols) {
   int __pyx_v_i;
   int __pyx_v_j;
   int __pyx_t_1;
@@ -2481,8 +2596,8 @@ static void __pyx_f_16linear_regressor_transpose_inplace(double *__pyx_v_MAT, do
   int __pyx_t_5;
   int __pyx_t_6;
 
-  /* "linear_regressor.pyx":17
- *     """
+  /* "LR_v1/linear_regressor.pyx":14
+ * cdef void transpose_inplace(double* MAT, double* MAT_t, int rows, int cols) nogil:
  *     cdef int i, j
  *     for i in range(rows):             # <<<<<<<<<<<<<<
  *         for j in range(cols):
@@ -2493,7 +2608,7 @@ static void __pyx_f_16linear_regressor_transpose_inplace(double *__pyx_v_MAT, do
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_i = __pyx_t_3;
 
-    /* "linear_regressor.pyx":18
+    /* "LR_v1/linear_regressor.pyx":15
  *     cdef int i, j
  *     for i in range(rows):
  *         for j in range(cols):             # <<<<<<<<<<<<<<
@@ -2505,37 +2620,37 @@ static void __pyx_f_16linear_regressor_transpose_inplace(double *__pyx_v_MAT, do
     for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_j = __pyx_t_6;
 
-      /* "linear_regressor.pyx":19
+      /* "LR_v1/linear_regressor.pyx":16
  *     for i in range(rows):
  *         for j in range(cols):
  *             MAT_t[j * rows + i] = MAT[i * cols + j]             # <<<<<<<<<<<<<<
  * 
- * cdef void matmul_c(double* MAT_A, double* MAT_B, double* MAT_result,
+ * cdef void matmul_c(double* A, double* B, double* R, int A_rows, int A_cols, int B_cols) nogil:
 */
       (__pyx_v_MAT_t[((__pyx_v_j * __pyx_v_rows) + __pyx_v_i)]) = (__pyx_v_MAT[((__pyx_v_i * __pyx_v_cols) + __pyx_v_j)]);
     }
   }
 
-  /* "linear_regressor.pyx":12
+  /* "LR_v1/linear_regressor.pyx":12
+ * from cython cimport cclass, cfunc
  * 
- * # Use C arrays instead of Python lists for better performance
  * cdef void transpose_inplace(double* MAT, double* MAT_t, int rows, int cols) nogil:             # <<<<<<<<<<<<<<
- *     """
- *     Transpose matrix MAT of size (rows x cols) into MAT_t (cols x rows).
+ *     cdef int i, j
+ *     for i in range(rows):
 */
 
   /* function exit code */
 }
 
-/* "linear_regressor.pyx":21
+/* "LR_v1/linear_regressor.pyx":18
  *             MAT_t[j * rows + i] = MAT[i * cols + j]
  * 
- * cdef void matmul_c(double* MAT_A, double* MAT_B, double* MAT_result,             # <<<<<<<<<<<<<<
- *                    int A_rows, int A_cols, int B_cols) nogil:
- *     """
+ * cdef void matmul_c(double* A, double* B, double* R, int A_rows, int A_cols, int B_cols) nogil:             # <<<<<<<<<<<<<<
+ *     cdef int i, j, k
+ *     cdef double temp
 */
 
-static void __pyx_f_16linear_regressor_matmul_c(double *__pyx_v_MAT_A, double *__pyx_v_MAT_B, double *__pyx_v_MAT_result, int __pyx_v_A_rows, int __pyx_v_A_cols, int __pyx_v_B_cols) {
+static void __pyx_f_5LR_v1_16linear_regressor_matmul_c(double *__pyx_v_A, double *__pyx_v_B, double *__pyx_v_R, int __pyx_v_A_rows, int __pyx_v_A_cols, int __pyx_v_B_cols) {
   int __pyx_v_i;
   int __pyx_v_j;
   int __pyx_v_k;
@@ -2550,45 +2665,45 @@ static void __pyx_f_16linear_regressor_matmul_c(double *__pyx_v_MAT_A, double *_
   int __pyx_t_8;
   int __pyx_t_9;
 
-  /* "linear_regressor.pyx":30
- * 
- *     # Initialize result matrix
+  /* "LR_v1/linear_regressor.pyx":21
+ *     cdef int i, j, k
+ *     cdef double temp
  *     for i in range(A_rows * B_cols):             # <<<<<<<<<<<<<<
- *         MAT_result[i] = 0.0
- * 
+ *         R[i] = 0
+ *     for i in range(A_rows):
 */
   __pyx_t_1 = (__pyx_v_A_rows * __pyx_v_B_cols);
   __pyx_t_2 = __pyx_t_1;
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_i = __pyx_t_3;
 
-    /* "linear_regressor.pyx":31
- *     # Initialize result matrix
+    /* "LR_v1/linear_regressor.pyx":22
+ *     cdef double temp
  *     for i in range(A_rows * B_cols):
- *         MAT_result[i] = 0.0             # <<<<<<<<<<<<<<
- * 
+ *         R[i] = 0             # <<<<<<<<<<<<<<
  *     for i in range(A_rows):
+ *         for j in range(B_cols):
 */
-    (__pyx_v_MAT_result[__pyx_v_i]) = 0.0;
+    (__pyx_v_R[__pyx_v_i]) = 0.0;
   }
 
-  /* "linear_regressor.pyx":33
- *         MAT_result[i] = 0.0
- * 
+  /* "LR_v1/linear_regressor.pyx":23
+ *     for i in range(A_rows * B_cols):
+ *         R[i] = 0
  *     for i in range(A_rows):             # <<<<<<<<<<<<<<
  *         for j in range(B_cols):
- *             temp = 0.0
+ *             temp = 0
 */
   __pyx_t_1 = __pyx_v_A_rows;
   __pyx_t_2 = __pyx_t_1;
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_i = __pyx_t_3;
 
-    /* "linear_regressor.pyx":34
- * 
+    /* "LR_v1/linear_regressor.pyx":24
+ *         R[i] = 0
  *     for i in range(A_rows):
  *         for j in range(B_cols):             # <<<<<<<<<<<<<<
- *             temp = 0.0
+ *             temp = 0
  *             for k in range(A_cols):
 */
     __pyx_t_4 = __pyx_v_B_cols;
@@ -2596,68 +2711,68 @@ static void __pyx_f_16linear_regressor_matmul_c(double *__pyx_v_MAT_A, double *_
     for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_j = __pyx_t_6;
 
-      /* "linear_regressor.pyx":35
+      /* "LR_v1/linear_regressor.pyx":25
  *     for i in range(A_rows):
  *         for j in range(B_cols):
- *             temp = 0.0             # <<<<<<<<<<<<<<
+ *             temp = 0             # <<<<<<<<<<<<<<
  *             for k in range(A_cols):
- *                 temp += MAT_A[i * A_cols + k] * MAT_B[k * B_cols + j]
+ *                 temp += A[i * A_cols + k] * B[k * B_cols + j]
 */
       __pyx_v_temp = 0.0;
 
-      /* "linear_regressor.pyx":36
+      /* "LR_v1/linear_regressor.pyx":26
  *         for j in range(B_cols):
- *             temp = 0.0
+ *             temp = 0
  *             for k in range(A_cols):             # <<<<<<<<<<<<<<
- *                 temp += MAT_A[i * A_cols + k] * MAT_B[k * B_cols + j]
- *             MAT_result[i * B_cols + j] = temp
+ *                 temp += A[i * A_cols + k] * B[k * B_cols + j]
+ *             R[i * B_cols + j] = temp
 */
       __pyx_t_7 = __pyx_v_A_cols;
       __pyx_t_8 = __pyx_t_7;
       for (__pyx_t_9 = 0; __pyx_t_9 < __pyx_t_8; __pyx_t_9+=1) {
         __pyx_v_k = __pyx_t_9;
 
-        /* "linear_regressor.pyx":37
- *             temp = 0.0
+        /* "LR_v1/linear_regressor.pyx":27
+ *             temp = 0
  *             for k in range(A_cols):
- *                 temp += MAT_A[i * A_cols + k] * MAT_B[k * B_cols + j]             # <<<<<<<<<<<<<<
- *             MAT_result[i * B_cols + j] = temp
+ *                 temp += A[i * A_cols + k] * B[k * B_cols + j]             # <<<<<<<<<<<<<<
+ *             R[i * B_cols + j] = temp
  * 
 */
-        __pyx_v_temp = (__pyx_v_temp + ((__pyx_v_MAT_A[((__pyx_v_i * __pyx_v_A_cols) + __pyx_v_k)]) * (__pyx_v_MAT_B[((__pyx_v_k * __pyx_v_B_cols) + __pyx_v_j)])));
+        __pyx_v_temp = (__pyx_v_temp + ((__pyx_v_A[((__pyx_v_i * __pyx_v_A_cols) + __pyx_v_k)]) * (__pyx_v_B[((__pyx_v_k * __pyx_v_B_cols) + __pyx_v_j)])));
       }
 
-      /* "linear_regressor.pyx":38
+      /* "LR_v1/linear_regressor.pyx":28
  *             for k in range(A_cols):
- *                 temp += MAT_A[i * A_cols + k] * MAT_B[k * B_cols + j]
- *             MAT_result[i * B_cols + j] = temp             # <<<<<<<<<<<<<<
+ *                 temp += A[i * A_cols + k] * B[k * B_cols + j]
+ *             R[i * B_cols + j] = temp             # <<<<<<<<<<<<<<
  * 
- * cdef void matvec_c(double* MAT, double* vector, double* result,
+ * cdef void matvec_c(double* M, double* v, double* r, int rows, int cols) nogil:
 */
-      (__pyx_v_MAT_result[((__pyx_v_i * __pyx_v_B_cols) + __pyx_v_j)]) = __pyx_v_temp;
+      (__pyx_v_R[((__pyx_v_i * __pyx_v_B_cols) + __pyx_v_j)]) = __pyx_v_temp;
     }
   }
 
-  /* "linear_regressor.pyx":21
+  /* "LR_v1/linear_regressor.pyx":18
  *             MAT_t[j * rows + i] = MAT[i * cols + j]
  * 
- * cdef void matmul_c(double* MAT_A, double* MAT_B, double* MAT_result,             # <<<<<<<<<<<<<<
- *                    int A_rows, int A_cols, int B_cols) nogil:
- *     """
+ * cdef void matmul_c(double* A, double* B, double* R, int A_rows, int A_cols, int B_cols) nogil:             # <<<<<<<<<<<<<<
+ *     cdef int i, j, k
+ *     cdef double temp
 */
 
   /* function exit code */
 }
 
-/* "linear_regressor.pyx":40
- *             MAT_result[i * B_cols + j] = temp
+/* "LR_v1/linear_regressor.pyx":30
+ *             R[i * B_cols + j] = temp
  * 
- * cdef void matvec_c(double* MAT, double* vector, double* result,             # <<<<<<<<<<<<<<
- *                    int rows, int cols) nogil:
- *     """
+ * cdef void matvec_c(double* M, double* v, double* r, int rows, int cols) nogil:             # <<<<<<<<<<<<<<
+ *     cdef int i, j
+ *     cdef double temp
 */
 
-static void __pyx_f_16linear_regressor_matvec_c(double *__pyx_v_MAT, double *__pyx_v_vector, double *__pyx_v_result, int __pyx_v_rows, int __pyx_v_cols) {
+static void __pyx_f_5LR_v1_16linear_regressor_matvec_c(double *__pyx_v_M, double *__pyx_v_v, double *__pyx_v_r, int __pyx_v_rows, int __pyx_v_cols) {
   int __pyx_v_i;
   int __pyx_v_j;
   double __pyx_v_temp;
@@ -2668,11 +2783,11 @@ static void __pyx_f_16linear_regressor_matvec_c(double *__pyx_v_MAT, double *__p
   int __pyx_t_5;
   int __pyx_t_6;
 
-  /* "linear_regressor.pyx":48
+  /* "LR_v1/linear_regressor.pyx":33
+ *     cdef int i, j
  *     cdef double temp
- * 
  *     for i in range(rows):             # <<<<<<<<<<<<<<
- *         temp = 0.0
+ *         temp = 0
  *         for j in range(cols):
 */
   __pyx_t_1 = __pyx_v_rows;
@@ -2680,171 +2795,491 @@ static void __pyx_f_16linear_regressor_matvec_c(double *__pyx_v_MAT, double *__p
   for (__pyx_t_3 = 0; __pyx_t_3 < __pyx_t_2; __pyx_t_3+=1) {
     __pyx_v_i = __pyx_t_3;
 
-    /* "linear_regressor.pyx":49
- * 
+    /* "LR_v1/linear_regressor.pyx":34
+ *     cdef double temp
  *     for i in range(rows):
- *         temp = 0.0             # <<<<<<<<<<<<<<
+ *         temp = 0             # <<<<<<<<<<<<<<
  *         for j in range(cols):
- *             temp += MAT[i * cols + j] * vector[j]
+ *             temp += M[i * cols + j] * v[j]
 */
     __pyx_v_temp = 0.0;
 
-    /* "linear_regressor.pyx":50
+    /* "LR_v1/linear_regressor.pyx":35
  *     for i in range(rows):
- *         temp = 0.0
+ *         temp = 0
  *         for j in range(cols):             # <<<<<<<<<<<<<<
- *             temp += MAT[i * cols + j] * vector[j]
- *         result[i] = temp
+ *             temp += M[i * cols + j] * v[j]
+ *         r[i] = temp
 */
     __pyx_t_4 = __pyx_v_cols;
     __pyx_t_5 = __pyx_t_4;
     for (__pyx_t_6 = 0; __pyx_t_6 < __pyx_t_5; __pyx_t_6+=1) {
       __pyx_v_j = __pyx_t_6;
 
-      /* "linear_regressor.pyx":51
- *         temp = 0.0
+      /* "LR_v1/linear_regressor.pyx":36
+ *         temp = 0
  *         for j in range(cols):
- *             temp += MAT[i * cols + j] * vector[j]             # <<<<<<<<<<<<<<
- *         result[i] = temp
+ *             temp += M[i * cols + j] * v[j]             # <<<<<<<<<<<<<<
+ *         r[i] = temp
  * 
 */
-      __pyx_v_temp = (__pyx_v_temp + ((__pyx_v_MAT[((__pyx_v_i * __pyx_v_cols) + __pyx_v_j)]) * (__pyx_v_vector[__pyx_v_j])));
+      __pyx_v_temp = (__pyx_v_temp + ((__pyx_v_M[((__pyx_v_i * __pyx_v_cols) + __pyx_v_j)]) * (__pyx_v_v[__pyx_v_j])));
     }
 
-    /* "linear_regressor.pyx":52
+    /* "LR_v1/linear_regressor.pyx":37
  *         for j in range(cols):
- *             temp += MAT[i * cols + j] * vector[j]
- *         result[i] = temp             # <<<<<<<<<<<<<<
+ *             temp += M[i * cols + j] * v[j]
+ *         r[i] = temp             # <<<<<<<<<<<<<<
  * 
- * cdef int inverse_2x2(double* MAT, double* MAT_inv) nogil:
+ * cdef int inverse(double* A, double* A_inv, int n) nogil:
 */
-    (__pyx_v_result[__pyx_v_i]) = __pyx_v_temp;
+    (__pyx_v_r[__pyx_v_i]) = __pyx_v_temp;
   }
 
-  /* "linear_regressor.pyx":40
- *             MAT_result[i * B_cols + j] = temp
+  /* "LR_v1/linear_regressor.pyx":30
+ *             R[i * B_cols + j] = temp
  * 
- * cdef void matvec_c(double* MAT, double* vector, double* result,             # <<<<<<<<<<<<<<
- *                    int rows, int cols) nogil:
- *     """
+ * cdef void matvec_c(double* M, double* v, double* r, int rows, int cols) nogil:             # <<<<<<<<<<<<<<
+ *     cdef int i, j
+ *     cdef double temp
 */
 
   /* function exit code */
 }
 
-/* "linear_regressor.pyx":54
- *         result[i] = temp
+/* "LR_v1/linear_regressor.pyx":39
+ *         r[i] = temp
  * 
- * cdef int inverse_2x2(double* MAT, double* MAT_inv) nogil:             # <<<<<<<<<<<<<<
- *     """
- *     Compute inverse of 2x2 matrix. Returns 0 on success, -1 on failure.
+ * cdef int inverse(double* A, double* A_inv, int n) nogil:             # <<<<<<<<<<<<<<
+ *     cdef int i, j, k, maxRow
+ *     cdef double maxEl, tmp
 */
 
-static int __pyx_f_16linear_regressor_inverse_2x2(double *__pyx_v_MAT, double *__pyx_v_MAT_inv) {
-  double __pyx_v_det;
-  double __pyx_v_inv_det;
+static int __pyx_f_5LR_v1_16linear_regressor_inverse(double *__pyx_v_A, double *__pyx_v_A_inv, int __pyx_v_n) {
+  int __pyx_v_i;
+  int __pyx_v_j;
+  int __pyx_v_k;
+  int __pyx_v_maxRow;
+  double __pyx_v_maxEl;
+  double __pyx_v_tmp;
+  double *__pyx_v_aug;
   int __pyx_r;
   int __pyx_t_1;
+  int __pyx_t_2;
+  int __pyx_t_3;
+  int __pyx_t_4;
+  int __pyx_t_5;
+  int __pyx_t_6;
+  int __pyx_t_7;
+  double __pyx_t_8;
+  long __pyx_t_9;
+  long __pyx_t_10;
+  long __pyx_t_11;
+  int __pyx_t_12;
 
-  /* "linear_regressor.pyx":58
- *     Compute inverse of 2x2 matrix. Returns 0 on success, -1 on failure.
- *     """
- *     cdef double det = MAT[0] * MAT[3] - MAT[1] * MAT[2]             # <<<<<<<<<<<<<<
+  /* "LR_v1/linear_regressor.pyx":43
+ *     cdef double maxEl, tmp
  * 
- *     if fabs(det) < 1e-10:
+ *     cdef double* aug = <double*>malloc(n * n * 2 * sizeof(double))             # <<<<<<<<<<<<<<
+ *     if not aug:
+ *         return -1
 */
-  __pyx_v_det = (((__pyx_v_MAT[0]) * (__pyx_v_MAT[3])) - ((__pyx_v_MAT[1]) * (__pyx_v_MAT[2])));
+  __pyx_v_aug = ((double *)malloc((((__pyx_v_n * __pyx_v_n) * 2) * (sizeof(double)))));
 
-  /* "linear_regressor.pyx":60
- *     cdef double det = MAT[0] * MAT[3] - MAT[1] * MAT[2]
+  /* "LR_v1/linear_regressor.pyx":44
  * 
- *     if fabs(det) < 1e-10:             # <<<<<<<<<<<<<<
- *         return -1  # Matrix not invertible
+ *     cdef double* aug = <double*>malloc(n * n * 2 * sizeof(double))
+ *     if not aug:             # <<<<<<<<<<<<<<
+ *         return -1
  * 
 */
-  __pyx_t_1 = (fabs(__pyx_v_det) < 1e-10);
+  __pyx_t_1 = (!(__pyx_v_aug != 0));
   if (__pyx_t_1) {
 
-    /* "linear_regressor.pyx":61
+    /* "LR_v1/linear_regressor.pyx":45
+ *     cdef double* aug = <double*>malloc(n * n * 2 * sizeof(double))
+ *     if not aug:
+ *         return -1             # <<<<<<<<<<<<<<
  * 
- *     if fabs(det) < 1e-10:
- *         return -1  # Matrix not invertible             # <<<<<<<<<<<<<<
- * 
- *     cdef double inv_det = 1.0 / det
+ *     for i in range(n):
 */
     __pyx_r = -1;
     goto __pyx_L0;
 
-    /* "linear_regressor.pyx":60
- *     cdef double det = MAT[0] * MAT[3] - MAT[1] * MAT[2]
+    /* "LR_v1/linear_regressor.pyx":44
  * 
- *     if fabs(det) < 1e-10:             # <<<<<<<<<<<<<<
- *         return -1  # Matrix not invertible
+ *     cdef double* aug = <double*>malloc(n * n * 2 * sizeof(double))
+ *     if not aug:             # <<<<<<<<<<<<<<
+ *         return -1
  * 
 */
   }
 
-  /* "linear_regressor.pyx":63
- *         return -1  # Matrix not invertible
+  /* "LR_v1/linear_regressor.pyx":47
+ *         return -1
  * 
- *     cdef double inv_det = 1.0 / det             # <<<<<<<<<<<<<<
- *     MAT_inv[0] = MAT[3] * inv_det    # [1][1]
- *     MAT_inv[1] = -MAT[1] * inv_det   # -[0][1]
+ *     for i in range(n):             # <<<<<<<<<<<<<<
+ *         for j in range(n):
+ *             aug[i * 2 * n + j] = A[i * n + j]
 */
-  __pyx_v_inv_det = (1.0 / __pyx_v_det);
+  __pyx_t_2 = __pyx_v_n;
+  __pyx_t_3 = __pyx_t_2;
+  for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
+    __pyx_v_i = __pyx_t_4;
 
-  /* "linear_regressor.pyx":64
+    /* "LR_v1/linear_regressor.pyx":48
  * 
- *     cdef double inv_det = 1.0 / det
- *     MAT_inv[0] = MAT[3] * inv_det    # [1][1]             # <<<<<<<<<<<<<<
- *     MAT_inv[1] = -MAT[1] * inv_det   # -[0][1]
- *     MAT_inv[2] = -MAT[2] * inv_det   # -[1][0]
+ *     for i in range(n):
+ *         for j in range(n):             # <<<<<<<<<<<<<<
+ *             aug[i * 2 * n + j] = A[i * n + j]
+ *             aug[i * 2 * n + j + n] = 1.0 if i == j else 0.0
 */
-  (__pyx_v_MAT_inv[0]) = ((__pyx_v_MAT[3]) * __pyx_v_inv_det);
+    __pyx_t_5 = __pyx_v_n;
+    __pyx_t_6 = __pyx_t_5;
+    for (__pyx_t_7 = 0; __pyx_t_7 < __pyx_t_6; __pyx_t_7+=1) {
+      __pyx_v_j = __pyx_t_7;
 
-  /* "linear_regressor.pyx":65
- *     cdef double inv_det = 1.0 / det
- *     MAT_inv[0] = MAT[3] * inv_det    # [1][1]
- *     MAT_inv[1] = -MAT[1] * inv_det   # -[0][1]             # <<<<<<<<<<<<<<
- *     MAT_inv[2] = -MAT[2] * inv_det   # -[1][0]
- *     MAT_inv[3] = MAT[0] * inv_det    # [0][0]
-*/
-  (__pyx_v_MAT_inv[1]) = ((-(__pyx_v_MAT[1])) * __pyx_v_inv_det);
-
-  /* "linear_regressor.pyx":66
- *     MAT_inv[0] = MAT[3] * inv_det    # [1][1]
- *     MAT_inv[1] = -MAT[1] * inv_det   # -[0][1]
- *     MAT_inv[2] = -MAT[2] * inv_det   # -[1][0]             # <<<<<<<<<<<<<<
- *     MAT_inv[3] = MAT[0] * inv_det    # [0][0]
+      /* "LR_v1/linear_regressor.pyx":49
+ *     for i in range(n):
+ *         for j in range(n):
+ *             aug[i * 2 * n + j] = A[i * n + j]             # <<<<<<<<<<<<<<
+ *             aug[i * 2 * n + j + n] = 1.0 if i == j else 0.0
  * 
 */
-  (__pyx_v_MAT_inv[2]) = ((-(__pyx_v_MAT[2])) * __pyx_v_inv_det);
+      (__pyx_v_aug[(((__pyx_v_i * 2) * __pyx_v_n) + __pyx_v_j)]) = (__pyx_v_A[((__pyx_v_i * __pyx_v_n) + __pyx_v_j)]);
 
-  /* "linear_regressor.pyx":67
- *     MAT_inv[1] = -MAT[1] * inv_det   # -[0][1]
- *     MAT_inv[2] = -MAT[2] * inv_det   # -[1][0]
- *     MAT_inv[3] = MAT[0] * inv_det    # [0][0]             # <<<<<<<<<<<<<<
+      /* "LR_v1/linear_regressor.pyx":50
+ *         for j in range(n):
+ *             aug[i * 2 * n + j] = A[i * n + j]
+ *             aug[i * 2 * n + j + n] = 1.0 if i == j else 0.0             # <<<<<<<<<<<<<<
  * 
+ *     for i in range(n):
+*/
+      __pyx_t_1 = (__pyx_v_i == __pyx_v_j);
+      if (__pyx_t_1) {
+        __pyx_t_8 = 1.0;
+      } else {
+        __pyx_t_8 = 0.0;
+      }
+      (__pyx_v_aug[((((__pyx_v_i * 2) * __pyx_v_n) + __pyx_v_j) + __pyx_v_n)]) = __pyx_t_8;
+    }
+  }
+
+  /* "LR_v1/linear_regressor.pyx":52
+ *             aug[i * 2 * n + j + n] = 1.0 if i == j else 0.0
+ * 
+ *     for i in range(n):             # <<<<<<<<<<<<<<
+ *         maxEl = fabs(aug[i * 2 * n + i])
+ *         maxRow = i
+*/
+  __pyx_t_2 = __pyx_v_n;
+  __pyx_t_3 = __pyx_t_2;
+  for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
+    __pyx_v_i = __pyx_t_4;
+
+    /* "LR_v1/linear_regressor.pyx":53
+ * 
+ *     for i in range(n):
+ *         maxEl = fabs(aug[i * 2 * n + i])             # <<<<<<<<<<<<<<
+ *         maxRow = i
+ *         for k in range(i+1, n):
+*/
+    __pyx_v_maxEl = fabs((__pyx_v_aug[(((__pyx_v_i * 2) * __pyx_v_n) + __pyx_v_i)]));
+
+    /* "LR_v1/linear_regressor.pyx":54
+ *     for i in range(n):
+ *         maxEl = fabs(aug[i * 2 * n + i])
+ *         maxRow = i             # <<<<<<<<<<<<<<
+ *         for k in range(i+1, n):
+ *             if fabs(aug[k * 2 * n + i]) > maxEl:
+*/
+    __pyx_v_maxRow = __pyx_v_i;
+
+    /* "LR_v1/linear_regressor.pyx":55
+ *         maxEl = fabs(aug[i * 2 * n + i])
+ *         maxRow = i
+ *         for k in range(i+1, n):             # <<<<<<<<<<<<<<
+ *             if fabs(aug[k * 2 * n + i]) > maxEl:
+ *                 maxEl = fabs(aug[k * 2 * n + i])
+*/
+    __pyx_t_5 = __pyx_v_n;
+    __pyx_t_6 = __pyx_t_5;
+    for (__pyx_t_7 = (__pyx_v_i + 1); __pyx_t_7 < __pyx_t_6; __pyx_t_7+=1) {
+      __pyx_v_k = __pyx_t_7;
+
+      /* "LR_v1/linear_regressor.pyx":56
+ *         maxRow = i
+ *         for k in range(i+1, n):
+ *             if fabs(aug[k * 2 * n + i]) > maxEl:             # <<<<<<<<<<<<<<
+ *                 maxEl = fabs(aug[k * 2 * n + i])
+ *                 maxRow = k
+*/
+      __pyx_t_1 = (fabs((__pyx_v_aug[(((__pyx_v_k * 2) * __pyx_v_n) + __pyx_v_i)])) > __pyx_v_maxEl);
+      if (__pyx_t_1) {
+
+        /* "LR_v1/linear_regressor.pyx":57
+ *         for k in range(i+1, n):
+ *             if fabs(aug[k * 2 * n + i]) > maxEl:
+ *                 maxEl = fabs(aug[k * 2 * n + i])             # <<<<<<<<<<<<<<
+ *                 maxRow = k
+ *         if maxEl < 1e-12:
+*/
+        __pyx_v_maxEl = fabs((__pyx_v_aug[(((__pyx_v_k * 2) * __pyx_v_n) + __pyx_v_i)]));
+
+        /* "LR_v1/linear_regressor.pyx":58
+ *             if fabs(aug[k * 2 * n + i]) > maxEl:
+ *                 maxEl = fabs(aug[k * 2 * n + i])
+ *                 maxRow = k             # <<<<<<<<<<<<<<
+ *         if maxEl < 1e-12:
+ *             free(aug)
+*/
+        __pyx_v_maxRow = __pyx_v_k;
+
+        /* "LR_v1/linear_regressor.pyx":56
+ *         maxRow = i
+ *         for k in range(i+1, n):
+ *             if fabs(aug[k * 2 * n + i]) > maxEl:             # <<<<<<<<<<<<<<
+ *                 maxEl = fabs(aug[k * 2 * n + i])
+ *                 maxRow = k
+*/
+      }
+    }
+
+    /* "LR_v1/linear_regressor.pyx":59
+ *                 maxEl = fabs(aug[k * 2 * n + i])
+ *                 maxRow = k
+ *         if maxEl < 1e-12:             # <<<<<<<<<<<<<<
+ *             free(aug)
+ *             return -1
+*/
+    __pyx_t_1 = (__pyx_v_maxEl < 1e-12);
+    if (__pyx_t_1) {
+
+      /* "LR_v1/linear_regressor.pyx":60
+ *                 maxRow = k
+ *         if maxEl < 1e-12:
+ *             free(aug)             # <<<<<<<<<<<<<<
+ *             return -1
+ * 
+*/
+      free(__pyx_v_aug);
+
+      /* "LR_v1/linear_regressor.pyx":61
+ *         if maxEl < 1e-12:
+ *             free(aug)
+ *             return -1             # <<<<<<<<<<<<<<
+ * 
+ *         for j in range(2 * n):
+*/
+      __pyx_r = -1;
+      goto __pyx_L0;
+
+      /* "LR_v1/linear_regressor.pyx":59
+ *                 maxEl = fabs(aug[k * 2 * n + i])
+ *                 maxRow = k
+ *         if maxEl < 1e-12:             # <<<<<<<<<<<<<<
+ *             free(aug)
+ *             return -1
+*/
+    }
+
+    /* "LR_v1/linear_regressor.pyx":63
+ *             return -1
+ * 
+ *         for j in range(2 * n):             # <<<<<<<<<<<<<<
+ *             tmp = aug[i * 2 * n + j]
+ *             aug[i * 2 * n + j] = aug[maxRow * 2 * n + j]
+*/
+    __pyx_t_9 = (2 * __pyx_v_n);
+    __pyx_t_10 = __pyx_t_9;
+    for (__pyx_t_5 = 0; __pyx_t_5 < __pyx_t_10; __pyx_t_5+=1) {
+      __pyx_v_j = __pyx_t_5;
+
+      /* "LR_v1/linear_regressor.pyx":64
+ * 
+ *         for j in range(2 * n):
+ *             tmp = aug[i * 2 * n + j]             # <<<<<<<<<<<<<<
+ *             aug[i * 2 * n + j] = aug[maxRow * 2 * n + j]
+ *             aug[maxRow * 2 * n + j] = tmp
+*/
+      __pyx_v_tmp = (__pyx_v_aug[(((__pyx_v_i * 2) * __pyx_v_n) + __pyx_v_j)]);
+
+      /* "LR_v1/linear_regressor.pyx":65
+ *         for j in range(2 * n):
+ *             tmp = aug[i * 2 * n + j]
+ *             aug[i * 2 * n + j] = aug[maxRow * 2 * n + j]             # <<<<<<<<<<<<<<
+ *             aug[maxRow * 2 * n + j] = tmp
+ * 
+*/
+      (__pyx_v_aug[(((__pyx_v_i * 2) * __pyx_v_n) + __pyx_v_j)]) = (__pyx_v_aug[(((__pyx_v_maxRow * 2) * __pyx_v_n) + __pyx_v_j)]);
+
+      /* "LR_v1/linear_regressor.pyx":66
+ *             tmp = aug[i * 2 * n + j]
+ *             aug[i * 2 * n + j] = aug[maxRow * 2 * n + j]
+ *             aug[maxRow * 2 * n + j] = tmp             # <<<<<<<<<<<<<<
+ * 
+ *         tmp = aug[i * 2 * n + i]
+*/
+      (__pyx_v_aug[(((__pyx_v_maxRow * 2) * __pyx_v_n) + __pyx_v_j)]) = __pyx_v_tmp;
+    }
+
+    /* "LR_v1/linear_regressor.pyx":68
+ *             aug[maxRow * 2 * n + j] = tmp
+ * 
+ *         tmp = aug[i * 2 * n + i]             # <<<<<<<<<<<<<<
+ *         for j in range(2 * n):
+ *             aug[i * 2 * n + j] /= tmp
+*/
+    __pyx_v_tmp = (__pyx_v_aug[(((__pyx_v_i * 2) * __pyx_v_n) + __pyx_v_i)]);
+
+    /* "LR_v1/linear_regressor.pyx":69
+ * 
+ *         tmp = aug[i * 2 * n + i]
+ *         for j in range(2 * n):             # <<<<<<<<<<<<<<
+ *             aug[i * 2 * n + j] /= tmp
+ * 
+*/
+    __pyx_t_9 = (2 * __pyx_v_n);
+    __pyx_t_10 = __pyx_t_9;
+    for (__pyx_t_5 = 0; __pyx_t_5 < __pyx_t_10; __pyx_t_5+=1) {
+      __pyx_v_j = __pyx_t_5;
+
+      /* "LR_v1/linear_regressor.pyx":70
+ *         tmp = aug[i * 2 * n + i]
+ *         for j in range(2 * n):
+ *             aug[i * 2 * n + j] /= tmp             # <<<<<<<<<<<<<<
+ * 
+ *         for k in range(n):
+*/
+      __pyx_t_11 = (((__pyx_v_i * 2) * __pyx_v_n) + __pyx_v_j);
+      (__pyx_v_aug[__pyx_t_11]) = ((__pyx_v_aug[__pyx_t_11]) / __pyx_v_tmp);
+    }
+
+    /* "LR_v1/linear_regressor.pyx":72
+ *             aug[i * 2 * n + j] /= tmp
+ * 
+ *         for k in range(n):             # <<<<<<<<<<<<<<
+ *             if k != i:
+ *                 tmp = aug[k * 2 * n + i]
+*/
+    __pyx_t_5 = __pyx_v_n;
+    __pyx_t_6 = __pyx_t_5;
+    for (__pyx_t_7 = 0; __pyx_t_7 < __pyx_t_6; __pyx_t_7+=1) {
+      __pyx_v_k = __pyx_t_7;
+
+      /* "LR_v1/linear_regressor.pyx":73
+ * 
+ *         for k in range(n):
+ *             if k != i:             # <<<<<<<<<<<<<<
+ *                 tmp = aug[k * 2 * n + i]
+ *                 for j in range(2 * n):
+*/
+      __pyx_t_1 = (__pyx_v_k != __pyx_v_i);
+      if (__pyx_t_1) {
+
+        /* "LR_v1/linear_regressor.pyx":74
+ *         for k in range(n):
+ *             if k != i:
+ *                 tmp = aug[k * 2 * n + i]             # <<<<<<<<<<<<<<
+ *                 for j in range(2 * n):
+ *                     aug[k * 2 * n + j] -= aug[i * 2 * n + j] * tmp
+*/
+        __pyx_v_tmp = (__pyx_v_aug[(((__pyx_v_k * 2) * __pyx_v_n) + __pyx_v_i)]);
+
+        /* "LR_v1/linear_regressor.pyx":75
+ *             if k != i:
+ *                 tmp = aug[k * 2 * n + i]
+ *                 for j in range(2 * n):             # <<<<<<<<<<<<<<
+ *                     aug[k * 2 * n + j] -= aug[i * 2 * n + j] * tmp
+ * 
+*/
+        __pyx_t_9 = (2 * __pyx_v_n);
+        __pyx_t_10 = __pyx_t_9;
+        for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_10; __pyx_t_12+=1) {
+          __pyx_v_j = __pyx_t_12;
+
+          /* "LR_v1/linear_regressor.pyx":76
+ *                 tmp = aug[k * 2 * n + i]
+ *                 for j in range(2 * n):
+ *                     aug[k * 2 * n + j] -= aug[i * 2 * n + j] * tmp             # <<<<<<<<<<<<<<
+ * 
+ *     for i in range(n):
+*/
+          __pyx_t_11 = (((__pyx_v_k * 2) * __pyx_v_n) + __pyx_v_j);
+          (__pyx_v_aug[__pyx_t_11]) = ((__pyx_v_aug[__pyx_t_11]) - ((__pyx_v_aug[(((__pyx_v_i * 2) * __pyx_v_n) + __pyx_v_j)]) * __pyx_v_tmp));
+        }
+
+        /* "LR_v1/linear_regressor.pyx":73
+ * 
+ *         for k in range(n):
+ *             if k != i:             # <<<<<<<<<<<<<<
+ *                 tmp = aug[k * 2 * n + i]
+ *                 for j in range(2 * n):
+*/
+      }
+    }
+  }
+
+  /* "LR_v1/linear_regressor.pyx":78
+ *                     aug[k * 2 * n + j] -= aug[i * 2 * n + j] * tmp
+ * 
+ *     for i in range(n):             # <<<<<<<<<<<<<<
+ *         for j in range(n):
+ *             A_inv[i * n + j] = aug[i * 2 * n + j + n]
+*/
+  __pyx_t_2 = __pyx_v_n;
+  __pyx_t_3 = __pyx_t_2;
+  for (__pyx_t_4 = 0; __pyx_t_4 < __pyx_t_3; __pyx_t_4+=1) {
+    __pyx_v_i = __pyx_t_4;
+
+    /* "LR_v1/linear_regressor.pyx":79
+ * 
+ *     for i in range(n):
+ *         for j in range(n):             # <<<<<<<<<<<<<<
+ *             A_inv[i * n + j] = aug[i * 2 * n + j + n]
+ * 
+*/
+    __pyx_t_5 = __pyx_v_n;
+    __pyx_t_6 = __pyx_t_5;
+    for (__pyx_t_7 = 0; __pyx_t_7 < __pyx_t_6; __pyx_t_7+=1) {
+      __pyx_v_j = __pyx_t_7;
+
+      /* "LR_v1/linear_regressor.pyx":80
+ *     for i in range(n):
+ *         for j in range(n):
+ *             A_inv[i * n + j] = aug[i * 2 * n + j + n]             # <<<<<<<<<<<<<<
+ * 
+ *     free(aug)
+*/
+      (__pyx_v_A_inv[((__pyx_v_i * __pyx_v_n) + __pyx_v_j)]) = (__pyx_v_aug[((((__pyx_v_i * 2) * __pyx_v_n) + __pyx_v_j) + __pyx_v_n)]);
+    }
+  }
+
+  /* "LR_v1/linear_regressor.pyx":82
+ *             A_inv[i * n + j] = aug[i * 2 * n + j + n]
+ * 
+ *     free(aug)             # <<<<<<<<<<<<<<
  *     return 0
-*/
-  (__pyx_v_MAT_inv[3]) = ((__pyx_v_MAT[0]) * __pyx_v_inv_det);
-
-  /* "linear_regressor.pyx":69
- *     MAT_inv[3] = MAT[0] * inv_det    # [0][0]
  * 
+*/
+  free(__pyx_v_aug);
+
+  /* "LR_v1/linear_regressor.pyx":83
+ * 
+ *     free(aug)
  *     return 0             # <<<<<<<<<<<<<<
  * 
- * # Main API - Optimized version
+ * cdef class LinearRegressor:
 */
   __pyx_r = 0;
   goto __pyx_L0;
 
-  /* "linear_regressor.pyx":54
- *         result[i] = temp
+  /* "LR_v1/linear_regressor.pyx":39
+ *         r[i] = temp
  * 
- * cdef int inverse_2x2(double* MAT, double* MAT_inv) nogil:             # <<<<<<<<<<<<<<
- *     """
- *     Compute inverse of 2x2 matrix. Returns 0 on success, -1 on failure.
+ * cdef int inverse(double* A, double* A_inv, int n) nogil:             # <<<<<<<<<<<<<<
+ *     cdef int i, j, k, maxRow
+ *     cdef double maxEl, tmp
 */
 
   /* function exit code */
@@ -2852,25 +3287,929 @@ static int __pyx_f_16linear_regressor_inverse_2x2(double *__pyx_v_MAT, double *_
   return __pyx_r;
 }
 
-/* "linear_regressor.pyx":72
+/* "LR_v1/linear_regressor.pyx":89
+ *     cdef double* beta
  * 
- * # Main API - Optimized version
- * def fit_linear_regression(list X_py, list y_py):             # <<<<<<<<<<<<<<
- *     """
- *     Fit a linear regression model using the OLS method - Optimized version
+ *     def __cinit__(self):             # <<<<<<<<<<<<<<
+ *         self.n_features = 0
+ *         self.beta = <double*>NULL
 */
 
 /* Python wrapper */
-static PyObject *__pyx_pw_16linear_regressor_1fit_linear_regression(PyObject *__pyx_self, 
+static int __pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
+static int __pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_1__cinit__(PyObject *__pyx_v_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
+  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  int __pyx_r;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__cinit__ (wrapper)", 0);
+  #if CYTHON_ASSUME_SAFE_SIZE
+  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
+  #else
+  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return -1;
+  #endif
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  if (unlikely(__pyx_nargs > 0)) { __Pyx_RaiseArgtupleInvalid("__cinit__", 1, 0, 0, __pyx_nargs); return -1; }
+  const Py_ssize_t __pyx_kwds_len = unlikely(__pyx_kwds) ? __Pyx_NumKwargs_VARARGS(__pyx_kwds) : 0;
+  if (unlikely(__pyx_kwds_len < 0)) return -1;
+  if (unlikely(__pyx_kwds_len > 0)) {__Pyx_RejectKeywords("__cinit__", __pyx_kwds); return -1;}
+  __pyx_r = __pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor___cinit__(((struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static int __pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor___cinit__(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *__pyx_v_self) {
+  int __pyx_r;
+
+  /* "LR_v1/linear_regressor.pyx":90
+ * 
+ *     def __cinit__(self):
+ *         self.n_features = 0             # <<<<<<<<<<<<<<
+ *         self.beta = <double*>NULL
+ * 
+*/
+  __pyx_v_self->n_features = 0;
+
+  /* "LR_v1/linear_regressor.pyx":91
+ *     def __cinit__(self):
+ *         self.n_features = 0
+ *         self.beta = <double*>NULL             # <<<<<<<<<<<<<<
+ * 
+ *     def __dealloc__(self):
+*/
+  __pyx_v_self->beta = ((double *)NULL);
+
+  /* "LR_v1/linear_regressor.pyx":89
+ *     cdef double* beta
+ * 
+ *     def __cinit__(self):             # <<<<<<<<<<<<<<
+ *         self.n_features = 0
+ *         self.beta = <double*>NULL
+*/
+
+  /* function exit code */
+  __pyx_r = 0;
+  return __pyx_r;
+}
+
+/* "LR_v1/linear_regressor.pyx":93
+ *         self.beta = <double*>NULL
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.beta:
+ *             free(self.beta)
+*/
+
+/* Python wrapper */
+static void __pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_3__dealloc__(PyObject *__pyx_v_self); /*proto*/
+static void __pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_3__dealloc__(PyObject *__pyx_v_self) {
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__dealloc__ (wrapper)", 0);
+  __pyx_kwvalues = __Pyx_KwValues_VARARGS(__pyx_args, __pyx_nargs);
+  __pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_2__dealloc__(((struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+}
+
+static void __pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_2__dealloc__(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *__pyx_v_self) {
+  int __pyx_t_1;
+
+  /* "LR_v1/linear_regressor.pyx":94
+ * 
+ *     def __dealloc__(self):
+ *         if self.beta:             # <<<<<<<<<<<<<<
+ *             free(self.beta)
+ * 
+*/
+  __pyx_t_1 = (__pyx_v_self->beta != 0);
+  if (__pyx_t_1) {
+
+    /* "LR_v1/linear_regressor.pyx":95
+ *     def __dealloc__(self):
+ *         if self.beta:
+ *             free(self.beta)             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef list fit(self, list X_py, list y_py):
+*/
+    free(__pyx_v_self->beta);
+
+    /* "LR_v1/linear_regressor.pyx":94
+ * 
+ *     def __dealloc__(self):
+ *         if self.beta:             # <<<<<<<<<<<<<<
+ *             free(self.beta)
+ * 
+*/
+  }
+
+  /* "LR_v1/linear_regressor.pyx":93
+ *         self.beta = <double*>NULL
+ * 
+ *     def __dealloc__(self):             # <<<<<<<<<<<<<<
+ *         if self.beta:
+ *             free(self.beta)
+*/
+
+  /* function exit code */
+}
+
+/* "LR_v1/linear_regressor.pyx":97
+ *             free(self.beta)
+ * 
+ *     cpdef list fit(self, list X_py, list y_py):             # <<<<<<<<<<<<<<
+ *         cdef int n_samples = len(X_py)
+ * 
+*/
+
+static PyObject *__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_5fit(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
 PyObject *__pyx_args, PyObject *__pyx_kwds
 #endif
 ); /*proto*/
-PyDoc_STRVAR(__pyx_doc_16linear_regressor_fit_linear_regression, "\n    Fit a linear regression model using the OLS method - Optimized version\n    X_py: list of list of floats (n_samples x 2)\n    y_py: list of floats (n_samples)\n    Returns list of coefficients (length 2)\n    ");
-static PyMethodDef __pyx_mdef_16linear_regressor_1fit_linear_regression = {"fit_linear_regression", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_16linear_regressor_1fit_linear_regression, __Pyx_METH_FASTCALL|METH_KEYWORDS, __pyx_doc_16linear_regressor_fit_linear_regression};
-static PyObject *__pyx_pw_16linear_regressor_1fit_linear_regression(PyObject *__pyx_self, 
+static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_fit(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *__pyx_v_self, PyObject *__pyx_v_X_py, PyObject *__pyx_v_y_py, int __pyx_skip_dispatch) {
+  int __pyx_v_n_samples;
+  int __pyx_v_raw_features;
+  PyObject *__pyx_v_row = NULL;
+  int __pyx_v_n_features;
+  int __pyx_v_i;
+  int __pyx_v_j;
+  double *__pyx_v_X;
+  double *__pyx_v_y;
+  double *__pyx_v_X_t;
+  double *__pyx_v_X_t_X;
+  double *__pyx_v_X_t_y;
+  double *__pyx_v_X_t_X_inv;
+  int __pyx_7genexpr__pyx_v_i;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  size_t __pyx_t_5;
+  Py_ssize_t __pyx_t_6;
+  int __pyx_t_7;
+  Py_ssize_t __pyx_t_8;
+  int __pyx_t_9;
+  int __pyx_t_10;
+  int __pyx_t_11;
+  int __pyx_t_12;
+  int __pyx_t_13;
+  int __pyx_t_14;
+  int __pyx_t_15;
+  double __pyx_t_16;
+  char const *__pyx_t_17;
+  PyObject *__pyx_t_18 = NULL;
+  PyObject *__pyx_t_19 = NULL;
+  PyObject *__pyx_t_20 = NULL;
+  PyObject *__pyx_t_21 = NULL;
+  PyObject *__pyx_t_22 = NULL;
+  PyObject *__pyx_t_23 = NULL;
+  PyObject *__pyx_t_24 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("fit", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (
+  #if !CYTHON_USE_TYPE_SLOTS
+  unlikely(Py_TYPE(((PyObject *)__pyx_v_self)) != __pyx_mstate_global->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor &&
+  __Pyx_PyType_HasFeature(Py_TYPE(((PyObject *)__pyx_v_self)), Py_TPFLAGS_HAVE_GC))
+  #else
+  unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0 || __Pyx_PyType_HasFeature(Py_TYPE(((PyObject *)__pyx_v_self)), (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))
+  #endif
+  ) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_mstate_global->__pyx_n_u_fit); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!__Pyx_IsSameCFunction(__pyx_t_1, (void(*)(void)) __pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_5fit)) {
+        __Pyx_XDECREF(__pyx_r);
+        __pyx_t_3 = NULL;
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_4 = __pyx_t_1; 
+        __pyx_t_5 = 1;
+        #if CYTHON_UNPACK_METHODS
+        if (unlikely(PyMethod_Check(__pyx_t_4))) {
+          __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
+          assert(__pyx_t_3);
+          PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_3);
+          __Pyx_INCREF(__pyx__function);
+          __Pyx_DECREF_SET(__pyx_t_4, __pyx__function);
+          __pyx_t_5 = 0;
+        }
+        #endif
+        {
+          PyObject *__pyx_callargs[3] = {__pyx_t_3, __pyx_v_X_py, __pyx_v_y_py};
+          __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (3-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+          __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 97, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_2);
+        }
+        if (!(likely(PyList_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("list", __pyx_t_2))) __PYX_ERR(0, 97, __pyx_L1_error)
+        __pyx_r = ((PyObject*)__pyx_t_2);
+        __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_typedict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "LR_v1/linear_regressor.pyx":98
+ * 
+ *     cpdef list fit(self, list X_py, list y_py):
+ *         cdef int n_samples = len(X_py)             # <<<<<<<<<<<<<<
+ * 
+ *         if n_samples != len(y_py):
+*/
+  if (unlikely(__pyx_v_X_py == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
+    __PYX_ERR(0, 98, __pyx_L1_error)
+  }
+  __pyx_t_6 = __Pyx_PyList_GET_SIZE(__pyx_v_X_py); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 98, __pyx_L1_error)
+  __pyx_v_n_samples = __pyx_t_6;
+
+  /* "LR_v1/linear_regressor.pyx":100
+ *         cdef int n_samples = len(X_py)
+ * 
+ *         if n_samples != len(y_py):             # <<<<<<<<<<<<<<
+ *             raise ValueError("X and y must have the same number of samples")
+ * 
+*/
+  if (unlikely(__pyx_v_y_py == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
+    __PYX_ERR(0, 100, __pyx_L1_error)
+  }
+  __pyx_t_6 = __Pyx_PyList_GET_SIZE(__pyx_v_y_py); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 100, __pyx_L1_error)
+  __pyx_t_7 = (__pyx_v_n_samples != __pyx_t_6);
+  if (unlikely(__pyx_t_7)) {
+
+    /* "LR_v1/linear_regressor.pyx":101
+ * 
+ *         if n_samples != len(y_py):
+ *             raise ValueError("X and y must have the same number of samples")             # <<<<<<<<<<<<<<
+ * 
+ *         cdef int raw_features = len(X_py[0])
+*/
+    __pyx_t_2 = NULL;
+    __Pyx_INCREF(__pyx_builtin_ValueError);
+    __pyx_t_4 = __pyx_builtin_ValueError; 
+    __pyx_t_5 = 1;
+    {
+      PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_mstate_global->__pyx_kp_u_X_and_y_must_have_the_same_numbe};
+      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+      __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 101, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+    }
+    __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __PYX_ERR(0, 101, __pyx_L1_error)
+
+    /* "LR_v1/linear_regressor.pyx":100
+ *         cdef int n_samples = len(X_py)
+ * 
+ *         if n_samples != len(y_py):             # <<<<<<<<<<<<<<
+ *             raise ValueError("X and y must have the same number of samples")
+ * 
+*/
+  }
+
+  /* "LR_v1/linear_regressor.pyx":103
+ *             raise ValueError("X and y must have the same number of samples")
+ * 
+ *         cdef int raw_features = len(X_py[0])             # <<<<<<<<<<<<<<
+ *         for row in X_py:
+ *             if len(row) != raw_features:
+*/
+  if (unlikely(__pyx_v_X_py == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+    __PYX_ERR(0, 103, __pyx_L1_error)
+  }
+  __pyx_t_1 = __Pyx_PyList_GET_ITEM(__pyx_v_X_py, 0);
+  __Pyx_INCREF(__pyx_t_1);
+  __pyx_t_6 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 103, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_v_raw_features = __pyx_t_6;
+
+  /* "LR_v1/linear_regressor.pyx":104
+ * 
+ *         cdef int raw_features = len(X_py[0])
+ *         for row in X_py:             # <<<<<<<<<<<<<<
+ *             if len(row) != raw_features:
+ *                 raise ValueError("All rows in X must have the same number of features")
+*/
+  if (unlikely(__pyx_v_X_py == Py_None)) {
+    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not iterable");
+    __PYX_ERR(0, 104, __pyx_L1_error)
+  }
+  __pyx_t_1 = __pyx_v_X_py; __Pyx_INCREF(__pyx_t_1);
+  __pyx_t_6 = 0;
+  for (;;) {
+    {
+      Py_ssize_t __pyx_temp = __Pyx_PyList_GET_SIZE(__pyx_t_1);
+      #if !CYTHON_ASSUME_SAFE_SIZE
+      if (unlikely((__pyx_temp < 0))) __PYX_ERR(0, 104, __pyx_L1_error)
+      #endif
+      if (__pyx_t_6 >= __pyx_temp) break;
+    }
+    __pyx_t_4 = __Pyx_PyList_GetItemRef(__pyx_t_1, __pyx_t_6);
+    ++__pyx_t_6;
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 104, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_4);
+    __Pyx_XDECREF_SET(__pyx_v_row, __pyx_t_4);
+    __pyx_t_4 = 0;
+
+    /* "LR_v1/linear_regressor.pyx":105
+ *         cdef int raw_features = len(X_py[0])
+ *         for row in X_py:
+ *             if len(row) != raw_features:             # <<<<<<<<<<<<<<
+ *                 raise ValueError("All rows in X must have the same number of features")
+ * 
+*/
+    __pyx_t_8 = PyObject_Length(__pyx_v_row); if (unlikely(__pyx_t_8 == ((Py_ssize_t)-1))) __PYX_ERR(0, 105, __pyx_L1_error)
+    __pyx_t_7 = (__pyx_t_8 != __pyx_v_raw_features);
+    if (unlikely(__pyx_t_7)) {
+
+      /* "LR_v1/linear_regressor.pyx":106
+ *         for row in X_py:
+ *             if len(row) != raw_features:
+ *                 raise ValueError("All rows in X must have the same number of features")             # <<<<<<<<<<<<<<
+ * 
+ *         cdef int n_features = raw_features + 1
+*/
+      __pyx_t_2 = NULL;
+      __Pyx_INCREF(__pyx_builtin_ValueError);
+      __pyx_t_3 = __pyx_builtin_ValueError; 
+      __pyx_t_5 = 1;
+      {
+        PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_mstate_global->__pyx_kp_u_All_rows_in_X_must_have_the_same};
+        __pyx_t_4 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+        __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 106, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_4);
+      }
+      __Pyx_Raise(__pyx_t_4, 0, 0, 0);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __PYX_ERR(0, 106, __pyx_L1_error)
+
+      /* "LR_v1/linear_regressor.pyx":105
+ *         cdef int raw_features = len(X_py[0])
+ *         for row in X_py:
+ *             if len(row) != raw_features:             # <<<<<<<<<<<<<<
+ *                 raise ValueError("All rows in X must have the same number of features")
+ * 
+*/
+    }
+
+    /* "LR_v1/linear_regressor.pyx":104
+ * 
+ *         cdef int raw_features = len(X_py[0])
+ *         for row in X_py:             # <<<<<<<<<<<<<<
+ *             if len(row) != raw_features:
+ *                 raise ValueError("All rows in X must have the same number of features")
+*/
+  }
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "LR_v1/linear_regressor.pyx":108
+ *                 raise ValueError("All rows in X must have the same number of features")
+ * 
+ *         cdef int n_features = raw_features + 1             # <<<<<<<<<<<<<<
+ *         self.n_features = n_features
+ * 
+*/
+  __pyx_v_n_features = (__pyx_v_raw_features + 1);
+
+  /* "LR_v1/linear_regressor.pyx":109
+ * 
+ *         cdef int n_features = raw_features + 1
+ *         self.n_features = n_features             # <<<<<<<<<<<<<<
+ * 
+ *         cdef int i, j
+*/
+  __pyx_v_self->n_features = __pyx_v_n_features;
+
+  /* "LR_v1/linear_regressor.pyx":112
+ * 
+ *         cdef int i, j
+ *         cdef double* X = <double*>malloc(n_samples * n_features * sizeof(double))             # <<<<<<<<<<<<<<
+ *         cdef double* y = <double*>malloc(n_samples * sizeof(double))
+ *         cdef double* X_t = <double*>malloc(n_features * n_samples * sizeof(double))
+*/
+  __pyx_v_X = ((double *)malloc(((__pyx_v_n_samples * __pyx_v_n_features) * (sizeof(double)))));
+
+  /* "LR_v1/linear_regressor.pyx":113
+ *         cdef int i, j
+ *         cdef double* X = <double*>malloc(n_samples * n_features * sizeof(double))
+ *         cdef double* y = <double*>malloc(n_samples * sizeof(double))             # <<<<<<<<<<<<<<
+ *         cdef double* X_t = <double*>malloc(n_features * n_samples * sizeof(double))
+ *         cdef double* X_t_X = <double*>malloc(n_features * n_features * sizeof(double))
+*/
+  __pyx_v_y = ((double *)malloc((__pyx_v_n_samples * (sizeof(double)))));
+
+  /* "LR_v1/linear_regressor.pyx":114
+ *         cdef double* X = <double*>malloc(n_samples * n_features * sizeof(double))
+ *         cdef double* y = <double*>malloc(n_samples * sizeof(double))
+ *         cdef double* X_t = <double*>malloc(n_features * n_samples * sizeof(double))             # <<<<<<<<<<<<<<
+ *         cdef double* X_t_X = <double*>malloc(n_features * n_features * sizeof(double))
+ *         cdef double* X_t_y = <double*>malloc(n_features * sizeof(double))
+*/
+  __pyx_v_X_t = ((double *)malloc(((__pyx_v_n_features * __pyx_v_n_samples) * (sizeof(double)))));
+
+  /* "LR_v1/linear_regressor.pyx":115
+ *         cdef double* y = <double*>malloc(n_samples * sizeof(double))
+ *         cdef double* X_t = <double*>malloc(n_features * n_samples * sizeof(double))
+ *         cdef double* X_t_X = <double*>malloc(n_features * n_features * sizeof(double))             # <<<<<<<<<<<<<<
+ *         cdef double* X_t_y = <double*>malloc(n_features * sizeof(double))
+ *         cdef double* X_t_X_inv = <double*>malloc(n_features * n_features * sizeof(double))
+*/
+  __pyx_v_X_t_X = ((double *)malloc(((__pyx_v_n_features * __pyx_v_n_features) * (sizeof(double)))));
+
+  /* "LR_v1/linear_regressor.pyx":116
+ *         cdef double* X_t = <double*>malloc(n_features * n_samples * sizeof(double))
+ *         cdef double* X_t_X = <double*>malloc(n_features * n_features * sizeof(double))
+ *         cdef double* X_t_y = <double*>malloc(n_features * sizeof(double))             # <<<<<<<<<<<<<<
+ *         cdef double* X_t_X_inv = <double*>malloc(n_features * n_features * sizeof(double))
+ * 
+*/
+  __pyx_v_X_t_y = ((double *)malloc((__pyx_v_n_features * (sizeof(double)))));
+
+  /* "LR_v1/linear_regressor.pyx":117
+ *         cdef double* X_t_X = <double*>malloc(n_features * n_features * sizeof(double))
+ *         cdef double* X_t_y = <double*>malloc(n_features * sizeof(double))
+ *         cdef double* X_t_X_inv = <double*>malloc(n_features * n_features * sizeof(double))             # <<<<<<<<<<<<<<
+ * 
+ *         if not X or not y or not X_t or not X_t_X or not X_t_y or not X_t_X_inv:
+*/
+  __pyx_v_X_t_X_inv = ((double *)malloc(((__pyx_v_n_features * __pyx_v_n_features) * (sizeof(double)))));
+
+  /* "LR_v1/linear_regressor.pyx":119
+ *         cdef double* X_t_X_inv = <double*>malloc(n_features * n_features * sizeof(double))
+ * 
+ *         if not X or not y or not X_t or not X_t_X or not X_t_y or not X_t_X_inv:             # <<<<<<<<<<<<<<
+ *             free(X); free(y); free(X_t); free(X_t_X); free(X_t_y); free(X_t_X_inv)
+ *             raise MemoryError("Allocation failed")
+*/
+  __pyx_t_9 = (!(__pyx_v_X != 0));
+  if (!__pyx_t_9) {
+  } else {
+    __pyx_t_7 = __pyx_t_9;
+    goto __pyx_L9_bool_binop_done;
+  }
+  __pyx_t_9 = (!(__pyx_v_y != 0));
+  if (!__pyx_t_9) {
+  } else {
+    __pyx_t_7 = __pyx_t_9;
+    goto __pyx_L9_bool_binop_done;
+  }
+  __pyx_t_9 = (!(__pyx_v_X_t != 0));
+  if (!__pyx_t_9) {
+  } else {
+    __pyx_t_7 = __pyx_t_9;
+    goto __pyx_L9_bool_binop_done;
+  }
+  __pyx_t_9 = (!(__pyx_v_X_t_X != 0));
+  if (!__pyx_t_9) {
+  } else {
+    __pyx_t_7 = __pyx_t_9;
+    goto __pyx_L9_bool_binop_done;
+  }
+  __pyx_t_9 = (!(__pyx_v_X_t_y != 0));
+  if (!__pyx_t_9) {
+  } else {
+    __pyx_t_7 = __pyx_t_9;
+    goto __pyx_L9_bool_binop_done;
+  }
+  __pyx_t_9 = (!(__pyx_v_X_t_X_inv != 0));
+  __pyx_t_7 = __pyx_t_9;
+  __pyx_L9_bool_binop_done:;
+  if (unlikely(__pyx_t_7)) {
+
+    /* "LR_v1/linear_regressor.pyx":120
+ * 
+ *         if not X or not y or not X_t or not X_t_X or not X_t_y or not X_t_X_inv:
+ *             free(X); free(y); free(X_t); free(X_t_X); free(X_t_y); free(X_t_X_inv)             # <<<<<<<<<<<<<<
+ *             raise MemoryError("Allocation failed")
+ * 
+*/
+    free(__pyx_v_X);
+    free(__pyx_v_y);
+    free(__pyx_v_X_t);
+    free(__pyx_v_X_t_X);
+    free(__pyx_v_X_t_y);
+    free(__pyx_v_X_t_X_inv);
+
+    /* "LR_v1/linear_regressor.pyx":121
+ *         if not X or not y or not X_t or not X_t_X or not X_t_y or not X_t_X_inv:
+ *             free(X); free(y); free(X_t); free(X_t_X); free(X_t_y); free(X_t_X_inv)
+ *             raise MemoryError("Allocation failed")             # <<<<<<<<<<<<<<
+ * 
+ *         if self.beta:
+*/
+    __pyx_t_4 = NULL;
+    __Pyx_INCREF(__pyx_builtin_MemoryError);
+    __pyx_t_3 = __pyx_builtin_MemoryError; 
+    __pyx_t_5 = 1;
+    {
+      PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_mstate_global->__pyx_kp_u_Allocation_failed};
+      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 121, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+    }
+    __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __PYX_ERR(0, 121, __pyx_L1_error)
+
+    /* "LR_v1/linear_regressor.pyx":119
+ *         cdef double* X_t_X_inv = <double*>malloc(n_features * n_features * sizeof(double))
+ * 
+ *         if not X or not y or not X_t or not X_t_X or not X_t_y or not X_t_X_inv:             # <<<<<<<<<<<<<<
+ *             free(X); free(y); free(X_t); free(X_t_X); free(X_t_y); free(X_t_X_inv)
+ *             raise MemoryError("Allocation failed")
+*/
+  }
+
+  /* "LR_v1/linear_regressor.pyx":123
+ *             raise MemoryError("Allocation failed")
+ * 
+ *         if self.beta:             # <<<<<<<<<<<<<<
+ *             free(self.beta)
+ *         self.beta = <double*>malloc(n_features * sizeof(double))
+*/
+  __pyx_t_7 = (__pyx_v_self->beta != 0);
+  if (__pyx_t_7) {
+
+    /* "LR_v1/linear_regressor.pyx":124
+ * 
+ *         if self.beta:
+ *             free(self.beta)             # <<<<<<<<<<<<<<
+ *         self.beta = <double*>malloc(n_features * sizeof(double))
+ *         if not self.beta:
+*/
+    free(__pyx_v_self->beta);
+
+    /* "LR_v1/linear_regressor.pyx":123
+ *             raise MemoryError("Allocation failed")
+ * 
+ *         if self.beta:             # <<<<<<<<<<<<<<
+ *             free(self.beta)
+ *         self.beta = <double*>malloc(n_features * sizeof(double))
+*/
+  }
+
+  /* "LR_v1/linear_regressor.pyx":125
+ *         if self.beta:
+ *             free(self.beta)
+ *         self.beta = <double*>malloc(n_features * sizeof(double))             # <<<<<<<<<<<<<<
+ *         if not self.beta:
+ *             raise MemoryError("Beta allocation failed")
+*/
+  __pyx_v_self->beta = ((double *)malloc((__pyx_v_n_features * (sizeof(double)))));
+
+  /* "LR_v1/linear_regressor.pyx":126
+ *             free(self.beta)
+ *         self.beta = <double*>malloc(n_features * sizeof(double))
+ *         if not self.beta:             # <<<<<<<<<<<<<<
+ *             raise MemoryError("Beta allocation failed")
+ * 
+*/
+  __pyx_t_7 = (!(__pyx_v_self->beta != 0));
+  if (unlikely(__pyx_t_7)) {
+
+    /* "LR_v1/linear_regressor.pyx":127
+ *         self.beta = <double*>malloc(n_features * sizeof(double))
+ *         if not self.beta:
+ *             raise MemoryError("Beta allocation failed")             # <<<<<<<<<<<<<<
+ * 
+ *         try:
+*/
+    __pyx_t_3 = NULL;
+    __Pyx_INCREF(__pyx_builtin_MemoryError);
+    __pyx_t_4 = __pyx_builtin_MemoryError; 
+    __pyx_t_5 = 1;
+    {
+      PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_mstate_global->__pyx_kp_u_Beta_allocation_failed};
+      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 127, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+    }
+    __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __PYX_ERR(0, 127, __pyx_L1_error)
+
+    /* "LR_v1/linear_regressor.pyx":126
+ *             free(self.beta)
+ *         self.beta = <double*>malloc(n_features * sizeof(double))
+ *         if not self.beta:             # <<<<<<<<<<<<<<
+ *             raise MemoryError("Beta allocation failed")
+ * 
+*/
+  }
+
+  /* "LR_v1/linear_regressor.pyx":129
+ *             raise MemoryError("Beta allocation failed")
+ * 
+ *         try:             # <<<<<<<<<<<<<<
+ *             for i in range(n_samples):
+ *                 X[i * n_features + 0] = 1.0  # Intercept
+*/
+  /*try:*/ {
+
+    /* "LR_v1/linear_regressor.pyx":130
+ * 
+ *         try:
+ *             for i in range(n_samples):             # <<<<<<<<<<<<<<
+ *                 X[i * n_features + 0] = 1.0  # Intercept
+ *                 for j in range(raw_features):
+*/
+    __pyx_t_10 = __pyx_v_n_samples;
+    __pyx_t_11 = __pyx_t_10;
+    for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
+      __pyx_v_i = __pyx_t_12;
+
+      /* "LR_v1/linear_regressor.pyx":131
+ *         try:
+ *             for i in range(n_samples):
+ *                 X[i * n_features + 0] = 1.0  # Intercept             # <<<<<<<<<<<<<<
+ *                 for j in range(raw_features):
+ *                     X[i * n_features + j + 1] = X_py[i][j]
+*/
+      (__pyx_v_X[((__pyx_v_i * __pyx_v_n_features) + 0)]) = 1.0;
+
+      /* "LR_v1/linear_regressor.pyx":132
+ *             for i in range(n_samples):
+ *                 X[i * n_features + 0] = 1.0  # Intercept
+ *                 for j in range(raw_features):             # <<<<<<<<<<<<<<
+ *                     X[i * n_features + j + 1] = X_py[i][j]
+ *                 y[i] = y_py[i]
+*/
+      __pyx_t_13 = __pyx_v_raw_features;
+      __pyx_t_14 = __pyx_t_13;
+      for (__pyx_t_15 = 0; __pyx_t_15 < __pyx_t_14; __pyx_t_15+=1) {
+        __pyx_v_j = __pyx_t_15;
+
+        /* "LR_v1/linear_regressor.pyx":133
+ *                 X[i * n_features + 0] = 1.0  # Intercept
+ *                 for j in range(raw_features):
+ *                     X[i * n_features + j + 1] = X_py[i][j]             # <<<<<<<<<<<<<<
+ *                 y[i] = y_py[i]
+ * 
+*/
+        if (unlikely(__pyx_v_X_py == Py_None)) {
+          PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+          __PYX_ERR(0, 133, __pyx_L18_error)
+        }
+        __pyx_t_1 = __Pyx_GetItemInt(__Pyx_PyList_GET_ITEM(__pyx_v_X_py, __pyx_v_i), __pyx_v_j, int, 1, __Pyx_PyLong_From_int, 0, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 133, __pyx_L18_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_16 = __Pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_16 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 133, __pyx_L18_error)
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        (__pyx_v_X[(((__pyx_v_i * __pyx_v_n_features) + __pyx_v_j) + 1)]) = __pyx_t_16;
+      }
+
+      /* "LR_v1/linear_regressor.pyx":134
+ *                 for j in range(raw_features):
+ *                     X[i * n_features + j + 1] = X_py[i][j]
+ *                 y[i] = y_py[i]             # <<<<<<<<<<<<<<
+ * 
+ *             transpose_inplace(X, X_t, n_samples, n_features)
+*/
+      if (unlikely(__pyx_v_y_py == Py_None)) {
+        PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
+        __PYX_ERR(0, 134, __pyx_L18_error)
+      }
+      __pyx_t_16 = __Pyx_PyFloat_AsDouble(__Pyx_PyList_GET_ITEM(__pyx_v_y_py, __pyx_v_i)); if (unlikely((__pyx_t_16 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 134, __pyx_L18_error)
+      (__pyx_v_y[__pyx_v_i]) = __pyx_t_16;
+    }
+
+    /* "LR_v1/linear_regressor.pyx":136
+ *                 y[i] = y_py[i]
+ * 
+ *             transpose_inplace(X, X_t, n_samples, n_features)             # <<<<<<<<<<<<<<
+ *             matmul_c(X_t, X, X_t_X, n_features, n_samples, n_features)
+ *             matvec_c(X_t, y, X_t_y, n_features, n_samples)
+*/
+    __pyx_f_5LR_v1_16linear_regressor_transpose_inplace(__pyx_v_X, __pyx_v_X_t, __pyx_v_n_samples, __pyx_v_n_features); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 136, __pyx_L18_error)
+
+    /* "LR_v1/linear_regressor.pyx":137
+ * 
+ *             transpose_inplace(X, X_t, n_samples, n_features)
+ *             matmul_c(X_t, X, X_t_X, n_features, n_samples, n_features)             # <<<<<<<<<<<<<<
+ *             matvec_c(X_t, y, X_t_y, n_features, n_samples)
+ * 
+*/
+    __pyx_f_5LR_v1_16linear_regressor_matmul_c(__pyx_v_X_t, __pyx_v_X, __pyx_v_X_t_X, __pyx_v_n_features, __pyx_v_n_samples, __pyx_v_n_features); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 137, __pyx_L18_error)
+
+    /* "LR_v1/linear_regressor.pyx":138
+ *             transpose_inplace(X, X_t, n_samples, n_features)
+ *             matmul_c(X_t, X, X_t_X, n_features, n_samples, n_features)
+ *             matvec_c(X_t, y, X_t_y, n_features, n_samples)             # <<<<<<<<<<<<<<
+ * 
+ *             if inverse(X_t_X, X_t_X_inv, n_features) != 0:
+*/
+    __pyx_f_5LR_v1_16linear_regressor_matvec_c(__pyx_v_X_t, __pyx_v_y, __pyx_v_X_t_y, __pyx_v_n_features, __pyx_v_n_samples); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 138, __pyx_L18_error)
+
+    /* "LR_v1/linear_regressor.pyx":140
+ *             matvec_c(X_t, y, X_t_y, n_features, n_samples)
+ * 
+ *             if inverse(X_t_X, X_t_X_inv, n_features) != 0:             # <<<<<<<<<<<<<<
+ *                 raise ValueError("Matrix not invertible")
+ * 
+*/
+    __pyx_t_10 = __pyx_f_5LR_v1_16linear_regressor_inverse(__pyx_v_X_t_X, __pyx_v_X_t_X_inv, __pyx_v_n_features); if (unlikely(__pyx_t_10 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 140, __pyx_L18_error)
+    __pyx_t_7 = (__pyx_t_10 != 0);
+    if (unlikely(__pyx_t_7)) {
+
+      /* "LR_v1/linear_regressor.pyx":141
+ * 
+ *             if inverse(X_t_X, X_t_X_inv, n_features) != 0:
+ *                 raise ValueError("Matrix not invertible")             # <<<<<<<<<<<<<<
+ * 
+ *             matvec_c(X_t_X_inv, X_t_y, self.beta, n_features, n_features)
+*/
+      __pyx_t_4 = NULL;
+      __Pyx_INCREF(__pyx_builtin_ValueError);
+      __pyx_t_3 = __pyx_builtin_ValueError; 
+      __pyx_t_5 = 1;
+      {
+        PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_mstate_global->__pyx_kp_u_Matrix_not_invertible};
+        __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 141, __pyx_L18_error)
+        __Pyx_GOTREF(__pyx_t_1);
+      }
+      __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __PYX_ERR(0, 141, __pyx_L18_error)
+
+      /* "LR_v1/linear_regressor.pyx":140
+ *             matvec_c(X_t, y, X_t_y, n_features, n_samples)
+ * 
+ *             if inverse(X_t_X, X_t_X_inv, n_features) != 0:             # <<<<<<<<<<<<<<
+ *                 raise ValueError("Matrix not invertible")
+ * 
+*/
+    }
+
+    /* "LR_v1/linear_regressor.pyx":143
+ *                 raise ValueError("Matrix not invertible")
+ * 
+ *             matvec_c(X_t_X_inv, X_t_y, self.beta, n_features, n_features)             # <<<<<<<<<<<<<<
+ * 
+ *             return [self.beta[i] for i in range(n_features)]
+*/
+    __pyx_f_5LR_v1_16linear_regressor_matvec_c(__pyx_v_X_t_X_inv, __pyx_v_X_t_y, __pyx_v_self->beta, __pyx_v_n_features, __pyx_v_n_features); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 143, __pyx_L18_error)
+
+    /* "LR_v1/linear_regressor.pyx":145
+ *             matvec_c(X_t_X_inv, X_t_y, self.beta, n_features, n_features)
+ * 
+ *             return [self.beta[i] for i in range(n_features)]             # <<<<<<<<<<<<<<
+ * 
+ *         finally:
+*/
+    __Pyx_XDECREF(__pyx_r);
+    { /* enter inner scope */
+      __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 145, __pyx_L18_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_10 = __pyx_v_n_features;
+      __pyx_t_11 = __pyx_t_10;
+      for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
+        __pyx_7genexpr__pyx_v_i = __pyx_t_12;
+        __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->beta[__pyx_7genexpr__pyx_v_i])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 145, __pyx_L18_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_3))) __PYX_ERR(0, 145, __pyx_L18_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      }
+    } /* exit inner scope */
+    __pyx_r = ((PyObject*)__pyx_t_1);
+    __pyx_t_1 = 0;
+    goto __pyx_L17_return;
+  }
+
+  /* "LR_v1/linear_regressor.pyx":148
+ * 
+ *         finally:
+ *             free(X); free(y); free(X_t); free(X_t_X); free(X_t_y); free(X_t_X_inv)             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef list coefficients(self):
+*/
+  /*finally:*/ {
+    __pyx_L18_error:;
+    /*exception exit:*/{
+      __Pyx_PyThreadState_declare
+      __Pyx_PyThreadState_assign
+      __pyx_t_18 = 0; __pyx_t_19 = 0; __pyx_t_20 = 0; __pyx_t_21 = 0; __pyx_t_22 = 0; __pyx_t_23 = 0;
+      __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
+       __Pyx_ExceptionSwap(&__pyx_t_21, &__pyx_t_22, &__pyx_t_23);
+      if ( unlikely(__Pyx_GetException(&__pyx_t_18, &__pyx_t_19, &__pyx_t_20) < 0)) __Pyx_ErrFetch(&__pyx_t_18, &__pyx_t_19, &__pyx_t_20);
+      __Pyx_XGOTREF(__pyx_t_18);
+      __Pyx_XGOTREF(__pyx_t_19);
+      __Pyx_XGOTREF(__pyx_t_20);
+      __Pyx_XGOTREF(__pyx_t_21);
+      __Pyx_XGOTREF(__pyx_t_22);
+      __Pyx_XGOTREF(__pyx_t_23);
+      __pyx_t_10 = __pyx_lineno; __pyx_t_11 = __pyx_clineno; __pyx_t_17 = __pyx_filename;
+      {
+        free(__pyx_v_X);
+        free(__pyx_v_y);
+        free(__pyx_v_X_t);
+        free(__pyx_v_X_t_X);
+        free(__pyx_v_X_t_y);
+        free(__pyx_v_X_t_X_inv);
+      }
+      __Pyx_XGIVEREF(__pyx_t_21);
+      __Pyx_XGIVEREF(__pyx_t_22);
+      __Pyx_XGIVEREF(__pyx_t_23);
+      __Pyx_ExceptionReset(__pyx_t_21, __pyx_t_22, __pyx_t_23);
+      __Pyx_XGIVEREF(__pyx_t_18);
+      __Pyx_XGIVEREF(__pyx_t_19);
+      __Pyx_XGIVEREF(__pyx_t_20);
+      __Pyx_ErrRestore(__pyx_t_18, __pyx_t_19, __pyx_t_20);
+      __pyx_t_18 = 0; __pyx_t_19 = 0; __pyx_t_20 = 0; __pyx_t_21 = 0; __pyx_t_22 = 0; __pyx_t_23 = 0;
+      __pyx_lineno = __pyx_t_10; __pyx_clineno = __pyx_t_11; __pyx_filename = __pyx_t_17;
+      goto __pyx_L1_error;
+    }
+    __pyx_L17_return: {
+      __pyx_t_24 = __pyx_r;
+      __pyx_r = 0;
+      free(__pyx_v_X);
+      free(__pyx_v_y);
+      free(__pyx_v_X_t);
+      free(__pyx_v_X_t_X);
+      free(__pyx_v_X_t_y);
+      free(__pyx_v_X_t_X_inv);
+      __pyx_r = __pyx_t_24;
+      __pyx_t_24 = 0;
+      goto __pyx_L0;
+    }
+  }
+
+  /* "LR_v1/linear_regressor.pyx":97
+ *             free(self.beta)
+ * 
+ *     cpdef list fit(self, list X_py, list y_py):             # <<<<<<<<<<<<<<
+ *         cdef int n_samples = len(X_py)
+ * 
+*/
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("LR_v1.linear_regressor.LinearRegressor.fit", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XDECREF(__pyx_v_row);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_5fit(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+); /*proto*/
+static PyMethodDef __pyx_mdef_5LR_v1_16linear_regressor_15LinearRegressor_5fit = {"fit", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_5fit, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_5fit(PyObject *__pyx_v_self, 
 #if CYTHON_METH_FASTCALL
 PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
 #else
@@ -2889,7 +4228,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   int __pyx_clineno = 0;
   PyObject *__pyx_r = 0;
   __Pyx_RefNannyDeclarations
-  __Pyx_RefNannySetupContext("fit_linear_regression (wrapper)", 0);
+  __Pyx_RefNannySetupContext("fit (wrapper)", 0);
   #if !CYTHON_METH_FASTCALL
   #if CYTHON_ASSUME_SAFE_SIZE
   __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
@@ -2901,52 +4240,52 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_X_py,&__pyx_mstate_global->__pyx_n_u_y_py,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 72, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 97, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  2:
         values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 72, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 97, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 72, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 97, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "fit_linear_regression", 0) < 0) __PYX_ERR(0, 72, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "fit", 0) < 0) __PYX_ERR(0, 97, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 2; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("fit_linear_regression", 1, 2, 2, i); __PYX_ERR(0, 72, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("fit", 1, 2, 2, i); __PYX_ERR(0, 97, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 2)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 72, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 97, __pyx_L3_error)
       values[1] = __Pyx_ArgRef_FASTCALL(__pyx_args, 1);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 72, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[1])) __PYX_ERR(0, 97, __pyx_L3_error)
     }
     __pyx_v_X_py = ((PyObject*)values[0]);
     __pyx_v_y_py = ((PyObject*)values[1]);
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("fit_linear_regression", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 72, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("fit", 1, 2, 2, __pyx_nargs); __PYX_ERR(0, 97, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
   for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
     Py_XDECREF(values[__pyx_temp]);
   }
-  __Pyx_AddTraceback("linear_regressor.fit_linear_regression", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("LR_v1.linear_regressor.LinearRegressor.fit", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_X_py), (&PyList_Type), 1, "X_py", 1))) __PYX_ERR(0, 72, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_y_py), (&PyList_Type), 1, "y_py", 1))) __PYX_ERR(0, 72, __pyx_L1_error)
-  __pyx_r = __pyx_pf_16linear_regressor_fit_linear_regression(__pyx_self, __pyx_v_X_py, __pyx_v_y_py);
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_X_py), (&PyList_Type), 1, "X_py", 1))) __PYX_ERR(0, 97, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_y_py), (&PyList_Type), 1, "y_py", 1))) __PYX_ERR(0, 97, __pyx_L1_error)
+  __pyx_r = __pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_4fit(((struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *)__pyx_v_self), __pyx_v_X_py, __pyx_v_y_py);
 
   /* function exit code */
   goto __pyx_L0;
@@ -2965,28 +4304,271 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   return __pyx_r;
 }
 
-static PyObject *__pyx_pf_16linear_regressor_fit_linear_regression(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_X_py, PyObject *__pyx_v_y_py) {
-  int __pyx_v_n_samples;
-  int __pyx_v_n_features;
-  double *__pyx_v_X;
-  double *__pyx_v_y;
-  double *__pyx_v_X_t;
-  double *__pyx_v_X_t_X;
-  double *__pyx_v_X_t_y;
-  double *__pyx_v_X_t_X_inv;
-  double *__pyx_v_beta;
-  int __pyx_v_i;
-  int __pyx_v_j;
-  PyObject *__pyx_v_result = NULL;
-  int __pyx_7genexpr__pyx_v_i;
+static PyObject *__pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_4fit(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *__pyx_v_self, PyObject *__pyx_v_X_py, PyObject *__pyx_v_y_py) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
-  Py_ssize_t __pyx_t_1;
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("fit", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_fit(__pyx_v_self, __pyx_v_X_py, __pyx_v_y_py, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 97, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("LR_v1.linear_regressor.LinearRegressor.fit", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "LR_v1/linear_regressor.pyx":150
+ *             free(X); free(y); free(X_t); free(X_t_X); free(X_t_y); free(X_t_X_inv)
+ * 
+ *     cpdef list coefficients(self):             # <<<<<<<<<<<<<<
+ *         return [self.beta[i] for i in range(self.n_features)]
+ * 
+*/
+
+static PyObject *__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_7coefficients(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+); /*proto*/
+static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_coefficients(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *__pyx_v_self, int __pyx_skip_dispatch) {
+  int __pyx_8genexpr1__pyx_v_i;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
   PyObject *__pyx_t_2 = NULL;
-  int __pyx_t_3;
+  PyObject *__pyx_t_3 = NULL;
   PyObject *__pyx_t_4 = NULL;
-  PyObject *__pyx_t_5 = NULL;
-  size_t __pyx_t_6;
+  size_t __pyx_t_5;
+  int __pyx_t_6;
+  int __pyx_t_7;
+  int __pyx_t_8;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("coefficients", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (
+  #if !CYTHON_USE_TYPE_SLOTS
+  unlikely(Py_TYPE(((PyObject *)__pyx_v_self)) != __pyx_mstate_global->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor &&
+  __Pyx_PyType_HasFeature(Py_TYPE(((PyObject *)__pyx_v_self)), Py_TPFLAGS_HAVE_GC))
+  #else
+  unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0 || __Pyx_PyType_HasFeature(Py_TYPE(((PyObject *)__pyx_v_self)), (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))
+  #endif
+  ) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_mstate_global->__pyx_n_u_coefficients); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 150, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!__Pyx_IsSameCFunction(__pyx_t_1, (void(*)(void)) __pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_7coefficients)) {
+        __Pyx_XDECREF(__pyx_r);
+        __pyx_t_3 = NULL;
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_4 = __pyx_t_1; 
+        __pyx_t_5 = 1;
+        #if CYTHON_UNPACK_METHODS
+        if (unlikely(PyMethod_Check(__pyx_t_4))) {
+          __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
+          assert(__pyx_t_3);
+          PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_3);
+          __Pyx_INCREF(__pyx__function);
+          __Pyx_DECREF_SET(__pyx_t_4, __pyx__function);
+          __pyx_t_5 = 0;
+        }
+        #endif
+        {
+          PyObject *__pyx_callargs[2] = {__pyx_t_3, NULL};
+          __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (1-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+          __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 150, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_2);
+        }
+        if (!(likely(PyList_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("list", __pyx_t_2))) __PYX_ERR(0, 150, __pyx_L1_error)
+        __pyx_r = ((PyObject*)__pyx_t_2);
+        __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_typedict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
+
+  /* "LR_v1/linear_regressor.pyx":151
+ * 
+ *     cpdef list coefficients(self):
+ *         return [self.beta[i] for i in range(self.n_features)]             # <<<<<<<<<<<<<<
+ * 
+ *     cpdef list predict(self, list X_py):
+*/
+  __Pyx_XDECREF(__pyx_r);
+  { /* enter inner scope */
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 151, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __pyx_t_6 = __pyx_v_self->n_features;
+    __pyx_t_7 = __pyx_t_6;
+    for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
+      __pyx_8genexpr1__pyx_v_i = __pyx_t_8;
+      __pyx_t_2 = PyFloat_FromDouble((__pyx_v_self->beta[__pyx_8genexpr1__pyx_v_i])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 151, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_2);
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_2))) __PYX_ERR(0, 151, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    }
+  } /* exit inner scope */
+  __pyx_r = ((PyObject*)__pyx_t_1);
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* "LR_v1/linear_regressor.pyx":150
+ *             free(X); free(y); free(X_t); free(X_t_X); free(X_t_y); free(X_t_X_inv)
+ * 
+ *     cpdef list coefficients(self):             # <<<<<<<<<<<<<<
+ *         return [self.beta[i] for i in range(self.n_features)]
+ * 
+*/
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
+  __Pyx_XDECREF(__pyx_t_4);
+  __Pyx_AddTraceback("LR_v1.linear_regressor.LinearRegressor.coefficients", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_7coefficients(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+); /*proto*/
+static PyMethodDef __pyx_mdef_5LR_v1_16linear_regressor_15LinearRegressor_7coefficients = {"coefficients", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_7coefficients, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_7coefficients(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+) {
+  #if !CYTHON_METH_FASTCALL
+  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
+  #endif
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("coefficients (wrapper)", 0);
+  #if !CYTHON_METH_FASTCALL
+  #if CYTHON_ASSUME_SAFE_SIZE
+  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
+  #else
+  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
+  #endif
+  #endif
+  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
+  if (unlikely(__pyx_nargs > 0)) { __Pyx_RaiseArgtupleInvalid("coefficients", 1, 0, 0, __pyx_nargs); return NULL; }
+  const Py_ssize_t __pyx_kwds_len = unlikely(__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
+  if (unlikely(__pyx_kwds_len < 0)) return NULL;
+  if (unlikely(__pyx_kwds_len > 0)) {__Pyx_RejectKeywords("coefficients", __pyx_kwds); return NULL;}
+  __pyx_r = __pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_6coefficients(((struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_6coefficients(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("coefficients", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_coefficients(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 150, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("LR_v1.linear_regressor.LinearRegressor.coefficients", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "LR_v1/linear_regressor.pyx":153
+ *         return [self.beta[i] for i in range(self.n_features)]
+ * 
+ *     cpdef list predict(self, list X_py):             # <<<<<<<<<<<<<<
+ *         cdef int n_samples = len(X_py)
+ *         cdef int raw_features = self.n_features - 1
+*/
+
+static PyObject *__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_9predict(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+); /*proto*/
+static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *__pyx_v_self, PyObject *__pyx_v_X_py, int __pyx_skip_dispatch) {
+  int __pyx_v_n_samples;
+  int __pyx_v_raw_features;
+  int __pyx_v_i;
+  int __pyx_v_j;
+  double *__pyx_v_X;
+  double *__pyx_v_y_pred;
+  int __pyx_8genexpr2__pyx_v_i;
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  PyObject *__pyx_t_3 = NULL;
+  PyObject *__pyx_t_4 = NULL;
+  size_t __pyx_t_5;
+  Py_ssize_t __pyx_t_6;
   int __pyx_t_7;
   int __pyx_t_8;
   int __pyx_t_9;
@@ -2994,661 +4576,826 @@ static PyObject *__pyx_pf_16linear_regressor_fit_linear_regression(CYTHON_UNUSED
   int __pyx_t_11;
   int __pyx_t_12;
   int __pyx_t_13;
-  double __pyx_t_14;
-  char const *__pyx_t_15;
-  PyObject *__pyx_t_16 = NULL;
+  int __pyx_t_14;
+  double __pyx_t_15;
+  char const *__pyx_t_16;
   PyObject *__pyx_t_17 = NULL;
   PyObject *__pyx_t_18 = NULL;
   PyObject *__pyx_t_19 = NULL;
   PyObject *__pyx_t_20 = NULL;
   PyObject *__pyx_t_21 = NULL;
+  PyObject *__pyx_t_22 = NULL;
+  PyObject *__pyx_t_23 = NULL;
   int __pyx_lineno = 0;
   const char *__pyx_filename = NULL;
   int __pyx_clineno = 0;
-  __Pyx_RefNannySetupContext("fit_linear_regression", 0);
+  __Pyx_RefNannySetupContext("predict", 0);
+  /* Check if called by wrapper */
+  if (unlikely(__pyx_skip_dispatch)) ;
+  /* Check if overridden in Python */
+  else if (
+  #if !CYTHON_USE_TYPE_SLOTS
+  unlikely(Py_TYPE(((PyObject *)__pyx_v_self)) != __pyx_mstate_global->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor &&
+  __Pyx_PyType_HasFeature(Py_TYPE(((PyObject *)__pyx_v_self)), Py_TPFLAGS_HAVE_GC))
+  #else
+  unlikely(Py_TYPE(((PyObject *)__pyx_v_self))->tp_dictoffset != 0 || __Pyx_PyType_HasFeature(Py_TYPE(((PyObject *)__pyx_v_self)), (Py_TPFLAGS_IS_ABSTRACT | Py_TPFLAGS_HEAPTYPE)))
+  #endif
+  ) {
+    #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    static PY_UINT64_T __pyx_tp_dict_version = __PYX_DICT_VERSION_INIT, __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+    if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
+      PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      #endif
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_mstate_global->__pyx_n_u_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 153, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      if (!__Pyx_IsSameCFunction(__pyx_t_1, (void(*)(void)) __pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_9predict)) {
+        __Pyx_XDECREF(__pyx_r);
+        __pyx_t_3 = NULL;
+        __Pyx_INCREF(__pyx_t_1);
+        __pyx_t_4 = __pyx_t_1; 
+        __pyx_t_5 = 1;
+        #if CYTHON_UNPACK_METHODS
+        if (unlikely(PyMethod_Check(__pyx_t_4))) {
+          __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_4);
+          assert(__pyx_t_3);
+          PyObject* __pyx__function = PyMethod_GET_FUNCTION(__pyx_t_4);
+          __Pyx_INCREF(__pyx_t_3);
+          __Pyx_INCREF(__pyx__function);
+          __Pyx_DECREF_SET(__pyx_t_4, __pyx__function);
+          __pyx_t_5 = 0;
+        }
+        #endif
+        {
+          PyObject *__pyx_callargs[2] = {__pyx_t_3, __pyx_v_X_py};
+          __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+          __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+          __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 153, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_2);
+        }
+        if (!(likely(PyList_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("list", __pyx_t_2))) __PYX_ERR(0, 153, __pyx_L1_error)
+        __pyx_r = ((PyObject*)__pyx_t_2);
+        __pyx_t_2 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        goto __pyx_L0;
+      }
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+      __pyx_tp_dict_version = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
+      __pyx_obj_dict_version = __Pyx_get_object_dict_version(((PyObject *)__pyx_v_self));
+      if (unlikely(__pyx_typedict_guard != __pyx_tp_dict_version)) {
+        __pyx_tp_dict_version = __pyx_obj_dict_version = __PYX_DICT_VERSION_INIT;
+      }
+      #endif
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      #if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_PYTYPE_LOOKUP && CYTHON_USE_TYPE_SLOTS
+    }
+    #endif
+  }
 
-  /* "linear_regressor.pyx":79
- *     Returns list of coefficients (length 2)
- *     """
- *     cdef int n_samples = len(X_py)             # <<<<<<<<<<<<<<
- *     cdef int n_features = len(X_py[0])
- *     if n_features != 2:
+  /* "LR_v1/linear_regressor.pyx":154
+ * 
+ *     cpdef list predict(self, list X_py):
+ *         cdef int n_samples = len(X_py)             # <<<<<<<<<<<<<<
+ *         cdef int raw_features = self.n_features - 1
+ *         cdef int i, j
 */
   if (unlikely(__pyx_v_X_py == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
-    __PYX_ERR(0, 79, __pyx_L1_error)
+    __PYX_ERR(0, 154, __pyx_L1_error)
   }
-  __pyx_t_1 = __Pyx_PyList_GET_SIZE(__pyx_v_X_py); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 79, __pyx_L1_error)
-  __pyx_v_n_samples = __pyx_t_1;
+  __pyx_t_6 = __Pyx_PyList_GET_SIZE(__pyx_v_X_py); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 154, __pyx_L1_error)
+  __pyx_v_n_samples = __pyx_t_6;
 
-  /* "linear_regressor.pyx":80
- *     """
- *     cdef int n_samples = len(X_py)
- *     cdef int n_features = len(X_py[0])             # <<<<<<<<<<<<<<
- *     if n_features != 2:
- *         raise ValueError("Only 2 features are supported in this version.")
-*/
-  if (unlikely(__pyx_v_X_py == Py_None)) {
-    PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-    __PYX_ERR(0, 80, __pyx_L1_error)
-  }
-  __pyx_t_2 = __Pyx_PyList_GET_ITEM(__pyx_v_X_py, 0);
-  __Pyx_INCREF(__pyx_t_2);
-  __pyx_t_1 = PyObject_Length(__pyx_t_2); if (unlikely(__pyx_t_1 == ((Py_ssize_t)-1))) __PYX_ERR(0, 80, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_v_n_features = __pyx_t_1;
-
-  /* "linear_regressor.pyx":81
- *     cdef int n_samples = len(X_py)
- *     cdef int n_features = len(X_py[0])
- *     if n_features != 2:             # <<<<<<<<<<<<<<
- *         raise ValueError("Only 2 features are supported in this version.")
+  /* "LR_v1/linear_regressor.pyx":155
+ *     cpdef list predict(self, list X_py):
+ *         cdef int n_samples = len(X_py)
+ *         cdef int raw_features = self.n_features - 1             # <<<<<<<<<<<<<<
+ *         cdef int i, j
  * 
 */
-  __pyx_t_3 = (__pyx_v_n_features != 2);
-  if (unlikely(__pyx_t_3)) {
+  __pyx_v_raw_features = (__pyx_v_self->n_features - 1);
 
-    /* "linear_regressor.pyx":82
- *     cdef int n_features = len(X_py[0])
- *     if n_features != 2:
- *         raise ValueError("Only 2 features are supported in this version.")             # <<<<<<<<<<<<<<
+  /* "LR_v1/linear_regressor.pyx":158
+ *         cdef int i, j
  * 
- *     # Allocate memory using C malloc for better performance
-*/
-    __pyx_t_4 = NULL;
-    __Pyx_INCREF(__pyx_builtin_ValueError);
-    __pyx_t_5 = __pyx_builtin_ValueError; 
-    __pyx_t_6 = 1;
-    {
-      PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_mstate_global->__pyx_kp_u_Only_2_features_are_supported_in};
-      __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-      __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 82, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
-    }
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __PYX_ERR(0, 82, __pyx_L1_error)
-
-    /* "linear_regressor.pyx":81
- *     cdef int n_samples = len(X_py)
- *     cdef int n_features = len(X_py[0])
- *     if n_features != 2:             # <<<<<<<<<<<<<<
- *         raise ValueError("Only 2 features are supported in this version.")
+ *         cdef double* X = <double*>malloc(n_samples * self.n_features * sizeof(double))             # <<<<<<<<<<<<<<
+ *         cdef double* y_pred = <double*>malloc(n_samples * sizeof(double))
  * 
 */
-  }
+  __pyx_v_X = ((double *)malloc(((__pyx_v_n_samples * __pyx_v_self->n_features) * (sizeof(double)))));
 
-  /* "linear_regressor.pyx":85
+  /* "LR_v1/linear_regressor.pyx":159
  * 
- *     # Allocate memory using C malloc for better performance
- *     cdef double* X = <double*>malloc(n_samples * n_features * sizeof(double))             # <<<<<<<<<<<<<<
- *     cdef double* y = <double*>malloc(n_samples * sizeof(double))
- *     cdef double* X_t = <double*>malloc(n_features * n_samples * sizeof(double))
-*/
-  __pyx_v_X = ((double *)malloc(((__pyx_v_n_samples * __pyx_v_n_features) * (sizeof(double)))));
-
-  /* "linear_regressor.pyx":86
- *     # Allocate memory using C malloc for better performance
- *     cdef double* X = <double*>malloc(n_samples * n_features * sizeof(double))
- *     cdef double* y = <double*>malloc(n_samples * sizeof(double))             # <<<<<<<<<<<<<<
- *     cdef double* X_t = <double*>malloc(n_features * n_samples * sizeof(double))
- *     cdef double* X_t_X = <double*>malloc(n_features * n_features * sizeof(double))
-*/
-  __pyx_v_y = ((double *)malloc((__pyx_v_n_samples * (sizeof(double)))));
-
-  /* "linear_regressor.pyx":87
- *     cdef double* X = <double*>malloc(n_samples * n_features * sizeof(double))
- *     cdef double* y = <double*>malloc(n_samples * sizeof(double))
- *     cdef double* X_t = <double*>malloc(n_features * n_samples * sizeof(double))             # <<<<<<<<<<<<<<
- *     cdef double* X_t_X = <double*>malloc(n_features * n_features * sizeof(double))
- *     cdef double* X_t_y = <double*>malloc(n_features * sizeof(double))
-*/
-  __pyx_v_X_t = ((double *)malloc(((__pyx_v_n_features * __pyx_v_n_samples) * (sizeof(double)))));
-
-  /* "linear_regressor.pyx":88
- *     cdef double* y = <double*>malloc(n_samples * sizeof(double))
- *     cdef double* X_t = <double*>malloc(n_features * n_samples * sizeof(double))
- *     cdef double* X_t_X = <double*>malloc(n_features * n_features * sizeof(double))             # <<<<<<<<<<<<<<
- *     cdef double* X_t_y = <double*>malloc(n_features * sizeof(double))
- *     cdef double* X_t_X_inv = <double*>malloc(n_features * n_features * sizeof(double))
-*/
-  __pyx_v_X_t_X = ((double *)malloc(((__pyx_v_n_features * __pyx_v_n_features) * (sizeof(double)))));
-
-  /* "linear_regressor.pyx":89
- *     cdef double* X_t = <double*>malloc(n_features * n_samples * sizeof(double))
- *     cdef double* X_t_X = <double*>malloc(n_features * n_features * sizeof(double))
- *     cdef double* X_t_y = <double*>malloc(n_features * sizeof(double))             # <<<<<<<<<<<<<<
- *     cdef double* X_t_X_inv = <double*>malloc(n_features * n_features * sizeof(double))
- *     cdef double* beta = <double*>malloc(n_features * sizeof(double))
-*/
-  __pyx_v_X_t_y = ((double *)malloc((__pyx_v_n_features * (sizeof(double)))));
-
-  /* "linear_regressor.pyx":90
- *     cdef double* X_t_X = <double*>malloc(n_features * n_features * sizeof(double))
- *     cdef double* X_t_y = <double*>malloc(n_features * sizeof(double))
- *     cdef double* X_t_X_inv = <double*>malloc(n_features * n_features * sizeof(double))             # <<<<<<<<<<<<<<
- *     cdef double* beta = <double*>malloc(n_features * sizeof(double))
+ *         cdef double* X = <double*>malloc(n_samples * self.n_features * sizeof(double))
+ *         cdef double* y_pred = <double*>malloc(n_samples * sizeof(double))             # <<<<<<<<<<<<<<
  * 
+ *         if not X or not y_pred:
 */
-  __pyx_v_X_t_X_inv = ((double *)malloc(((__pyx_v_n_features * __pyx_v_n_features) * (sizeof(double)))));
+  __pyx_v_y_pred = ((double *)malloc((__pyx_v_n_samples * (sizeof(double)))));
 
-  /* "linear_regressor.pyx":91
- *     cdef double* X_t_y = <double*>malloc(n_features * sizeof(double))
- *     cdef double* X_t_X_inv = <double*>malloc(n_features * n_features * sizeof(double))
- *     cdef double* beta = <double*>malloc(n_features * sizeof(double))             # <<<<<<<<<<<<<<
+  /* "LR_v1/linear_regressor.pyx":161
+ *         cdef double* y_pred = <double*>malloc(n_samples * sizeof(double))
  * 
- *     if not X or not y or not X_t or not X_t_X or not X_t_y or not X_t_X_inv or not beta:
+ *         if not X or not y_pred:             # <<<<<<<<<<<<<<
+ *             free(X); free(y_pred)
+ *             raise MemoryError("Allocation failed")
 */
-  __pyx_v_beta = ((double *)malloc((__pyx_v_n_features * (sizeof(double)))));
-
-  /* "linear_regressor.pyx":93
- *     cdef double* beta = <double*>malloc(n_features * sizeof(double))
- * 
- *     if not X or not y or not X_t or not X_t_X or not X_t_y or not X_t_X_inv or not beta:             # <<<<<<<<<<<<<<
- *         # Clean up any allocated memory before raising error
- *         free(X)
-*/
-  __pyx_t_7 = (!(__pyx_v_X != 0));
-  if (!__pyx_t_7) {
+  __pyx_t_8 = (!(__pyx_v_X != 0));
+  if (!__pyx_t_8) {
   } else {
-    __pyx_t_3 = __pyx_t_7;
-    goto __pyx_L5_bool_binop_done;
+    __pyx_t_7 = __pyx_t_8;
+    goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_7 = (!(__pyx_v_y != 0));
-  if (!__pyx_t_7) {
-  } else {
-    __pyx_t_3 = __pyx_t_7;
-    goto __pyx_L5_bool_binop_done;
-  }
-  __pyx_t_7 = (!(__pyx_v_X_t != 0));
-  if (!__pyx_t_7) {
-  } else {
-    __pyx_t_3 = __pyx_t_7;
-    goto __pyx_L5_bool_binop_done;
-  }
-  __pyx_t_7 = (!(__pyx_v_X_t_X != 0));
-  if (!__pyx_t_7) {
-  } else {
-    __pyx_t_3 = __pyx_t_7;
-    goto __pyx_L5_bool_binop_done;
-  }
-  __pyx_t_7 = (!(__pyx_v_X_t_y != 0));
-  if (!__pyx_t_7) {
-  } else {
-    __pyx_t_3 = __pyx_t_7;
-    goto __pyx_L5_bool_binop_done;
-  }
-  __pyx_t_7 = (!(__pyx_v_X_t_X_inv != 0));
-  if (!__pyx_t_7) {
-  } else {
-    __pyx_t_3 = __pyx_t_7;
-    goto __pyx_L5_bool_binop_done;
-  }
-  __pyx_t_7 = (!(__pyx_v_beta != 0));
-  __pyx_t_3 = __pyx_t_7;
-  __pyx_L5_bool_binop_done:;
-  if (unlikely(__pyx_t_3)) {
+  __pyx_t_8 = (!(__pyx_v_y_pred != 0));
+  __pyx_t_7 = __pyx_t_8;
+  __pyx_L4_bool_binop_done:;
+  if (unlikely(__pyx_t_7)) {
 
-    /* "linear_regressor.pyx":95
- *     if not X or not y or not X_t or not X_t_X or not X_t_y or not X_t_X_inv or not beta:
- *         # Clean up any allocated memory before raising error
- *         free(X)             # <<<<<<<<<<<<<<
- *         free(y)
- *         free(X_t)
+    /* "LR_v1/linear_regressor.pyx":162
+ * 
+ *         if not X or not y_pred:
+ *             free(X); free(y_pred)             # <<<<<<<<<<<<<<
+ *             raise MemoryError("Allocation failed")
+ * 
 */
     free(__pyx_v_X);
+    free(__pyx_v_y_pred);
 
-    /* "linear_regressor.pyx":96
- *         # Clean up any allocated memory before raising error
- *         free(X)
- *         free(y)             # <<<<<<<<<<<<<<
- *         free(X_t)
- *         free(X_t_X)
-*/
-    free(__pyx_v_y);
-
-    /* "linear_regressor.pyx":97
- *         free(X)
- *         free(y)
- *         free(X_t)             # <<<<<<<<<<<<<<
- *         free(X_t_X)
- *         free(X_t_y)
-*/
-    free(__pyx_v_X_t);
-
-    /* "linear_regressor.pyx":98
- *         free(y)
- *         free(X_t)
- *         free(X_t_X)             # <<<<<<<<<<<<<<
- *         free(X_t_y)
- *         free(X_t_X_inv)
-*/
-    free(__pyx_v_X_t_X);
-
-    /* "linear_regressor.pyx":99
- *         free(X_t)
- *         free(X_t_X)
- *         free(X_t_y)             # <<<<<<<<<<<<<<
- *         free(X_t_X_inv)
- *         free(beta)
-*/
-    free(__pyx_v_X_t_y);
-
-    /* "linear_regressor.pyx":100
- *         free(X_t_X)
- *         free(X_t_y)
- *         free(X_t_X_inv)             # <<<<<<<<<<<<<<
- *         free(beta)
- *         raise MemoryError("Could not allocate memory")
-*/
-    free(__pyx_v_X_t_X_inv);
-
-    /* "linear_regressor.pyx":101
- *         free(X_t_y)
- *         free(X_t_X_inv)
- *         free(beta)             # <<<<<<<<<<<<<<
- *         raise MemoryError("Could not allocate memory")
+    /* "LR_v1/linear_regressor.pyx":163
+ *         if not X or not y_pred:
+ *             free(X); free(y_pred)
+ *             raise MemoryError("Allocation failed")             # <<<<<<<<<<<<<<
  * 
+ *         try:
 */
-    free(__pyx_v_beta);
-
-    /* "linear_regressor.pyx":102
- *         free(X_t_X_inv)
- *         free(beta)
- *         raise MemoryError("Could not allocate memory")             # <<<<<<<<<<<<<<
- * 
- *     cdef int i, j
-*/
-    __pyx_t_5 = NULL;
+    __pyx_t_2 = NULL;
     __Pyx_INCREF(__pyx_builtin_MemoryError);
     __pyx_t_4 = __pyx_builtin_MemoryError; 
-    __pyx_t_6 = 1;
+    __pyx_t_5 = 1;
     {
-      PyObject *__pyx_callargs[2] = {__pyx_t_5, __pyx_mstate_global->__pyx_kp_u_Could_not_allocate_memory};
-      __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
+      PyObject *__pyx_callargs[2] = {__pyx_t_2, __pyx_mstate_global->__pyx_kp_u_Allocation_failed};
+      __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
+      __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 102, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_2);
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 163, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
     }
-    __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __PYX_ERR(0, 102, __pyx_L1_error)
+    __Pyx_Raise(__pyx_t_1, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+    __PYX_ERR(0, 163, __pyx_L1_error)
 
-    /* "linear_regressor.pyx":93
- *     cdef double* beta = <double*>malloc(n_features * sizeof(double))
+    /* "LR_v1/linear_regressor.pyx":161
+ *         cdef double* y_pred = <double*>malloc(n_samples * sizeof(double))
  * 
- *     if not X or not y or not X_t or not X_t_X or not X_t_y or not X_t_X_inv or not beta:             # <<<<<<<<<<<<<<
- *         # Clean up any allocated memory before raising error
- *         free(X)
+ *         if not X or not y_pred:             # <<<<<<<<<<<<<<
+ *             free(X); free(y_pred)
+ *             raise MemoryError("Allocation failed")
 */
   }
 
-  /* "linear_regressor.pyx":105
+  /* "LR_v1/linear_regressor.pyx":165
+ *             raise MemoryError("Allocation failed")
  * 
- *     cdef int i, j
- *     try:             # <<<<<<<<<<<<<<
- *         # Copy data from Python lists to C arrays
- *         for i in range(n_samples):
+ *         try:             # <<<<<<<<<<<<<<
+ *             for i in range(n_samples):
+ *                 X[i * self.n_features + 0] = 1.0
 */
   /*try:*/ {
 
-    /* "linear_regressor.pyx":107
- *     try:
- *         # Copy data from Python lists to C arrays
- *         for i in range(n_samples):             # <<<<<<<<<<<<<<
- *             for j in range(n_features):
- *                 X[i * n_features + j] = X_py[i][j]
-*/
-    __pyx_t_8 = __pyx_v_n_samples;
-    __pyx_t_9 = __pyx_t_8;
-    for (__pyx_t_10 = 0; __pyx_t_10 < __pyx_t_9; __pyx_t_10+=1) {
-      __pyx_v_i = __pyx_t_10;
-
-      /* "linear_regressor.pyx":108
- *         # Copy data from Python lists to C arrays
- *         for i in range(n_samples):
- *             for j in range(n_features):             # <<<<<<<<<<<<<<
- *                 X[i * n_features + j] = X_py[i][j]
- *             y[i] = y_py[i]
-*/
-      __pyx_t_11 = __pyx_v_n_features;
-      __pyx_t_12 = __pyx_t_11;
-      for (__pyx_t_13 = 0; __pyx_t_13 < __pyx_t_12; __pyx_t_13+=1) {
-        __pyx_v_j = __pyx_t_13;
-
-        /* "linear_regressor.pyx":109
- *         for i in range(n_samples):
- *             for j in range(n_features):
- *                 X[i * n_features + j] = X_py[i][j]             # <<<<<<<<<<<<<<
- *             y[i] = y_py[i]
+    /* "LR_v1/linear_regressor.pyx":166
  * 
+ *         try:
+ *             for i in range(n_samples):             # <<<<<<<<<<<<<<
+ *                 X[i * self.n_features + 0] = 1.0
+ *                 for j in range(raw_features):
+*/
+    __pyx_t_9 = __pyx_v_n_samples;
+    __pyx_t_10 = __pyx_t_9;
+    for (__pyx_t_11 = 0; __pyx_t_11 < __pyx_t_10; __pyx_t_11+=1) {
+      __pyx_v_i = __pyx_t_11;
+
+      /* "LR_v1/linear_regressor.pyx":167
+ *         try:
+ *             for i in range(n_samples):
+ *                 X[i * self.n_features + 0] = 1.0             # <<<<<<<<<<<<<<
+ *                 for j in range(raw_features):
+ *                     X[i * self.n_features + j + 1] = X_py[i][j]
+*/
+      (__pyx_v_X[((__pyx_v_i * __pyx_v_self->n_features) + 0)]) = 1.0;
+
+      /* "LR_v1/linear_regressor.pyx":168
+ *             for i in range(n_samples):
+ *                 X[i * self.n_features + 0] = 1.0
+ *                 for j in range(raw_features):             # <<<<<<<<<<<<<<
+ *                     X[i * self.n_features + j + 1] = X_py[i][j]
+ * 
+*/
+      __pyx_t_12 = __pyx_v_raw_features;
+      __pyx_t_13 = __pyx_t_12;
+      for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
+        __pyx_v_j = __pyx_t_14;
+
+        /* "LR_v1/linear_regressor.pyx":169
+ *                 X[i * self.n_features + 0] = 1.0
+ *                 for j in range(raw_features):
+ *                     X[i * self.n_features + j + 1] = X_py[i][j]             # <<<<<<<<<<<<<<
+ * 
+ *             matvec_c(X, self.beta, y_pred, n_samples, self.n_features)
 */
         if (unlikely(__pyx_v_X_py == Py_None)) {
           PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-          __PYX_ERR(0, 109, __pyx_L13_error)
+          __PYX_ERR(0, 169, __pyx_L7_error)
         }
-        __pyx_t_2 = __Pyx_GetItemInt(__Pyx_PyList_GET_ITEM(__pyx_v_X_py, __pyx_v_i), __pyx_v_j, int, 1, __Pyx_PyLong_From_int, 0, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 109, __pyx_L13_error)
-        __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_14 = __Pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_14 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 109, __pyx_L13_error)
-        __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        (__pyx_v_X[((__pyx_v_i * __pyx_v_n_features) + __pyx_v_j)]) = __pyx_t_14;
+        __pyx_t_1 = __Pyx_GetItemInt(__Pyx_PyList_GET_ITEM(__pyx_v_X_py, __pyx_v_i), __pyx_v_j, int, 1, __Pyx_PyLong_From_int, 0, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 169, __pyx_L7_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_15 = __Pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_15 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 169, __pyx_L7_error)
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        (__pyx_v_X[(((__pyx_v_i * __pyx_v_self->n_features) + __pyx_v_j) + 1)]) = __pyx_t_15;
       }
-
-      /* "linear_regressor.pyx":110
- *             for j in range(n_features):
- *                 X[i * n_features + j] = X_py[i][j]
- *             y[i] = y_py[i]             # <<<<<<<<<<<<<<
- * 
- *         # Compute X^T
-*/
-      if (unlikely(__pyx_v_y_py == Py_None)) {
-        PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-        __PYX_ERR(0, 110, __pyx_L13_error)
-      }
-      __pyx_t_14 = __Pyx_PyFloat_AsDouble(__Pyx_PyList_GET_ITEM(__pyx_v_y_py, __pyx_v_i)); if (unlikely((__pyx_t_14 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 110, __pyx_L13_error)
-      (__pyx_v_y[__pyx_v_i]) = __pyx_t_14;
     }
 
-    /* "linear_regressor.pyx":113
+    /* "LR_v1/linear_regressor.pyx":171
+ *                     X[i * self.n_features + j + 1] = X_py[i][j]
  * 
- *         # Compute X^T
- *         transpose_inplace(X, X_t, n_samples, n_features)             # <<<<<<<<<<<<<<
- * 
- *         # Compute X^T * X
-*/
-    __pyx_f_16linear_regressor_transpose_inplace(__pyx_v_X, __pyx_v_X_t, __pyx_v_n_samples, __pyx_v_n_features); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 113, __pyx_L13_error)
-
-    /* "linear_regressor.pyx":116
- * 
- *         # Compute X^T * X
- *         matmul_c(X_t, X, X_t_X, n_features, n_samples, n_features)             # <<<<<<<<<<<<<<
- * 
- *         # Compute X^T * y
-*/
-    __pyx_f_16linear_regressor_matmul_c(__pyx_v_X_t, __pyx_v_X, __pyx_v_X_t_X, __pyx_v_n_features, __pyx_v_n_samples, __pyx_v_n_features); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 116, __pyx_L13_error)
-
-    /* "linear_regressor.pyx":119
- * 
- *         # Compute X^T * y
- *         matvec_c(X_t, y, X_t_y, n_features, n_samples)             # <<<<<<<<<<<<<<
- * 
- *         # Invert X_t_X (2x2 matrix)
-*/
-    __pyx_f_16linear_regressor_matvec_c(__pyx_v_X_t, __pyx_v_y, __pyx_v_X_t_y, __pyx_v_n_features, __pyx_v_n_samples); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 119, __pyx_L13_error)
-
-    /* "linear_regressor.pyx":122
- * 
- *         # Invert X_t_X (2x2 matrix)
- *         if inverse_2x2(X_t_X, X_t_X_inv) != 0:             # <<<<<<<<<<<<<<
- *             raise ValueError("Matrix not invertible! [det = 0]")
+ *             matvec_c(X, self.beta, y_pred, n_samples, self.n_features)             # <<<<<<<<<<<<<<
+ *             return [y_pred[i] for i in range(n_samples)]
  * 
 */
-    __pyx_t_8 = __pyx_f_16linear_regressor_inverse_2x2(__pyx_v_X_t_X, __pyx_v_X_t_X_inv); if (unlikely(__pyx_t_8 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 122, __pyx_L13_error)
-    __pyx_t_3 = (__pyx_t_8 != 0);
-    if (unlikely(__pyx_t_3)) {
+    __pyx_f_5LR_v1_16linear_regressor_matvec_c(__pyx_v_X, __pyx_v_self->beta, __pyx_v_y_pred, __pyx_v_n_samples, __pyx_v_self->n_features); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 171, __pyx_L7_error)
 
-      /* "linear_regressor.pyx":123
- *         # Invert X_t_X (2x2 matrix)
- *         if inverse_2x2(X_t_X, X_t_X_inv) != 0:
- *             raise ValueError("Matrix not invertible! [det = 0]")             # <<<<<<<<<<<<<<
+    /* "LR_v1/linear_regressor.pyx":172
  * 
- *         # BETA calculation: beta = X_t_X_inv * X_t_y
-*/
-      __pyx_t_4 = NULL;
-      __Pyx_INCREF(__pyx_builtin_ValueError);
-      __pyx_t_5 = __pyx_builtin_ValueError; 
-      __pyx_t_6 = 1;
-      {
-        PyObject *__pyx_callargs[2] = {__pyx_t_4, __pyx_mstate_global->__pyx_kp_u_Matrix_not_invertible_det_0};
-        __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_5, __pyx_callargs+__pyx_t_6, (2-__pyx_t_6) | (__pyx_t_6*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
-        __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 123, __pyx_L13_error)
-        __Pyx_GOTREF(__pyx_t_2);
-      }
-      __Pyx_Raise(__pyx_t_2, 0, 0, 0);
-      __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __PYX_ERR(0, 123, __pyx_L13_error)
-
-      /* "linear_regressor.pyx":122
+ *             matvec_c(X, self.beta, y_pred, n_samples, self.n_features)
+ *             return [y_pred[i] for i in range(n_samples)]             # <<<<<<<<<<<<<<
  * 
- *         # Invert X_t_X (2x2 matrix)
- *         if inverse_2x2(X_t_X, X_t_X_inv) != 0:             # <<<<<<<<<<<<<<
- *             raise ValueError("Matrix not invertible! [det = 0]")
- * 
-*/
-    }
-
-    /* "linear_regressor.pyx":126
- * 
- *         # BETA calculation: beta = X_t_X_inv * X_t_y
- *         matvec_c(X_t_X_inv, X_t_y, beta, n_features, n_features)             # <<<<<<<<<<<<<<
- * 
- *         # Convert result to Python list
-*/
-    __pyx_f_16linear_regressor_matvec_c(__pyx_v_X_t_X_inv, __pyx_v_X_t_y, __pyx_v_beta, __pyx_v_n_features, __pyx_v_n_features); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 126, __pyx_L13_error)
-
-    /* "linear_regressor.pyx":129
- * 
- *         # Convert result to Python list
- *         result = [beta[i] for i in range(n_features)]             # <<<<<<<<<<<<<<
- * 
- *         return result
-*/
-    { /* enter inner scope */
-      __pyx_t_2 = PyList_New(0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 129, __pyx_L13_error)
-      __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_8 = __pyx_v_n_features;
-      __pyx_t_9 = __pyx_t_8;
-      for (__pyx_t_10 = 0; __pyx_t_10 < __pyx_t_9; __pyx_t_10+=1) {
-        __pyx_7genexpr__pyx_v_i = __pyx_t_10;
-        __pyx_t_5 = PyFloat_FromDouble((__pyx_v_beta[__pyx_7genexpr__pyx_v_i])); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 129, __pyx_L13_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_2, (PyObject*)__pyx_t_5))) __PYX_ERR(0, 129, __pyx_L13_error)
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      }
-    } /* exit inner scope */
-    __pyx_v_result = ((PyObject*)__pyx_t_2);
-    __pyx_t_2 = 0;
-
-    /* "linear_regressor.pyx":131
- *         result = [beta[i] for i in range(n_features)]
- * 
- *         return result             # <<<<<<<<<<<<<<
- * 
- *     finally:
+ *         finally:
 */
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_INCREF(__pyx_v_result);
-    __pyx_r = __pyx_v_result;
-    goto __pyx_L12_return;
+    { /* enter inner scope */
+      __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 172, __pyx_L7_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_9 = __pyx_v_n_samples;
+      __pyx_t_10 = __pyx_t_9;
+      for (__pyx_t_11 = 0; __pyx_t_11 < __pyx_t_10; __pyx_t_11+=1) {
+        __pyx_8genexpr2__pyx_v_i = __pyx_t_11;
+        __pyx_t_4 = PyFloat_FromDouble((__pyx_v_y_pred[__pyx_8genexpr2__pyx_v_i])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 172, __pyx_L7_error)
+        __Pyx_GOTREF(__pyx_t_4);
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_4))) __PYX_ERR(0, 172, __pyx_L7_error)
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      }
+    } /* exit inner scope */
+    __pyx_r = ((PyObject*)__pyx_t_1);
+    __pyx_t_1 = 0;
+    goto __pyx_L6_return;
   }
 
-  /* "linear_regressor.pyx":135
- *     finally:
- *         # Always free allocated memory
- *         free(X)             # <<<<<<<<<<<<<<
- *         free(y)
- *         free(X_t)
+  /* "LR_v1/linear_regressor.pyx":175
+ * 
+ *         finally:
+ *             free(X); free(y_pred)             # <<<<<<<<<<<<<<
 */
   /*finally:*/ {
-    __pyx_L13_error:;
+    __pyx_L7_error:;
     /*exception exit:*/{
       __Pyx_PyThreadState_declare
       __Pyx_PyThreadState_assign
-      __pyx_t_16 = 0; __pyx_t_17 = 0; __pyx_t_18 = 0; __pyx_t_19 = 0; __pyx_t_20 = 0; __pyx_t_21 = 0;
+      __pyx_t_17 = 0; __pyx_t_18 = 0; __pyx_t_19 = 0; __pyx_t_20 = 0; __pyx_t_21 = 0; __pyx_t_22 = 0;
+      __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
-      __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-       __Pyx_ExceptionSwap(&__pyx_t_19, &__pyx_t_20, &__pyx_t_21);
-      if ( unlikely(__Pyx_GetException(&__pyx_t_16, &__pyx_t_17, &__pyx_t_18) < 0)) __Pyx_ErrFetch(&__pyx_t_16, &__pyx_t_17, &__pyx_t_18);
-      __Pyx_XGOTREF(__pyx_t_16);
+       __Pyx_ExceptionSwap(&__pyx_t_20, &__pyx_t_21, &__pyx_t_22);
+      if ( unlikely(__Pyx_GetException(&__pyx_t_17, &__pyx_t_18, &__pyx_t_19) < 0)) __Pyx_ErrFetch(&__pyx_t_17, &__pyx_t_18, &__pyx_t_19);
       __Pyx_XGOTREF(__pyx_t_17);
       __Pyx_XGOTREF(__pyx_t_18);
       __Pyx_XGOTREF(__pyx_t_19);
       __Pyx_XGOTREF(__pyx_t_20);
       __Pyx_XGOTREF(__pyx_t_21);
-      __pyx_t_8 = __pyx_lineno; __pyx_t_9 = __pyx_clineno; __pyx_t_15 = __pyx_filename;
+      __Pyx_XGOTREF(__pyx_t_22);
+      __pyx_t_9 = __pyx_lineno; __pyx_t_10 = __pyx_clineno; __pyx_t_16 = __pyx_filename;
       {
         free(__pyx_v_X);
-
-        /* "linear_regressor.pyx":136
- *         # Always free allocated memory
- *         free(X)
- *         free(y)             # <<<<<<<<<<<<<<
- *         free(X_t)
- *         free(X_t_X)
-*/
-        free(__pyx_v_y);
-
-        /* "linear_regressor.pyx":137
- *         free(X)
- *         free(y)
- *         free(X_t)             # <<<<<<<<<<<<<<
- *         free(X_t_X)
- *         free(X_t_y)
-*/
-        free(__pyx_v_X_t);
-
-        /* "linear_regressor.pyx":138
- *         free(y)
- *         free(X_t)
- *         free(X_t_X)             # <<<<<<<<<<<<<<
- *         free(X_t_y)
- *         free(X_t_X_inv)
-*/
-        free(__pyx_v_X_t_X);
-
-        /* "linear_regressor.pyx":139
- *         free(X_t)
- *         free(X_t_X)
- *         free(X_t_y)             # <<<<<<<<<<<<<<
- *         free(X_t_X_inv)
- *         free(beta)
-*/
-        free(__pyx_v_X_t_y);
-
-        /* "linear_regressor.pyx":140
- *         free(X_t_X)
- *         free(X_t_y)
- *         free(X_t_X_inv)             # <<<<<<<<<<<<<<
- *         free(beta)
-*/
-        free(__pyx_v_X_t_X_inv);
-
-        /* "linear_regressor.pyx":141
- *         free(X_t_y)
- *         free(X_t_X_inv)
- *         free(beta)             # <<<<<<<<<<<<<<
-*/
-        free(__pyx_v_beta);
+        free(__pyx_v_y_pred);
       }
-      __Pyx_XGIVEREF(__pyx_t_19);
       __Pyx_XGIVEREF(__pyx_t_20);
       __Pyx_XGIVEREF(__pyx_t_21);
-      __Pyx_ExceptionReset(__pyx_t_19, __pyx_t_20, __pyx_t_21);
-      __Pyx_XGIVEREF(__pyx_t_16);
+      __Pyx_XGIVEREF(__pyx_t_22);
+      __Pyx_ExceptionReset(__pyx_t_20, __pyx_t_21, __pyx_t_22);
       __Pyx_XGIVEREF(__pyx_t_17);
       __Pyx_XGIVEREF(__pyx_t_18);
-      __Pyx_ErrRestore(__pyx_t_16, __pyx_t_17, __pyx_t_18);
-      __pyx_t_16 = 0; __pyx_t_17 = 0; __pyx_t_18 = 0; __pyx_t_19 = 0; __pyx_t_20 = 0; __pyx_t_21 = 0;
-      __pyx_lineno = __pyx_t_8; __pyx_clineno = __pyx_t_9; __pyx_filename = __pyx_t_15;
+      __Pyx_XGIVEREF(__pyx_t_19);
+      __Pyx_ErrRestore(__pyx_t_17, __pyx_t_18, __pyx_t_19);
+      __pyx_t_17 = 0; __pyx_t_18 = 0; __pyx_t_19 = 0; __pyx_t_20 = 0; __pyx_t_21 = 0; __pyx_t_22 = 0;
+      __pyx_lineno = __pyx_t_9; __pyx_clineno = __pyx_t_10; __pyx_filename = __pyx_t_16;
       goto __pyx_L1_error;
     }
-    __pyx_L12_return: {
-      __pyx_t_21 = __pyx_r;
+    __pyx_L6_return: {
+      __pyx_t_23 = __pyx_r;
       __pyx_r = 0;
-
-      /* "linear_regressor.pyx":135
- *     finally:
- *         # Always free allocated memory
- *         free(X)             # <<<<<<<<<<<<<<
- *         free(y)
- *         free(X_t)
-*/
       free(__pyx_v_X);
-
-      /* "linear_regressor.pyx":136
- *         # Always free allocated memory
- *         free(X)
- *         free(y)             # <<<<<<<<<<<<<<
- *         free(X_t)
- *         free(X_t_X)
-*/
-      free(__pyx_v_y);
-
-      /* "linear_regressor.pyx":137
- *         free(X)
- *         free(y)
- *         free(X_t)             # <<<<<<<<<<<<<<
- *         free(X_t_X)
- *         free(X_t_y)
-*/
-      free(__pyx_v_X_t);
-
-      /* "linear_regressor.pyx":138
- *         free(y)
- *         free(X_t)
- *         free(X_t_X)             # <<<<<<<<<<<<<<
- *         free(X_t_y)
- *         free(X_t_X_inv)
-*/
-      free(__pyx_v_X_t_X);
-
-      /* "linear_regressor.pyx":139
- *         free(X_t)
- *         free(X_t_X)
- *         free(X_t_y)             # <<<<<<<<<<<<<<
- *         free(X_t_X_inv)
- *         free(beta)
-*/
-      free(__pyx_v_X_t_y);
-
-      /* "linear_regressor.pyx":140
- *         free(X_t_X)
- *         free(X_t_y)
- *         free(X_t_X_inv)             # <<<<<<<<<<<<<<
- *         free(beta)
-*/
-      free(__pyx_v_X_t_X_inv);
-
-      /* "linear_regressor.pyx":141
- *         free(X_t_y)
- *         free(X_t_X_inv)
- *         free(beta)             # <<<<<<<<<<<<<<
-*/
-      free(__pyx_v_beta);
-      __pyx_r = __pyx_t_21;
-      __pyx_t_21 = 0;
+      free(__pyx_v_y_pred);
+      __pyx_r = __pyx_t_23;
+      __pyx_t_23 = 0;
       goto __pyx_L0;
     }
   }
 
-  /* "linear_regressor.pyx":72
+  /* "LR_v1/linear_regressor.pyx":153
+ *         return [self.beta[i] for i in range(self.n_features)]
  * 
- * # Main API - Optimized version
- * def fit_linear_regression(list X_py, list y_py):             # <<<<<<<<<<<<<<
- *     """
- *     Fit a linear regression model using the OLS method - Optimized version
+ *     cpdef list predict(self, list X_py):             # <<<<<<<<<<<<<<
+ *         cdef int n_samples = len(X_py)
+ *         cdef int raw_features = self.n_features - 1
 */
 
   /* function exit code */
   __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
   __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_XDECREF(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_4);
-  __Pyx_XDECREF(__pyx_t_5);
-  __Pyx_AddTraceback("linear_regressor.fit_linear_regression", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_AddTraceback("LR_v1.linear_regressor.LinearRegressor.predict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = 0;
+  __pyx_L0:;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_9predict(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+); /*proto*/
+static PyMethodDef __pyx_mdef_5LR_v1_16linear_regressor_15LinearRegressor_9predict = {"predict", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_9predict, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_9predict(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+) {
+  PyObject *__pyx_v_X_py = 0;
+  #if !CYTHON_METH_FASTCALL
+  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
+  #endif
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject* values[1] = {0};
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("predict (wrapper)", 0);
+  #if !CYTHON_METH_FASTCALL
+  #if CYTHON_ASSUME_SAFE_SIZE
+  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
+  #else
+  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
+  #endif
+  #endif
+  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
+  {
+    PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_X_py,0};
+    const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 153, __pyx_L3_error)
+    if (__pyx_kwds_len > 0) {
+      switch (__pyx_nargs) {
+        case  1:
+        values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 153, __pyx_L3_error)
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      const Py_ssize_t kwd_pos_args = __pyx_nargs;
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "predict", 0) < 0) __PYX_ERR(0, 153, __pyx_L3_error)
+      for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("predict", 1, 1, 1, i); __PYX_ERR(0, 153, __pyx_L3_error) }
+      }
+    } else if (unlikely(__pyx_nargs != 1)) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 153, __pyx_L3_error)
+    }
+    __pyx_v_X_py = ((PyObject*)values[0]);
+  }
+  goto __pyx_L6_skip;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("predict", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 153, __pyx_L3_error)
+  __pyx_L6_skip:;
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+    Py_XDECREF(values[__pyx_temp]);
+  }
+  __Pyx_AddTraceback("LR_v1.linear_regressor.LinearRegressor.predict", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_X_py), (&PyList_Type), 1, "X_py", 1))) __PYX_ERR(0, 153, __pyx_L1_error)
+  __pyx_r = __pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_8predict(((struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *)__pyx_v_self), __pyx_v_X_py);
+
+  /* function exit code */
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __pyx_r = NULL;
+  for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+    Py_XDECREF(values[__pyx_temp]);
+  }
+  goto __pyx_L7_cleaned_up;
+  __pyx_L0:;
+  for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+    Py_XDECREF(values[__pyx_temp]);
+  }
+  __pyx_L7_cleaned_up:;
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_8predict(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *__pyx_v_self, PyObject *__pyx_v_X_py) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("predict", 0);
+  __Pyx_XDECREF(__pyx_r);
+  __pyx_t_1 = __pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(__pyx_v_self, __pyx_v_X_py, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __pyx_r = __pyx_t_1;
+  __pyx_t_1 = 0;
+  goto __pyx_L0;
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_AddTraceback("LR_v1.linear_regressor.LinearRegressor.predict", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __pyx_r = NULL;
   __pyx_L0:;
-  __Pyx_XDECREF(__pyx_v_result);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "(tree fragment)":1
+ * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
+ *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
+ * def __setstate_cython__(self, __pyx_state):
+*/
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_11__reduce_cython__(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+); /*proto*/
+static PyMethodDef __pyx_mdef_5LR_v1_16linear_regressor_15LinearRegressor_11__reduce_cython__ = {"__reduce_cython__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_11__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_11__reduce_cython__(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+) {
+  #if !CYTHON_METH_FASTCALL
+  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
+  #endif
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__reduce_cython__ (wrapper)", 0);
+  #if !CYTHON_METH_FASTCALL
+  #if CYTHON_ASSUME_SAFE_SIZE
+  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
+  #else
+  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
+  #endif
+  #endif
+  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
+  if (unlikely(__pyx_nargs > 0)) { __Pyx_RaiseArgtupleInvalid("__reduce_cython__", 1, 0, 0, __pyx_nargs); return NULL; }
+  const Py_ssize_t __pyx_kwds_len = unlikely(__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
+  if (unlikely(__pyx_kwds_len < 0)) return NULL;
+  if (unlikely(__pyx_kwds_len > 0)) {__Pyx_RejectKeywords("__reduce_cython__", __pyx_kwds); return NULL;}
+  __pyx_r = __pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_10__reduce_cython__(((struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *)__pyx_v_self));
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_10__reduce_cython__(CYTHON_UNUSED struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *__pyx_v_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__reduce_cython__", 0);
+
+  /* "(tree fragment)":2
+ * def __reduce_cython__(self):
+ *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"             # <<<<<<<<<<<<<<
+ * def __setstate_cython__(self, __pyx_state):
+ *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
+*/
+  __Pyx_Raise(__pyx_builtin_TypeError, __pyx_mstate_global->__pyx_kp_u_no_default___reduce___due_to_non, 0, 0);
+  __PYX_ERR(1, 2, __pyx_L1_error)
+
+  /* "(tree fragment)":1
+ * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
+ *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
+ * def __setstate_cython__(self, __pyx_state):
+*/
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("LR_v1.linear_regressor.LinearRegressor.__reduce_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "(tree fragment)":3
+ * def __reduce_cython__(self):
+ *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
+ * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
+ *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
+*/
+
+/* Python wrapper */
+static PyObject *__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_13__setstate_cython__(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+); /*proto*/
+static PyMethodDef __pyx_mdef_5LR_v1_16linear_regressor_15LinearRegressor_13__setstate_cython__ = {"__setstate_cython__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_13__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0};
+static PyObject *__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_13__setstate_cython__(PyObject *__pyx_v_self, 
+#if CYTHON_METH_FASTCALL
+PyObject *const *__pyx_args, Py_ssize_t __pyx_nargs, PyObject *__pyx_kwds
+#else
+PyObject *__pyx_args, PyObject *__pyx_kwds
+#endif
+) {
+  CYTHON_UNUSED PyObject *__pyx_v___pyx_state = 0;
+  #if !CYTHON_METH_FASTCALL
+  CYTHON_UNUSED Py_ssize_t __pyx_nargs;
+  #endif
+  CYTHON_UNUSED PyObject *const *__pyx_kwvalues;
+  PyObject* values[1] = {0};
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("__setstate_cython__ (wrapper)", 0);
+  #if !CYTHON_METH_FASTCALL
+  #if CYTHON_ASSUME_SAFE_SIZE
+  __pyx_nargs = PyTuple_GET_SIZE(__pyx_args);
+  #else
+  __pyx_nargs = PyTuple_Size(__pyx_args); if (unlikely(__pyx_nargs < 0)) return NULL;
+  #endif
+  #endif
+  __pyx_kwvalues = __Pyx_KwValues_FASTCALL(__pyx_args, __pyx_nargs);
+  {
+    PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_pyx_state,0};
+    const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(1, 3, __pyx_L3_error)
+    if (__pyx_kwds_len > 0) {
+      switch (__pyx_nargs) {
+        case  1:
+        values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(1, 3, __pyx_L3_error)
+        CYTHON_FALLTHROUGH;
+        case  0: break;
+        default: goto __pyx_L5_argtuple_error;
+      }
+      const Py_ssize_t kwd_pos_args = __pyx_nargs;
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "__setstate_cython__", 0) < 0) __PYX_ERR(1, 3, __pyx_L3_error)
+      for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("__setstate_cython__", 1, 1, 1, i); __PYX_ERR(1, 3, __pyx_L3_error) }
+      }
+    } else if (unlikely(__pyx_nargs != 1)) {
+      goto __pyx_L5_argtuple_error;
+    } else {
+      values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(1, 3, __pyx_L3_error)
+    }
+    __pyx_v___pyx_state = values[0];
+  }
+  goto __pyx_L6_skip;
+  __pyx_L5_argtuple_error:;
+  __Pyx_RaiseArgtupleInvalid("__setstate_cython__", 1, 1, 1, __pyx_nargs); __PYX_ERR(1, 3, __pyx_L3_error)
+  __pyx_L6_skip:;
+  goto __pyx_L4_argument_unpacking_done;
+  __pyx_L3_error:;
+  for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+    Py_XDECREF(values[__pyx_temp]);
+  }
+  __Pyx_AddTraceback("LR_v1.linear_regressor.LinearRegressor.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __Pyx_RefNannyFinishContext();
+  return NULL;
+  __pyx_L4_argument_unpacking_done:;
+  __pyx_r = __pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_12__setstate_cython__(((struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *)__pyx_v_self), __pyx_v___pyx_state);
+
+  /* function exit code */
+  for (Py_ssize_t __pyx_temp=0; __pyx_temp < (Py_ssize_t)(sizeof(values)/sizeof(values[0])); ++__pyx_temp) {
+    Py_XDECREF(values[__pyx_temp]);
+  }
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_12__setstate_cython__(CYTHON_UNUSED struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *__pyx_v_self, CYTHON_UNUSED PyObject *__pyx_v___pyx_state) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("__setstate_cython__", 0);
+
+  /* "(tree fragment)":4
+ *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
+ * def __setstate_cython__(self, __pyx_state):
+ *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"             # <<<<<<<<<<<<<<
+*/
+  __Pyx_Raise(__pyx_builtin_TypeError, __pyx_mstate_global->__pyx_kp_u_no_default___reduce___due_to_non, 0, 0);
+  __PYX_ERR(1, 4, __pyx_L1_error)
+
+  /* "(tree fragment)":3
+ * def __reduce_cython__(self):
+ *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
+ * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
+ *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
+*/
+
+  /* function exit code */
+  __pyx_L1_error:;
+  __Pyx_AddTraceback("LR_v1.linear_regressor.LinearRegressor.__setstate_cython__", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 /* #### Code section: module_exttypes ### */
+static struct __pyx_vtabstruct_5LR_v1_16linear_regressor_LinearRegressor __pyx_vtable_5LR_v1_16linear_regressor_LinearRegressor;
+
+static PyObject *__pyx_tp_new_5LR_v1_16linear_regressor_LinearRegressor(PyTypeObject *t, CYTHON_UNUSED PyObject *a, CYTHON_UNUSED PyObject *k) {
+  struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *p;
+  PyObject *o;
+  #if CYTHON_COMPILING_IN_LIMITED_API
+  allocfunc alloc_func = (allocfunc)PyType_GetSlot(t, Py_tp_alloc);
+  o = alloc_func(t, 0);
+  #else
+  if (likely(!__Pyx_PyType_HasFeature(t, Py_TPFLAGS_IS_ABSTRACT))) {
+    o = (*t->tp_alloc)(t, 0);
+  } else {
+    o = (PyObject *) PyBaseObject_Type.tp_new(t, __pyx_mstate_global->__pyx_empty_tuple, 0);
+  }
+  if (unlikely(!o)) return 0;
+  #endif
+  p = ((struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *)o);
+  p->__pyx_vtab = __pyx_vtabptr_5LR_v1_16linear_regressor_LinearRegressor;
+  if (unlikely(__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_1__cinit__(o, __pyx_mstate_global->__pyx_empty_tuple, NULL) < 0)) goto bad;
+  return o;
+  bad:
+  Py_DECREF(o); o = 0;
+  return NULL;
+}
+
+static void __pyx_tp_dealloc_5LR_v1_16linear_regressor_LinearRegressor(PyObject *o) {
+  #if CYTHON_USE_TP_FINALIZE
+  if (unlikely((PY_VERSION_HEX >= 0x03080000 || __Pyx_PyType_HasFeature(Py_TYPE(o), Py_TPFLAGS_HAVE_FINALIZE)) && __Pyx_PyObject_GetSlot(o, tp_finalize, destructor)) && (!PyType_IS_GC(Py_TYPE(o)) || !__Pyx_PyObject_GC_IsFinalized(o))) {
+    if (__Pyx_PyObject_GetSlot(o, tp_dealloc, destructor) == __pyx_tp_dealloc_5LR_v1_16linear_regressor_LinearRegressor) {
+      if (PyObject_CallFinalizerFromDealloc(o)) return;
+    }
+  }
+  #endif
+  {
+    PyObject *etype, *eval, *etb;
+    PyErr_Fetch(&etype, &eval, &etb);
+    __Pyx_SET_REFCNT(o, Py_REFCNT(o) + 1);
+    __pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_3__dealloc__(o);
+    __Pyx_SET_REFCNT(o, Py_REFCNT(o) - 1);
+    PyErr_Restore(etype, eval, etb);
+  }
+  #if CYTHON_USE_TYPE_SLOTS
+  (*Py_TYPE(o)->tp_free)(o);
+  #else
+  {
+    freefunc tp_free = (freefunc)PyType_GetSlot(Py_TYPE(o), Py_tp_free);
+    if (tp_free) tp_free(o);
+  }
+  #endif
+}
+
+static PyMethodDef __pyx_methods_5LR_v1_16linear_regressor_LinearRegressor[] = {
+  {"__reduce_cython__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_11__reduce_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
+  {"__setstate_cython__", (PyCFunction)(void(*)(void))(__Pyx_PyCFunction_FastCallWithKeywords)__pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_13__setstate_cython__, __Pyx_METH_FASTCALL|METH_KEYWORDS, 0},
+  {0, 0, 0, 0}
+};
+#if CYTHON_USE_TYPE_SPECS
+static PyType_Slot __pyx_type_5LR_v1_16linear_regressor_LinearRegressor_slots[] = {
+  {Py_tp_dealloc, (void *)__pyx_tp_dealloc_5LR_v1_16linear_regressor_LinearRegressor},
+  {Py_tp_methods, (void *)__pyx_methods_5LR_v1_16linear_regressor_LinearRegressor},
+  {Py_tp_new, (void *)__pyx_tp_new_5LR_v1_16linear_regressor_LinearRegressor},
+  {0, 0},
+};
+static PyType_Spec __pyx_type_5LR_v1_16linear_regressor_LinearRegressor_spec = {
+  "LR_v1.linear_regressor.LinearRegressor",
+  sizeof(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor),
+  0,
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE,
+  __pyx_type_5LR_v1_16linear_regressor_LinearRegressor_slots,
+};
+#else
+
+static PyTypeObject __pyx_type_5LR_v1_16linear_regressor_LinearRegressor = {
+  PyVarObject_HEAD_INIT(0, 0)
+  "LR_v1.linear_regressor.""LinearRegressor", /*tp_name*/
+  sizeof(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor), /*tp_basicsize*/
+  0, /*tp_itemsize*/
+  __pyx_tp_dealloc_5LR_v1_16linear_regressor_LinearRegressor, /*tp_dealloc*/
+  #if PY_VERSION_HEX < 0x030800b4
+  0, /*tp_print*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030800b4
+  0, /*tp_vectorcall_offset*/
+  #endif
+  0, /*tp_getattr*/
+  0, /*tp_setattr*/
+  0, /*tp_as_async*/
+  0, /*tp_repr*/
+  0, /*tp_as_number*/
+  0, /*tp_as_sequence*/
+  0, /*tp_as_mapping*/
+  0, /*tp_hash*/
+  0, /*tp_call*/
+  0, /*tp_str*/
+  0, /*tp_getattro*/
+  0, /*tp_setattro*/
+  0, /*tp_as_buffer*/
+  Py_TPFLAGS_DEFAULT|Py_TPFLAGS_HAVE_VERSION_TAG|Py_TPFLAGS_CHECKTYPES|Py_TPFLAGS_HAVE_NEWBUFFER|Py_TPFLAGS_BASETYPE, /*tp_flags*/
+  0, /*tp_doc*/
+  0, /*tp_traverse*/
+  0, /*tp_clear*/
+  0, /*tp_richcompare*/
+  0, /*tp_weaklistoffset*/
+  0, /*tp_iter*/
+  0, /*tp_iternext*/
+  __pyx_methods_5LR_v1_16linear_regressor_LinearRegressor, /*tp_methods*/
+  0, /*tp_members*/
+  0, /*tp_getset*/
+  0, /*tp_base*/
+  0, /*tp_dict*/
+  0, /*tp_descr_get*/
+  0, /*tp_descr_set*/
+  #if !CYTHON_USE_TYPE_SPECS
+  0, /*tp_dictoffset*/
+  #endif
+  0, /*tp_init*/
+  0, /*tp_alloc*/
+  __pyx_tp_new_5LR_v1_16linear_regressor_LinearRegressor, /*tp_new*/
+  0, /*tp_free*/
+  0, /*tp_is_gc*/
+  0, /*tp_bases*/
+  0, /*tp_mro*/
+  0, /*tp_cache*/
+  0, /*tp_subclasses*/
+  0, /*tp_weaklist*/
+  0, /*tp_del*/
+  0, /*tp_version_tag*/
+  #if CYTHON_USE_TP_FINALIZE
+  0, /*tp_finalize*/
+  #else
+  NULL, /*tp_finalize*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030800b1 && (!CYTHON_COMPILING_IN_PYPY || PYPY_VERSION_NUM >= 0x07030800)
+  0, /*tp_vectorcall*/
+  #endif
+  #if __PYX_NEED_TP_PRINT_SLOT == 1
+  0, /*tp_print*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030C0000
+  0, /*tp_watched*/
+  #endif
+  #if PY_VERSION_HEX >= 0x030d00A4
+  0, /*tp_versions_used*/
+  #endif
+  #if CYTHON_COMPILING_IN_PYPY && PY_VERSION_HEX >= 0x03090000 && PY_VERSION_HEX < 0x030a0000
+  0, /*tp_pypy_flags*/
+  #endif
+};
+#endif
 
 static PyMethodDef __pyx_methods[] = {
   {0, 0, 0, 0}
@@ -3698,10 +5445,40 @@ static int __Pyx_modinit_function_export_code(__pyx_mstatetype *__pyx_mstate) {
 static int __Pyx_modinit_type_init_code(__pyx_mstatetype *__pyx_mstate) {
   __Pyx_RefNannyDeclarations
   CYTHON_UNUSED_VAR(__pyx_mstate);
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
+  __pyx_vtabptr_5LR_v1_16linear_regressor_LinearRegressor = &__pyx_vtable_5LR_v1_16linear_regressor_LinearRegressor;
+  __pyx_vtable_5LR_v1_16linear_regressor_LinearRegressor.fit = (PyObject *(*)(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *, PyObject *, PyObject *, int __pyx_skip_dispatch))__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_fit;
+  __pyx_vtable_5LR_v1_16linear_regressor_LinearRegressor.coefficients = (PyObject *(*)(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *, int __pyx_skip_dispatch))__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_coefficients;
+  __pyx_vtable_5LR_v1_16linear_regressor_LinearRegressor.predict = (PyObject *(*)(struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *, PyObject *, int __pyx_skip_dispatch))__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict;
+  #if CYTHON_USE_TYPE_SPECS
+  __pyx_mstate->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor = (PyTypeObject *) __Pyx_PyType_FromModuleAndSpec(__pyx_m, &__pyx_type_5LR_v1_16linear_regressor_LinearRegressor_spec, NULL); if (unlikely(!__pyx_mstate->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor)) __PYX_ERR(0, 85, __pyx_L1_error)
+  if (__Pyx_fix_up_extension_type_from_spec(&__pyx_type_5LR_v1_16linear_regressor_LinearRegressor_spec, __pyx_mstate->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor) < 0) __PYX_ERR(0, 85, __pyx_L1_error)
+  #else
+  __pyx_mstate->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor = &__pyx_type_5LR_v1_16linear_regressor_LinearRegressor;
+  #endif
+  #if !CYTHON_COMPILING_IN_LIMITED_API
+  #endif
+  #if !CYTHON_USE_TYPE_SPECS
+  if (__Pyx_PyType_Ready(__pyx_mstate->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor) < 0) __PYX_ERR(0, 85, __pyx_L1_error)
+  #endif
+  #if !CYTHON_COMPILING_IN_LIMITED_API
+  if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_mstate->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor->tp_dictoffset && __pyx_mstate->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor->tp_getattro == PyObject_GenericGetAttr)) {
+    __pyx_mstate->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor->tp_getattro = PyObject_GenericGetAttr;
+  }
+  #endif
+  if (__Pyx_SetVtable(__pyx_mstate->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor, __pyx_vtabptr_5LR_v1_16linear_regressor_LinearRegressor) < 0) __PYX_ERR(0, 85, __pyx_L1_error)
+  if (__Pyx_MergeVtables(__pyx_mstate->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor) < 0) __PYX_ERR(0, 85, __pyx_L1_error)
+  if (PyObject_SetAttr(__pyx_m, __pyx_mstate_global->__pyx_n_u_LinearRegressor, (PyObject *) __pyx_mstate->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor) < 0) __PYX_ERR(0, 85, __pyx_L1_error)
+  if (__Pyx_setup_reduce((PyObject *) __pyx_mstate->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor) < 0) __PYX_ERR(0, 85, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
+  __pyx_L1_error:;
+  __Pyx_RefNannyFinishContext();
+  return -1;
 }
 
 static int __Pyx_modinit_type_import_code(__pyx_mstatetype *__pyx_mstate) {
@@ -3989,13 +5766,13 @@ __Pyx_RefNannySetupContext("PyInit_linear_regressor", 0);
   if (__pyx_AsyncGen_init(__pyx_m) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   #endif
   /*--- Library function declarations ---*/
-  if (__pyx_module_is_main_linear_regressor) {
+  if (__pyx_module_is_main_LR_v1__linear_regressor) {
     if (PyObject_SetAttr(__pyx_m, __pyx_mstate_global->__pyx_n_u_name, __pyx_mstate_global->__pyx_n_u_main) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
   }
   {
     PyObject *modules = PyImport_GetModuleDict(); if (unlikely(!modules)) __PYX_ERR(0, 1, __pyx_L1_error)
-    if (!PyDict_GetItemString(modules, "linear_regressor")) {
-      if (unlikely((PyDict_SetItemString(modules, "linear_regressor", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
+    if (!PyDict_GetItemString(modules, "LR_v1.linear_regressor")) {
+      if (unlikely((PyDict_SetItemString(modules, "LR_v1.linear_regressor", __pyx_m) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
     }
   }
   /*--- Builtin init code ---*/
@@ -4007,25 +5784,70 @@ __Pyx_RefNannySetupContext("PyInit_linear_regressor", 0);
   (void)__Pyx_modinit_global_init_code(__pyx_mstate);
   (void)__Pyx_modinit_variable_export_code(__pyx_mstate);
   (void)__Pyx_modinit_function_export_code(__pyx_mstate);
-  (void)__Pyx_modinit_type_init_code(__pyx_mstate);
+  if (unlikely((__Pyx_modinit_type_init_code(__pyx_mstate) < 0))) __PYX_ERR(0, 1, __pyx_L1_error)
   (void)__Pyx_modinit_type_import_code(__pyx_mstate);
   (void)__Pyx_modinit_variable_import_code(__pyx_mstate);
   (void)__Pyx_modinit_function_import_code(__pyx_mstate);
   /*--- Execution code ---*/
 
-  /* "linear_regressor.pyx":72
+  /* "LR_v1/linear_regressor.pyx":97
+ *             free(self.beta)
  * 
- * # Main API - Optimized version
- * def fit_linear_regression(list X_py, list y_py):             # <<<<<<<<<<<<<<
- *     """
- *     Fit a linear regression model using the OLS method - Optimized version
+ *     cpdef list fit(self, list X_py, list y_py):             # <<<<<<<<<<<<<<
+ *         cdef int n_samples = len(X_py)
+ * 
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_16linear_regressor_1fit_linear_regression, 0, __pyx_mstate_global->__pyx_n_u_fit_linear_regression, NULL, __pyx_mstate_global->__pyx_n_u_linear_regressor, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 72, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_5LR_v1_16linear_regressor_15LinearRegressor_5fit, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_LinearRegressor_fit, NULL, __pyx_mstate_global->__pyx_n_u_LR_v1_linear_regressor, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[0])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 97, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_fit_linear_regression, __pyx_t_2) < 0) __PYX_ERR(0, 72, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor, __pyx_mstate_global->__pyx_n_u_fit, __pyx_t_2) < 0) __PYX_ERR(0, 97, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "linear_regressor.pyx":1
+  /* "LR_v1/linear_regressor.pyx":150
+ *             free(X); free(y); free(X_t); free(X_t_X); free(X_t_y); free(X_t_X_inv)
+ * 
+ *     cpdef list coefficients(self):             # <<<<<<<<<<<<<<
+ *         return [self.beta[i] for i in range(self.n_features)]
+ * 
+*/
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_5LR_v1_16linear_regressor_15LinearRegressor_7coefficients, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_LinearRegressor_coefficients, NULL, __pyx_mstate_global->__pyx_n_u_LR_v1_linear_regressor, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 150, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor, __pyx_mstate_global->__pyx_n_u_coefficients, __pyx_t_2) < 0) __PYX_ERR(0, 150, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "LR_v1/linear_regressor.pyx":153
+ *         return [self.beta[i] for i in range(self.n_features)]
+ * 
+ *     cpdef list predict(self, list X_py):             # <<<<<<<<<<<<<<
+ *         cdef int n_samples = len(X_py)
+ *         cdef int raw_features = self.n_features - 1
+*/
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_5LR_v1_16linear_regressor_15LinearRegressor_9predict, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_LinearRegressor_predict, NULL, __pyx_mstate_global->__pyx_n_u_LR_v1_linear_regressor, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor, __pyx_mstate_global->__pyx_n_u_predict, __pyx_t_2) < 0) __PYX_ERR(0, 153, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "(tree fragment)":1
+ * def __reduce_cython__(self):             # <<<<<<<<<<<<<<
+ *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
+ * def __setstate_cython__(self, __pyx_state):
+*/
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_5LR_v1_16linear_regressor_15LinearRegressor_11__reduce_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_LinearRegressor___reduce_cython, NULL, __pyx_mstate_global->__pyx_n_u_LR_v1_linear_regressor, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[3])); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_reduce_cython, __pyx_t_2) < 0) __PYX_ERR(1, 1, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "(tree fragment)":3
+ * def __reduce_cython__(self):
+ *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
+ * def __setstate_cython__(self, __pyx_state):             # <<<<<<<<<<<<<<
+ *     raise TypeError, "no default __reduce__ due to non-trivial __cinit__"
+*/
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_5LR_v1_16linear_regressor_15LinearRegressor_13__setstate_cython__, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_LinearRegressor___setstate_cytho, NULL, __pyx_mstate_global->__pyx_n_u_LR_v1_linear_regressor, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[4])); if (unlikely(!__pyx_t_2)) __PYX_ERR(1, 3, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  if (PyDict_SetItem(__pyx_mstate_global->__pyx_d, __pyx_mstate_global->__pyx_n_u_setstate_cython, __pyx_t_2) < 0) __PYX_ERR(1, 3, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+
+  /* "LR_v1/linear_regressor.pyx":1
  * # cython: language_level=3             # <<<<<<<<<<<<<<
  * # cython: boundscheck=False
  * # cython: wraparound=False
@@ -4042,7 +5864,7 @@ __Pyx_RefNannySetupContext("PyInit_linear_regressor", 0);
   __Pyx_XDECREF(__pyx_t_2);
   if (__pyx_m) {
     if (__pyx_mstate->__pyx_d && stringtab_initialized) {
-      __Pyx_AddTraceback("init linear_regressor", __pyx_clineno, __pyx_lineno, __pyx_filename);
+      __Pyx_AddTraceback("init LR_v1.linear_regressor", __pyx_clineno, __pyx_lineno, __pyx_filename);
     }
     #if !CYTHON_USE_MODULE_STATE
     Py_CLEAR(__pyx_m);
@@ -4056,7 +5878,7 @@ __Pyx_RefNannySetupContext("PyInit_linear_regressor", 0);
     }
     #endif
   } else if (!PyErr_Occurred()) {
-    PyErr_SetString(PyExc_ImportError, "init linear_regressor");
+    PyErr_SetString(PyExc_ImportError, "init LR_v1.linear_regressor");
   }
   __pyx_L0:;
   __Pyx_RefNannyFinishContext();
@@ -4094,41 +5916,55 @@ typedef struct {
 static const char * const __pyx_string_tab_encodings[] = { 0 };
 static const __Pyx_StringTabEntry __pyx_string_tab[] = {
   {__pyx_k_, sizeof(__pyx_k_), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_ */
-  {__pyx_k_Could_not_allocate_memory, sizeof(__pyx_k_Could_not_allocate_memory), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_Could_not_allocate_memory */
-  {__pyx_k_Matrix_not_invertible_det_0, sizeof(__pyx_k_Matrix_not_invertible_det_0), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_Matrix_not_invertible_det_0 */
+  {__pyx_k_All_rows_in_X_must_have_the_same, sizeof(__pyx_k_All_rows_in_X_must_have_the_same), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_All_rows_in_X_must_have_the_same */
+  {__pyx_k_Allocation_failed, sizeof(__pyx_k_Allocation_failed), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_Allocation_failed */
+  {__pyx_k_Beta_allocation_failed, sizeof(__pyx_k_Beta_allocation_failed), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_Beta_allocation_failed */
+  {__pyx_k_LR_v1_linear_regressor, sizeof(__pyx_k_LR_v1_linear_regressor), 0, 1, 1}, /* PyObject cname: __pyx_n_u_LR_v1_linear_regressor */
+  {__pyx_k_LR_v1_linear_regressor_pyx, sizeof(__pyx_k_LR_v1_linear_regressor_pyx), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_LR_v1_linear_regressor_pyx */
+  {__pyx_k_LinearRegressor, sizeof(__pyx_k_LinearRegressor), 0, 1, 1}, /* PyObject cname: __pyx_n_u_LinearRegressor */
+  {__pyx_k_LinearRegressor___reduce_cython, sizeof(__pyx_k_LinearRegressor___reduce_cython), 0, 1, 1}, /* PyObject cname: __pyx_n_u_LinearRegressor___reduce_cython */
+  {__pyx_k_LinearRegressor___setstate_cytho, sizeof(__pyx_k_LinearRegressor___setstate_cytho), 0, 1, 1}, /* PyObject cname: __pyx_n_u_LinearRegressor___setstate_cytho */
+  {__pyx_k_LinearRegressor_coefficients, sizeof(__pyx_k_LinearRegressor_coefficients), 0, 1, 1}, /* PyObject cname: __pyx_n_u_LinearRegressor_coefficients */
+  {__pyx_k_LinearRegressor_fit, sizeof(__pyx_k_LinearRegressor_fit), 0, 1, 1}, /* PyObject cname: __pyx_n_u_LinearRegressor_fit */
+  {__pyx_k_LinearRegressor_predict, sizeof(__pyx_k_LinearRegressor_predict), 0, 1, 1}, /* PyObject cname: __pyx_n_u_LinearRegressor_predict */
+  {__pyx_k_Matrix_not_invertible, sizeof(__pyx_k_Matrix_not_invertible), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_Matrix_not_invertible */
   {__pyx_k_MemoryError, sizeof(__pyx_k_MemoryError), 0, 1, 1}, /* PyObject cname: __pyx_n_u_MemoryError */
   {__pyx_k_Note_that_Cython_is_deliberately, sizeof(__pyx_k_Note_that_Cython_is_deliberately), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_Note_that_Cython_is_deliberately */
-  {__pyx_k_Only_2_features_are_supported_in, sizeof(__pyx_k_Only_2_features_are_supported_in), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_Only_2_features_are_supported_in */
+  {__pyx_k_TypeError, sizeof(__pyx_k_TypeError), 0, 1, 1}, /* PyObject cname: __pyx_n_u_TypeError */
   {__pyx_k_ValueError, sizeof(__pyx_k_ValueError), 0, 1, 1}, /* PyObject cname: __pyx_n_u_ValueError */
-  {__pyx_k_X, sizeof(__pyx_k_X), 0, 1, 1}, /* PyObject cname: __pyx_n_u_X */
+  {__pyx_k_X_and_y_must_have_the_same_numbe, sizeof(__pyx_k_X_and_y_must_have_the_same_numbe), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_X_and_y_must_have_the_same_numbe */
   {__pyx_k_X_py, sizeof(__pyx_k_X_py), 0, 1, 1}, /* PyObject cname: __pyx_n_u_X_py */
-  {__pyx_k_X_t, sizeof(__pyx_k_X_t), 0, 1, 1}, /* PyObject cname: __pyx_n_u_X_t */
-  {__pyx_k_X_t_X, sizeof(__pyx_k_X_t_X), 0, 1, 1}, /* PyObject cname: __pyx_n_u_X_t_X */
-  {__pyx_k_X_t_X_inv, sizeof(__pyx_k_X_t_X_inv), 0, 1, 1}, /* PyObject cname: __pyx_n_u_X_t_X_inv */
-  {__pyx_k_X_t_y, sizeof(__pyx_k_X_t_y), 0, 1, 1}, /* PyObject cname: __pyx_n_u_X_t_y */
   {__pyx_k_add_note, sizeof(__pyx_k_add_note), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_add_note */
   {__pyx_k_asyncio_coroutines, sizeof(__pyx_k_asyncio_coroutines), 0, 1, 1}, /* PyObject cname: __pyx_n_u_asyncio_coroutines */
-  {__pyx_k_beta, sizeof(__pyx_k_beta), 0, 1, 1}, /* PyObject cname: __pyx_n_u_beta */
   {__pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 1, 1}, /* PyObject cname: __pyx_n_u_cline_in_traceback */
-  {__pyx_k_fit_linear_regression, sizeof(__pyx_k_fit_linear_regression), 0, 1, 1}, /* PyObject cname: __pyx_n_u_fit_linear_regression */
+  {__pyx_k_coefficients, sizeof(__pyx_k_coefficients), 0, 1, 1}, /* PyObject cname: __pyx_n_u_coefficients */
+  {__pyx_k_disable, sizeof(__pyx_k_disable), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_disable */
+  {__pyx_k_enable, sizeof(__pyx_k_enable), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_enable */
+  {__pyx_k_fit, sizeof(__pyx_k_fit), 0, 1, 1}, /* PyObject cname: __pyx_n_u_fit */
   {__pyx_k_func, sizeof(__pyx_k_func), 0, 1, 1}, /* PyObject cname: __pyx_n_u_func */
-  {__pyx_k_i, sizeof(__pyx_k_i), 0, 1, 1}, /* PyObject cname: __pyx_n_u_i */
+  {__pyx_k_gc, sizeof(__pyx_k_gc), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_gc */
+  {__pyx_k_getstate, sizeof(__pyx_k_getstate), 0, 1, 1}, /* PyObject cname: __pyx_n_u_getstate */
   {__pyx_k_is_coroutine, sizeof(__pyx_k_is_coroutine), 0, 1, 1}, /* PyObject cname: __pyx_n_u_is_coroutine */
-  {__pyx_k_j, sizeof(__pyx_k_j), 0, 1, 1}, /* PyObject cname: __pyx_n_u_j */
-  {__pyx_k_linear_regressor, sizeof(__pyx_k_linear_regressor), 0, 1, 1}, /* PyObject cname: __pyx_n_u_linear_regressor */
-  {__pyx_k_linear_regressor_pyx, sizeof(__pyx_k_linear_regressor_pyx), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_linear_regressor_pyx */
+  {__pyx_k_isenabled, sizeof(__pyx_k_isenabled), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_isenabled */
   {__pyx_k_main, sizeof(__pyx_k_main), 0, 1, 1}, /* PyObject cname: __pyx_n_u_main */
   {__pyx_k_module, sizeof(__pyx_k_module), 0, 1, 1}, /* PyObject cname: __pyx_n_u_module */
-  {__pyx_k_n_features, sizeof(__pyx_k_n_features), 0, 1, 1}, /* PyObject cname: __pyx_n_u_n_features */
-  {__pyx_k_n_samples, sizeof(__pyx_k_n_samples), 0, 1, 1}, /* PyObject cname: __pyx_n_u_n_samples */
   {__pyx_k_name, sizeof(__pyx_k_name), 0, 1, 1}, /* PyObject cname: __pyx_n_u_name */
+  {__pyx_k_no_default___reduce___due_to_non, sizeof(__pyx_k_no_default___reduce___due_to_non), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_no_default___reduce___due_to_non */
   {__pyx_k_pop, sizeof(__pyx_k_pop), 0, 1, 1}, /* PyObject cname: __pyx_n_u_pop */
+  {__pyx_k_predict, sizeof(__pyx_k_predict), 0, 1, 1}, /* PyObject cname: __pyx_n_u_predict */
+  {__pyx_k_pyx_state, sizeof(__pyx_k_pyx_state), 0, 1, 1}, /* PyObject cname: __pyx_n_u_pyx_state */
+  {__pyx_k_pyx_vtable, sizeof(__pyx_k_pyx_vtable), 0, 1, 1}, /* PyObject cname: __pyx_n_u_pyx_vtable */
   {__pyx_k_qualname, sizeof(__pyx_k_qualname), 0, 1, 1}, /* PyObject cname: __pyx_n_u_qualname */
   {__pyx_k_range, sizeof(__pyx_k_range), 0, 1, 1}, /* PyObject cname: __pyx_n_u_range */
-  {__pyx_k_result, sizeof(__pyx_k_result), 0, 1, 1}, /* PyObject cname: __pyx_n_u_result */
+  {__pyx_k_reduce, sizeof(__pyx_k_reduce), 0, 1, 1}, /* PyObject cname: __pyx_n_u_reduce */
+  {__pyx_k_reduce_cython, sizeof(__pyx_k_reduce_cython), 0, 1, 1}, /* PyObject cname: __pyx_n_u_reduce_cython */
+  {__pyx_k_reduce_ex, sizeof(__pyx_k_reduce_ex), 0, 1, 1}, /* PyObject cname: __pyx_n_u_reduce_ex */
+  {__pyx_k_self, sizeof(__pyx_k_self), 0, 1, 1}, /* PyObject cname: __pyx_n_u_self */
   {__pyx_k_set_name, sizeof(__pyx_k_set_name), 0, 1, 1}, /* PyObject cname: __pyx_n_u_set_name */
+  {__pyx_k_setstate, sizeof(__pyx_k_setstate), 0, 1, 1}, /* PyObject cname: __pyx_n_u_setstate */
+  {__pyx_k_setstate_cython, sizeof(__pyx_k_setstate_cython), 0, 1, 1}, /* PyObject cname: __pyx_n_u_setstate_cython */
+  {__pyx_k_stringsource, sizeof(__pyx_k_stringsource), 0, 1, 0}, /* PyObject cname: __pyx_kp_u_stringsource */
   {__pyx_k_test, sizeof(__pyx_k_test), 0, 1, 1}, /* PyObject cname: __pyx_n_u_test */
-  {__pyx_k_y, sizeof(__pyx_k_y), 0, 1, 1}, /* PyObject cname: __pyx_n_u_y */
   {__pyx_k_y_py, sizeof(__pyx_k_y_py), 0, 1, 1}, /* PyObject cname: __pyx_n_u_y_py */
   {0, 0, 0, 0, 0}
 };
@@ -4139,9 +5975,10 @@ static int __Pyx_InitStrings(__Pyx_StringTabEntry const *t, PyObject **target, c
 
 static int __Pyx_InitCachedBuiltins(__pyx_mstatetype *__pyx_mstate) {
   CYTHON_UNUSED_VAR(__pyx_mstate);
-  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_range); if (!__pyx_builtin_range) __PYX_ERR(0, 17, __pyx_L1_error)
-  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 82, __pyx_L1_error)
-  __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(0, 102, __pyx_L1_error)
+  __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_range); if (!__pyx_builtin_range) __PYX_ERR(0, 14, __pyx_L1_error)
+  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 101, __pyx_L1_error)
+  __pyx_builtin_MemoryError = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_MemoryError); if (!__pyx_builtin_MemoryError) __PYX_ERR(0, 121, __pyx_L1_error)
+  __pyx_builtin_TypeError = __Pyx_GetBuiltinName(__pyx_mstate->__pyx_n_u_TypeError); if (!__pyx_builtin_TypeError) __PYX_ERR(1, 2, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -4172,9 +6009,9 @@ static int __Pyx_InitConstants(__pyx_mstatetype *__pyx_mstate) {
             unsigned int argcount : 2;
             unsigned int num_posonly_args : 1;
             unsigned int num_kwonly_args : 1;
-            unsigned int nlocals : 4;
+            unsigned int nlocals : 2;
             unsigned int flags : 10;
-            unsigned int first_line : 7;
+            unsigned int first_line : 8;
             unsigned int line_table_length : 14;
         } __Pyx_PyCode_New_function_description;
 /* NewCodeObj.proto */
@@ -4192,9 +6029,29 @@ static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
   PyObject* tuple_dedup_map = PyDict_New();
   if (unlikely(!tuple_dedup_map)) return -1;
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 15, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 72, 507};
-    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_X_py, __pyx_mstate->__pyx_n_u_y_py, __pyx_mstate->__pyx_n_u_n_samples, __pyx_mstate->__pyx_n_u_n_features, __pyx_mstate->__pyx_n_u_X, __pyx_mstate->__pyx_n_u_y, __pyx_mstate->__pyx_n_u_X_t, __pyx_mstate->__pyx_n_u_X_t_X, __pyx_mstate->__pyx_n_u_X_t_y, __pyx_mstate->__pyx_n_u_X_t_X_inv, __pyx_mstate->__pyx_n_u_beta, __pyx_mstate->__pyx_n_u_i, __pyx_mstate->__pyx_n_u_j, __pyx_mstate->__pyx_n_u_result, __pyx_mstate->__pyx_n_u_i};
-    __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_linear_regressor_pyx, __pyx_mstate->__pyx_n_u_fit_linear_regression, __pyx_k_AQ_Qd_1_Q_j_YfAZr_Ba_YfAZr_y_a, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 97, 567};
+    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_X_py, __pyx_mstate->__pyx_n_u_y_py};
+    __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_LR_v1_linear_regressor_pyx, __pyx_mstate->__pyx_n_u_fit, __pyx_k_A_S_S_1A_AQ_1D_G1_s_5_1_j_m2Q_N, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
+  }
+  {
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 150, 27};
+    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self};
+    __pyx_mstate_global->__pyx_codeobj_tab[1] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_LR_v1_linear_regressor_pyx, __pyx_mstate->__pyx_n_u_coefficients, __pyx_k_A_q_E_T_e1D, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[1])) goto bad;
+  }
+  {
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 153, 225};
+    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_X_py};
+    __pyx_mstate_global->__pyx_codeobj_tab[2] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_LR_v1_linear_regressor_pyx, __pyx_mstate->__pyx_n_u_predict, __pyx_k_A_S_L_2T_Rq_ivQj_4r_D_T_Qa_U_1_B, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[2])) goto bad;
+  }
+  {
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 1, 9};
+    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self};
+    __pyx_mstate_global->__pyx_codeobj_tab[3] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_stringsource, __pyx_mstate->__pyx_n_u_reduce_cython, __pyx_k_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[3])) goto bad;
+  }
+  {
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 3, 9};
+    PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_pyx_state};
+    __pyx_mstate_global->__pyx_codeobj_tab[4] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_stringsource, __pyx_mstate->__pyx_n_u_setstate_cython, __pyx_k_Q, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[4])) goto bad;
   }
   Py_DECREF(tuple_dedup_map);
   return 0;
@@ -4651,14 +6508,78 @@ bad:
 #endif
 #endif
 
-/* RaiseDoubleKeywords */
-static void __Pyx_RaiseDoubleKeywordsError(
+/* RaiseArgTupleInvalid */
+static void __Pyx_RaiseArgtupleInvalid(
     const char* func_name,
-    PyObject* kw_name)
+    int exact,
+    Py_ssize_t num_min,
+    Py_ssize_t num_max,
+    Py_ssize_t num_found)
 {
+    Py_ssize_t num_expected;
+    const char *more_or_less;
+    if (num_found < num_min) {
+        num_expected = num_min;
+        more_or_less = "at least";
+    } else {
+        num_expected = num_max;
+        more_or_less = "at most";
+    }
+    if (exact) {
+        more_or_less = "exactly";
+    }
     PyErr_Format(PyExc_TypeError,
-        "%s() got multiple values for keyword argument '%U'", func_name, kw_name);
+                 "%.200s() takes %.8s %" CYTHON_FORMAT_SSIZE_T "d positional argument%.1s (%" CYTHON_FORMAT_SSIZE_T "d given)",
+                 func_name, more_or_less, num_expected,
+                 (num_expected == 1) ? "" : "s", num_found);
 }
+
+/* RejectKeywords */
+static void __Pyx_RejectKeywords(const char* function_name, PyObject *kwds) {
+    PyObject *key = NULL;
+    if (CYTHON_METH_FASTCALL && likely(PyTuple_Check(kwds))) {
+        key = __Pyx_PySequence_ITEM(kwds, 0);
+    } else {
+        Py_ssize_t pos = 0;
+#if !CYTHON_COMPILING_IN_PYPY || defined(PyArg_ValidateKeywordArguments)
+        if (unlikely(!PyArg_ValidateKeywordArguments(kwds))) return;
+#endif
+        PyDict_Next(kwds, &pos, &key, NULL);
+        Py_INCREF(key);
+    }
+    if (likely(key)) {
+        PyErr_Format(PyExc_TypeError,
+            "%s() got an unexpected keyword argument '%U'",
+            function_name, key);
+        Py_DECREF(key);
+    }
+}
+
+/* PyDictVersioning */
+#if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_TYPE_SLOTS
+static CYTHON_INLINE PY_UINT64_T __Pyx_get_tp_dict_version(PyObject *obj) {
+    PyObject *dict = Py_TYPE(obj)->tp_dict;
+    return likely(dict) ? __PYX_GET_DICT_VERSION(dict) : 0;
+}
+static CYTHON_INLINE PY_UINT64_T __Pyx_get_object_dict_version(PyObject *obj) {
+    PyObject **dictptr = NULL;
+    Py_ssize_t offset = Py_TYPE(obj)->tp_dictoffset;
+    if (offset) {
+#if CYTHON_COMPILING_IN_CPYTHON
+        dictptr = (likely(offset > 0)) ? (PyObject **) ((char *)obj + offset) : _PyObject_GetDictPtr(obj);
+#else
+        dictptr = _PyObject_GetDictPtr(obj);
+#endif
+    }
+    return (dictptr && *dictptr) ? __PYX_GET_DICT_VERSION(*dictptr) : 0;
+}
+static CYTHON_INLINE int __Pyx_object_dict_version_matches(PyObject* obj, PY_UINT64_T tp_dict_version, PY_UINT64_T obj_dict_version) {
+    PyObject *dict = Py_TYPE(obj)->tp_dict;
+    if (unlikely(!dict) || unlikely(tp_dict_version != __PYX_GET_DICT_VERSION(dict)))
+        return 0;
+    return obj_dict_version == __Pyx_get_object_dict_version(obj);
+}
+#endif
 
 /* PyFunctionFastCall */
 #if CYTHON_FAST_PYCALL && !CYTHON_VECTORCALL
@@ -4901,6 +6822,466 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_FastCallDict(PyObject *func, PyObj
     #else
     return __Pyx_PyObject_FastCall_fallback(func, args, (size_t)nargs, kwargs);
     #endif
+}
+
+/* RaiseUnexpectedTypeError */
+static int
+__Pyx_RaiseUnexpectedTypeError(const char *expected, PyObject *obj)
+{
+    __Pyx_TypeName obj_type_name = __Pyx_PyType_GetFullyQualifiedName(Py_TYPE(obj));
+    PyErr_Format(PyExc_TypeError, "Expected %s, got " __Pyx_FMT_TYPENAME,
+                 expected, obj_type_name);
+    __Pyx_DECREF_TypeName(obj_type_name);
+    return 0;
+}
+
+/* RaiseException */
+static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause) {
+    PyObject* owned_instance = NULL;
+    if (tb == Py_None) {
+        tb = 0;
+    } else if (tb && !PyTraceBack_Check(tb)) {
+        PyErr_SetString(PyExc_TypeError,
+            "raise: arg 3 must be a traceback or None");
+        goto bad;
+    }
+    if (value == Py_None)
+        value = 0;
+    if (PyExceptionInstance_Check(type)) {
+        if (value) {
+            PyErr_SetString(PyExc_TypeError,
+                "instance exception may not have a separate value");
+            goto bad;
+        }
+        value = type;
+        type = (PyObject*) Py_TYPE(value);
+    } else if (PyExceptionClass_Check(type)) {
+        PyObject *instance_class = NULL;
+        if (value && PyExceptionInstance_Check(value)) {
+            instance_class = (PyObject*) Py_TYPE(value);
+            if (instance_class != type) {
+                int is_subclass = PyObject_IsSubclass(instance_class, type);
+                if (!is_subclass) {
+                    instance_class = NULL;
+                } else if (unlikely(is_subclass == -1)) {
+                    goto bad;
+                } else {
+                    type = instance_class;
+                }
+            }
+        }
+        if (!instance_class) {
+            PyObject *args;
+            if (!value)
+                args = PyTuple_New(0);
+            else if (PyTuple_Check(value)) {
+                Py_INCREF(value);
+                args = value;
+            } else
+                args = PyTuple_Pack(1, value);
+            if (!args)
+                goto bad;
+            owned_instance = PyObject_Call(type, args, NULL);
+            Py_DECREF(args);
+            if (!owned_instance)
+                goto bad;
+            value = owned_instance;
+            if (!PyExceptionInstance_Check(value)) {
+                PyErr_Format(PyExc_TypeError,
+                             "calling %R should have returned an instance of "
+                             "BaseException, not %R",
+                             type, Py_TYPE(value));
+                goto bad;
+            }
+        }
+    } else {
+        PyErr_SetString(PyExc_TypeError,
+            "raise: exception class must be a subclass of BaseException");
+        goto bad;
+    }
+    if (cause) {
+        PyObject *fixed_cause;
+        if (cause == Py_None) {
+            fixed_cause = NULL;
+        } else if (PyExceptionClass_Check(cause)) {
+            fixed_cause = PyObject_CallObject(cause, NULL);
+            if (fixed_cause == NULL)
+                goto bad;
+        } else if (PyExceptionInstance_Check(cause)) {
+            fixed_cause = cause;
+            Py_INCREF(fixed_cause);
+        } else {
+            PyErr_SetString(PyExc_TypeError,
+                            "exception causes must derive from "
+                            "BaseException");
+            goto bad;
+        }
+        PyException_SetCause(value, fixed_cause);
+    }
+    PyErr_SetObject(type, value);
+    if (tb) {
+#if PY_VERSION_HEX >= 0x030C00A6
+        PyException_SetTraceback(value, tb);
+#elif CYTHON_FAST_THREAD_STATE
+        PyThreadState *tstate = __Pyx_PyThreadState_Current;
+        PyObject* tmp_tb = tstate->curexc_traceback;
+        if (tb != tmp_tb) {
+            Py_INCREF(tb);
+            tstate->curexc_traceback = tb;
+            Py_XDECREF(tmp_tb);
+        }
+#else
+        PyObject *tmp_type, *tmp_value, *tmp_tb;
+        PyErr_Fetch(&tmp_type, &tmp_value, &tmp_tb);
+        Py_INCREF(tb);
+        PyErr_Restore(tmp_type, tmp_value, tb);
+        Py_XDECREF(tmp_tb);
+#endif
+    }
+bad:
+    Py_XDECREF(owned_instance);
+    return;
+}
+
+/* GetItemInt */
+static PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j) {
+    PyObject *r;
+    if (unlikely(!j)) return NULL;
+    r = PyObject_GetItem(o, j);
+    Py_DECREF(j);
+    return r;
+}
+static CYTHON_INLINE PyObject *__Pyx_GetItemInt_List_Fast(PyObject *o, Py_ssize_t i,
+                                                              CYTHON_NCP_UNUSED int wraparound,
+                                                              CYTHON_NCP_UNUSED int boundscheck) {
+#if CYTHON_ASSUME_SAFE_MACROS && CYTHON_ASSUME_SAFE_SIZE && !CYTHON_AVOID_BORROWED_REFS && !CYTHON_AVOID_THREAD_UNSAFE_BORROWED_REFS
+    Py_ssize_t wrapped_i = i;
+    if (wraparound & unlikely(i < 0)) {
+        wrapped_i += PyList_GET_SIZE(o);
+    }
+    if ((!boundscheck) || likely(__Pyx_is_valid_index(wrapped_i, PyList_GET_SIZE(o)))) {
+        PyObject *r = PyList_GET_ITEM(o, wrapped_i);
+        Py_INCREF(r);
+        return r;
+    }
+    return __Pyx_GetItemInt_Generic(o, PyLong_FromSsize_t(i));
+#else
+    return PySequence_GetItem(o, i);
+#endif
+}
+static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Tuple_Fast(PyObject *o, Py_ssize_t i,
+                                                              CYTHON_NCP_UNUSED int wraparound,
+                                                              CYTHON_NCP_UNUSED int boundscheck) {
+#if CYTHON_ASSUME_SAFE_MACROS && CYTHON_ASSUME_SAFE_SIZE && !CYTHON_AVOID_BORROWED_REFS
+    Py_ssize_t wrapped_i = i;
+    if (wraparound & unlikely(i < 0)) {
+        wrapped_i += PyTuple_GET_SIZE(o);
+    }
+    if ((!boundscheck) || likely(__Pyx_is_valid_index(wrapped_i, PyTuple_GET_SIZE(o)))) {
+        PyObject *r = PyTuple_GET_ITEM(o, wrapped_i);
+        Py_INCREF(r);
+        return r;
+    }
+    return __Pyx_GetItemInt_Generic(o, PyLong_FromSsize_t(i));
+#else
+    return PySequence_GetItem(o, i);
+#endif
+}
+static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i, int is_list,
+                                                     CYTHON_NCP_UNUSED int wraparound,
+                                                     CYTHON_NCP_UNUSED int boundscheck) {
+#if CYTHON_ASSUME_SAFE_MACROS && CYTHON_ASSUME_SAFE_SIZE && !CYTHON_AVOID_BORROWED_REFS && CYTHON_USE_TYPE_SLOTS
+    if (is_list || PyList_CheckExact(o)) {
+        Py_ssize_t n = ((!wraparound) | likely(i >= 0)) ? i : i + PyList_GET_SIZE(o);
+        if ((!boundscheck) || (likely(__Pyx_is_valid_index(n, PyList_GET_SIZE(o))))) {
+            return __Pyx_PyList_GetItemRef(o, n);
+        }
+    }
+    else if (PyTuple_CheckExact(o)) {
+        Py_ssize_t n = ((!wraparound) | likely(i >= 0)) ? i : i + PyTuple_GET_SIZE(o);
+        if ((!boundscheck) || likely(__Pyx_is_valid_index(n, PyTuple_GET_SIZE(o)))) {
+            PyObject *r = PyTuple_GET_ITEM(o, n);
+            Py_INCREF(r);
+            return r;
+        }
+    } else {
+        PyMappingMethods *mm = Py_TYPE(o)->tp_as_mapping;
+        PySequenceMethods *sm = Py_TYPE(o)->tp_as_sequence;
+        if (mm && mm->mp_subscript) {
+            PyObject *r, *key = PyLong_FromSsize_t(i);
+            if (unlikely(!key)) return NULL;
+            r = mm->mp_subscript(o, key);
+            Py_DECREF(key);
+            return r;
+        }
+        if (likely(sm && sm->sq_item)) {
+            if (wraparound && unlikely(i < 0) && likely(sm->sq_length)) {
+                Py_ssize_t l = sm->sq_length(o);
+                if (likely(l >= 0)) {
+                    i += l;
+                } else {
+                    if (!PyErr_ExceptionMatches(PyExc_OverflowError))
+                        return NULL;
+                    PyErr_Clear();
+                }
+            }
+            return sm->sq_item(o, i);
+        }
+    }
+#else
+    if (is_list || !PyMapping_Check(o)) {
+        return PySequence_GetItem(o, i);
+    }
+#endif
+    return __Pyx_GetItemInt_Generic(o, PyLong_FromSsize_t(i));
+}
+
+/* GetException */
+#if CYTHON_FAST_THREAD_STATE
+static int __Pyx__GetException(PyThreadState *tstate, PyObject **type, PyObject **value, PyObject **tb)
+#else
+static int __Pyx_GetException(PyObject **type, PyObject **value, PyObject **tb)
+#endif
+{
+    PyObject *local_type = NULL, *local_value, *local_tb = NULL;
+#if CYTHON_FAST_THREAD_STATE
+    PyObject *tmp_type, *tmp_value, *tmp_tb;
+  #if PY_VERSION_HEX >= 0x030C0000
+    local_value = tstate->current_exception;
+    tstate->current_exception = 0;
+  #else
+    local_type = tstate->curexc_type;
+    local_value = tstate->curexc_value;
+    local_tb = tstate->curexc_traceback;
+    tstate->curexc_type = 0;
+    tstate->curexc_value = 0;
+    tstate->curexc_traceback = 0;
+  #endif
+#elif __PYX_LIMITED_VERSION_HEX > 0x030C0000
+    local_value = PyErr_GetRaisedException();
+#else
+    PyErr_Fetch(&local_type, &local_value, &local_tb);
+#endif
+#if __PYX_LIMITED_VERSION_HEX > 0x030C0000
+    if (likely(local_value)) {
+        local_type = (PyObject*) Py_TYPE(local_value);
+        Py_INCREF(local_type);
+        local_tb = PyException_GetTraceback(local_value);
+    }
+#else
+    PyErr_NormalizeException(&local_type, &local_value, &local_tb);
+#if CYTHON_FAST_THREAD_STATE
+    if (unlikely(tstate->curexc_type))
+#else
+    if (unlikely(PyErr_Occurred()))
+#endif
+        goto bad;
+    if (local_tb) {
+        if (unlikely(PyException_SetTraceback(local_value, local_tb) < 0))
+            goto bad;
+    }
+#endif // __PYX_LIMITED_VERSION_HEX > 0x030C0000
+    Py_XINCREF(local_tb);
+    Py_XINCREF(local_type);
+    Py_XINCREF(local_value);
+    *type = local_type;
+    *value = local_value;
+    *tb = local_tb;
+#if CYTHON_FAST_THREAD_STATE
+    #if CYTHON_USE_EXC_INFO_STACK
+    {
+        _PyErr_StackItem *exc_info = tstate->exc_info;
+      #if PY_VERSION_HEX >= 0x030B00a4
+        tmp_value = exc_info->exc_value;
+        exc_info->exc_value = local_value;
+        tmp_type = NULL;
+        tmp_tb = NULL;
+        Py_XDECREF(local_type);
+        Py_XDECREF(local_tb);
+      #else
+        tmp_type = exc_info->exc_type;
+        tmp_value = exc_info->exc_value;
+        tmp_tb = exc_info->exc_traceback;
+        exc_info->exc_type = local_type;
+        exc_info->exc_value = local_value;
+        exc_info->exc_traceback = local_tb;
+      #endif
+    }
+    #else
+    tmp_type = tstate->exc_type;
+    tmp_value = tstate->exc_value;
+    tmp_tb = tstate->exc_traceback;
+    tstate->exc_type = local_type;
+    tstate->exc_value = local_value;
+    tstate->exc_traceback = local_tb;
+    #endif
+    Py_XDECREF(tmp_type);
+    Py_XDECREF(tmp_value);
+    Py_XDECREF(tmp_tb);
+#elif __PYX_LIMITED_VERSION_HEX >= 0x030b0000
+    PyErr_SetHandledException(local_value);
+    Py_XDECREF(local_value);
+    Py_XDECREF(local_type);
+    Py_XDECREF(local_tb);
+#else
+    PyErr_SetExcInfo(local_type, local_value, local_tb);
+#endif
+    return 0;
+#if __PYX_LIMITED_VERSION_HEX <= 0x030C0000
+bad:
+    *type = 0;
+    *value = 0;
+    *tb = 0;
+    Py_XDECREF(local_type);
+    Py_XDECREF(local_value);
+    Py_XDECREF(local_tb);
+    return -1;
+#endif
+}
+
+/* SwapException */
+#if CYTHON_FAST_THREAD_STATE
+static CYTHON_INLINE void __Pyx__ExceptionSwap(PyThreadState *tstate, PyObject **type, PyObject **value, PyObject **tb) {
+    PyObject *tmp_type, *tmp_value, *tmp_tb;
+  #if CYTHON_USE_EXC_INFO_STACK && PY_VERSION_HEX >= 0x030B00a4
+    _PyErr_StackItem *exc_info = tstate->exc_info;
+    tmp_value = exc_info->exc_value;
+    exc_info->exc_value = *value;
+    if (tmp_value == NULL || tmp_value == Py_None) {
+        Py_XDECREF(tmp_value);
+        tmp_value = NULL;
+        tmp_type = NULL;
+        tmp_tb = NULL;
+    } else {
+        tmp_type = (PyObject*) Py_TYPE(tmp_value);
+        Py_INCREF(tmp_type);
+        #if CYTHON_COMPILING_IN_CPYTHON
+        tmp_tb = ((PyBaseExceptionObject*) tmp_value)->traceback;
+        Py_XINCREF(tmp_tb);
+        #else
+        tmp_tb = PyException_GetTraceback(tmp_value);
+        #endif
+    }
+  #elif CYTHON_USE_EXC_INFO_STACK
+    _PyErr_StackItem *exc_info = tstate->exc_info;
+    tmp_type = exc_info->exc_type;
+    tmp_value = exc_info->exc_value;
+    tmp_tb = exc_info->exc_traceback;
+    exc_info->exc_type = *type;
+    exc_info->exc_value = *value;
+    exc_info->exc_traceback = *tb;
+  #else
+    tmp_type = tstate->exc_type;
+    tmp_value = tstate->exc_value;
+    tmp_tb = tstate->exc_traceback;
+    tstate->exc_type = *type;
+    tstate->exc_value = *value;
+    tstate->exc_traceback = *tb;
+  #endif
+    *type = tmp_type;
+    *value = tmp_value;
+    *tb = tmp_tb;
+}
+#else
+static CYTHON_INLINE void __Pyx_ExceptionSwap(PyObject **type, PyObject **value, PyObject **tb) {
+    PyObject *tmp_type, *tmp_value, *tmp_tb;
+    PyErr_GetExcInfo(&tmp_type, &tmp_value, &tmp_tb);
+    PyErr_SetExcInfo(*type, *value, *tb);
+    *type = tmp_type;
+    *value = tmp_value;
+    *tb = tmp_tb;
+}
+#endif
+
+/* GetTopmostException */
+#if CYTHON_USE_EXC_INFO_STACK && CYTHON_FAST_THREAD_STATE
+static _PyErr_StackItem *
+__Pyx_PyErr_GetTopmostException(PyThreadState *tstate)
+{
+    _PyErr_StackItem *exc_info = tstate->exc_info;
+    while ((exc_info->exc_value == NULL || exc_info->exc_value == Py_None) &&
+           exc_info->previous_item != NULL)
+    {
+        exc_info = exc_info->previous_item;
+    }
+    return exc_info;
+}
+#endif
+
+/* SaveResetException */
+#if CYTHON_FAST_THREAD_STATE
+static CYTHON_INLINE void __Pyx__ExceptionSave(PyThreadState *tstate, PyObject **type, PyObject **value, PyObject **tb) {
+  #if CYTHON_USE_EXC_INFO_STACK && PY_VERSION_HEX >= 0x030B00a4
+    _PyErr_StackItem *exc_info = __Pyx_PyErr_GetTopmostException(tstate);
+    PyObject *exc_value = exc_info->exc_value;
+    if (exc_value == NULL || exc_value == Py_None) {
+        *value = NULL;
+        *type = NULL;
+        *tb = NULL;
+    } else {
+        *value = exc_value;
+        Py_INCREF(*value);
+        *type = (PyObject*) Py_TYPE(exc_value);
+        Py_INCREF(*type);
+        *tb = PyException_GetTraceback(exc_value);
+    }
+  #elif CYTHON_USE_EXC_INFO_STACK
+    _PyErr_StackItem *exc_info = __Pyx_PyErr_GetTopmostException(tstate);
+    *type = exc_info->exc_type;
+    *value = exc_info->exc_value;
+    *tb = exc_info->exc_traceback;
+    Py_XINCREF(*type);
+    Py_XINCREF(*value);
+    Py_XINCREF(*tb);
+  #else
+    *type = tstate->exc_type;
+    *value = tstate->exc_value;
+    *tb = tstate->exc_traceback;
+    Py_XINCREF(*type);
+    Py_XINCREF(*value);
+    Py_XINCREF(*tb);
+  #endif
+}
+static CYTHON_INLINE void __Pyx__ExceptionReset(PyThreadState *tstate, PyObject *type, PyObject *value, PyObject *tb) {
+  #if CYTHON_USE_EXC_INFO_STACK && PY_VERSION_HEX >= 0x030B00a4
+    _PyErr_StackItem *exc_info = tstate->exc_info;
+    PyObject *tmp_value = exc_info->exc_value;
+    exc_info->exc_value = value;
+    Py_XDECREF(tmp_value);
+    Py_XDECREF(type);
+    Py_XDECREF(tb);
+  #else
+    PyObject *tmp_type, *tmp_value, *tmp_tb;
+    #if CYTHON_USE_EXC_INFO_STACK
+    _PyErr_StackItem *exc_info = tstate->exc_info;
+    tmp_type = exc_info->exc_type;
+    tmp_value = exc_info->exc_value;
+    tmp_tb = exc_info->exc_traceback;
+    exc_info->exc_type = type;
+    exc_info->exc_value = value;
+    exc_info->exc_traceback = tb;
+    #else
+    tmp_type = tstate->exc_type;
+    tmp_value = tstate->exc_value;
+    tmp_tb = tstate->exc_traceback;
+    tstate->exc_type = type;
+    tstate->exc_value = value;
+    tstate->exc_traceback = tb;
+    #endif
+    Py_XDECREF(tmp_type);
+    Py_XDECREF(tmp_value);
+    Py_XDECREF(tmp_tb);
+  #endif
+}
+#endif
+
+/* RaiseDoubleKeywords */
+static void __Pyx_RaiseDoubleKeywordsError(
+    const char* func_name,
+    PyObject* kw_name)
+{
+    PyErr_Format(PyExc_TypeError,
+        "%s() got multiple values for keyword argument '%U'", func_name, kw_name);
 }
 
 /* UnpackUnboundCMethod */
@@ -5417,32 +7798,6 @@ static int __Pyx_ParseKeywords(
         return __Pyx_ParseKeywordDict(kwds, argnames, values, num_pos_args, num_kwargs, function_name, ignore_unknown_kwargs);
 }
 
-/* RaiseArgTupleInvalid */
-static void __Pyx_RaiseArgtupleInvalid(
-    const char* func_name,
-    int exact,
-    Py_ssize_t num_min,
-    Py_ssize_t num_max,
-    Py_ssize_t num_found)
-{
-    Py_ssize_t num_expected;
-    const char *more_or_less;
-    if (num_found < num_min) {
-        num_expected = num_min;
-        more_or_less = "at least";
-    } else {
-        num_expected = num_max;
-        more_or_less = "at most";
-    }
-    if (exact) {
-        more_or_less = "exactly";
-    }
-    PyErr_Format(PyExc_TypeError,
-                 "%.200s() takes %.8s %" CYTHON_FORMAT_SSIZE_T "d positional argument%.1s (%" CYTHON_FORMAT_SSIZE_T "d given)",
-                 func_name, more_or_less, num_expected,
-                 (num_expected == 1) ? "" : "s", num_found);
-}
-
 /* ArgTypeTest */
 static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *name, int exact)
 {
@@ -5490,446 +7845,6 @@ static int __Pyx__ArgTypeTest(PyObject *obj, PyTypeObject *type, const char *nam
     __Pyx_DECREF_TypeName(obj_type_name);
     return 0;
 }
-
-/* RaiseException */
-static void __Pyx_Raise(PyObject *type, PyObject *value, PyObject *tb, PyObject *cause) {
-    PyObject* owned_instance = NULL;
-    if (tb == Py_None) {
-        tb = 0;
-    } else if (tb && !PyTraceBack_Check(tb)) {
-        PyErr_SetString(PyExc_TypeError,
-            "raise: arg 3 must be a traceback or None");
-        goto bad;
-    }
-    if (value == Py_None)
-        value = 0;
-    if (PyExceptionInstance_Check(type)) {
-        if (value) {
-            PyErr_SetString(PyExc_TypeError,
-                "instance exception may not have a separate value");
-            goto bad;
-        }
-        value = type;
-        type = (PyObject*) Py_TYPE(value);
-    } else if (PyExceptionClass_Check(type)) {
-        PyObject *instance_class = NULL;
-        if (value && PyExceptionInstance_Check(value)) {
-            instance_class = (PyObject*) Py_TYPE(value);
-            if (instance_class != type) {
-                int is_subclass = PyObject_IsSubclass(instance_class, type);
-                if (!is_subclass) {
-                    instance_class = NULL;
-                } else if (unlikely(is_subclass == -1)) {
-                    goto bad;
-                } else {
-                    type = instance_class;
-                }
-            }
-        }
-        if (!instance_class) {
-            PyObject *args;
-            if (!value)
-                args = PyTuple_New(0);
-            else if (PyTuple_Check(value)) {
-                Py_INCREF(value);
-                args = value;
-            } else
-                args = PyTuple_Pack(1, value);
-            if (!args)
-                goto bad;
-            owned_instance = PyObject_Call(type, args, NULL);
-            Py_DECREF(args);
-            if (!owned_instance)
-                goto bad;
-            value = owned_instance;
-            if (!PyExceptionInstance_Check(value)) {
-                PyErr_Format(PyExc_TypeError,
-                             "calling %R should have returned an instance of "
-                             "BaseException, not %R",
-                             type, Py_TYPE(value));
-                goto bad;
-            }
-        }
-    } else {
-        PyErr_SetString(PyExc_TypeError,
-            "raise: exception class must be a subclass of BaseException");
-        goto bad;
-    }
-    if (cause) {
-        PyObject *fixed_cause;
-        if (cause == Py_None) {
-            fixed_cause = NULL;
-        } else if (PyExceptionClass_Check(cause)) {
-            fixed_cause = PyObject_CallObject(cause, NULL);
-            if (fixed_cause == NULL)
-                goto bad;
-        } else if (PyExceptionInstance_Check(cause)) {
-            fixed_cause = cause;
-            Py_INCREF(fixed_cause);
-        } else {
-            PyErr_SetString(PyExc_TypeError,
-                            "exception causes must derive from "
-                            "BaseException");
-            goto bad;
-        }
-        PyException_SetCause(value, fixed_cause);
-    }
-    PyErr_SetObject(type, value);
-    if (tb) {
-#if PY_VERSION_HEX >= 0x030C00A6
-        PyException_SetTraceback(value, tb);
-#elif CYTHON_FAST_THREAD_STATE
-        PyThreadState *tstate = __Pyx_PyThreadState_Current;
-        PyObject* tmp_tb = tstate->curexc_traceback;
-        if (tb != tmp_tb) {
-            Py_INCREF(tb);
-            tstate->curexc_traceback = tb;
-            Py_XDECREF(tmp_tb);
-        }
-#else
-        PyObject *tmp_type, *tmp_value, *tmp_tb;
-        PyErr_Fetch(&tmp_type, &tmp_value, &tmp_tb);
-        Py_INCREF(tb);
-        PyErr_Restore(tmp_type, tmp_value, tb);
-        Py_XDECREF(tmp_tb);
-#endif
-    }
-bad:
-    Py_XDECREF(owned_instance);
-    return;
-}
-
-/* GetItemInt */
-static PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j) {
-    PyObject *r;
-    if (unlikely(!j)) return NULL;
-    r = PyObject_GetItem(o, j);
-    Py_DECREF(j);
-    return r;
-}
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_List_Fast(PyObject *o, Py_ssize_t i,
-                                                              CYTHON_NCP_UNUSED int wraparound,
-                                                              CYTHON_NCP_UNUSED int boundscheck) {
-#if CYTHON_ASSUME_SAFE_MACROS && CYTHON_ASSUME_SAFE_SIZE && !CYTHON_AVOID_BORROWED_REFS && !CYTHON_AVOID_THREAD_UNSAFE_BORROWED_REFS
-    Py_ssize_t wrapped_i = i;
-    if (wraparound & unlikely(i < 0)) {
-        wrapped_i += PyList_GET_SIZE(o);
-    }
-    if ((!boundscheck) || likely(__Pyx_is_valid_index(wrapped_i, PyList_GET_SIZE(o)))) {
-        PyObject *r = PyList_GET_ITEM(o, wrapped_i);
-        Py_INCREF(r);
-        return r;
-    }
-    return __Pyx_GetItemInt_Generic(o, PyLong_FromSsize_t(i));
-#else
-    return PySequence_GetItem(o, i);
-#endif
-}
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Tuple_Fast(PyObject *o, Py_ssize_t i,
-                                                              CYTHON_NCP_UNUSED int wraparound,
-                                                              CYTHON_NCP_UNUSED int boundscheck) {
-#if CYTHON_ASSUME_SAFE_MACROS && CYTHON_ASSUME_SAFE_SIZE && !CYTHON_AVOID_BORROWED_REFS
-    Py_ssize_t wrapped_i = i;
-    if (wraparound & unlikely(i < 0)) {
-        wrapped_i += PyTuple_GET_SIZE(o);
-    }
-    if ((!boundscheck) || likely(__Pyx_is_valid_index(wrapped_i, PyTuple_GET_SIZE(o)))) {
-        PyObject *r = PyTuple_GET_ITEM(o, wrapped_i);
-        Py_INCREF(r);
-        return r;
-    }
-    return __Pyx_GetItemInt_Generic(o, PyLong_FromSsize_t(i));
-#else
-    return PySequence_GetItem(o, i);
-#endif
-}
-static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i, int is_list,
-                                                     CYTHON_NCP_UNUSED int wraparound,
-                                                     CYTHON_NCP_UNUSED int boundscheck) {
-#if CYTHON_ASSUME_SAFE_MACROS && CYTHON_ASSUME_SAFE_SIZE && !CYTHON_AVOID_BORROWED_REFS && CYTHON_USE_TYPE_SLOTS
-    if (is_list || PyList_CheckExact(o)) {
-        Py_ssize_t n = ((!wraparound) | likely(i >= 0)) ? i : i + PyList_GET_SIZE(o);
-        if ((!boundscheck) || (likely(__Pyx_is_valid_index(n, PyList_GET_SIZE(o))))) {
-            return __Pyx_PyList_GetItemRef(o, n);
-        }
-    }
-    else if (PyTuple_CheckExact(o)) {
-        Py_ssize_t n = ((!wraparound) | likely(i >= 0)) ? i : i + PyTuple_GET_SIZE(o);
-        if ((!boundscheck) || likely(__Pyx_is_valid_index(n, PyTuple_GET_SIZE(o)))) {
-            PyObject *r = PyTuple_GET_ITEM(o, n);
-            Py_INCREF(r);
-            return r;
-        }
-    } else {
-        PyMappingMethods *mm = Py_TYPE(o)->tp_as_mapping;
-        PySequenceMethods *sm = Py_TYPE(o)->tp_as_sequence;
-        if (mm && mm->mp_subscript) {
-            PyObject *r, *key = PyLong_FromSsize_t(i);
-            if (unlikely(!key)) return NULL;
-            r = mm->mp_subscript(o, key);
-            Py_DECREF(key);
-            return r;
-        }
-        if (likely(sm && sm->sq_item)) {
-            if (wraparound && unlikely(i < 0) && likely(sm->sq_length)) {
-                Py_ssize_t l = sm->sq_length(o);
-                if (likely(l >= 0)) {
-                    i += l;
-                } else {
-                    if (!PyErr_ExceptionMatches(PyExc_OverflowError))
-                        return NULL;
-                    PyErr_Clear();
-                }
-            }
-            return sm->sq_item(o, i);
-        }
-    }
-#else
-    if (is_list || !PyMapping_Check(o)) {
-        return PySequence_GetItem(o, i);
-    }
-#endif
-    return __Pyx_GetItemInt_Generic(o, PyLong_FromSsize_t(i));
-}
-
-/* GetException */
-#if CYTHON_FAST_THREAD_STATE
-static int __Pyx__GetException(PyThreadState *tstate, PyObject **type, PyObject **value, PyObject **tb)
-#else
-static int __Pyx_GetException(PyObject **type, PyObject **value, PyObject **tb)
-#endif
-{
-    PyObject *local_type = NULL, *local_value, *local_tb = NULL;
-#if CYTHON_FAST_THREAD_STATE
-    PyObject *tmp_type, *tmp_value, *tmp_tb;
-  #if PY_VERSION_HEX >= 0x030C0000
-    local_value = tstate->current_exception;
-    tstate->current_exception = 0;
-  #else
-    local_type = tstate->curexc_type;
-    local_value = tstate->curexc_value;
-    local_tb = tstate->curexc_traceback;
-    tstate->curexc_type = 0;
-    tstate->curexc_value = 0;
-    tstate->curexc_traceback = 0;
-  #endif
-#elif __PYX_LIMITED_VERSION_HEX > 0x030C0000
-    local_value = PyErr_GetRaisedException();
-#else
-    PyErr_Fetch(&local_type, &local_value, &local_tb);
-#endif
-#if __PYX_LIMITED_VERSION_HEX > 0x030C0000
-    if (likely(local_value)) {
-        local_type = (PyObject*) Py_TYPE(local_value);
-        Py_INCREF(local_type);
-        local_tb = PyException_GetTraceback(local_value);
-    }
-#else
-    PyErr_NormalizeException(&local_type, &local_value, &local_tb);
-#if CYTHON_FAST_THREAD_STATE
-    if (unlikely(tstate->curexc_type))
-#else
-    if (unlikely(PyErr_Occurred()))
-#endif
-        goto bad;
-    if (local_tb) {
-        if (unlikely(PyException_SetTraceback(local_value, local_tb) < 0))
-            goto bad;
-    }
-#endif // __PYX_LIMITED_VERSION_HEX > 0x030C0000
-    Py_XINCREF(local_tb);
-    Py_XINCREF(local_type);
-    Py_XINCREF(local_value);
-    *type = local_type;
-    *value = local_value;
-    *tb = local_tb;
-#if CYTHON_FAST_THREAD_STATE
-    #if CYTHON_USE_EXC_INFO_STACK
-    {
-        _PyErr_StackItem *exc_info = tstate->exc_info;
-      #if PY_VERSION_HEX >= 0x030B00a4
-        tmp_value = exc_info->exc_value;
-        exc_info->exc_value = local_value;
-        tmp_type = NULL;
-        tmp_tb = NULL;
-        Py_XDECREF(local_type);
-        Py_XDECREF(local_tb);
-      #else
-        tmp_type = exc_info->exc_type;
-        tmp_value = exc_info->exc_value;
-        tmp_tb = exc_info->exc_traceback;
-        exc_info->exc_type = local_type;
-        exc_info->exc_value = local_value;
-        exc_info->exc_traceback = local_tb;
-      #endif
-    }
-    #else
-    tmp_type = tstate->exc_type;
-    tmp_value = tstate->exc_value;
-    tmp_tb = tstate->exc_traceback;
-    tstate->exc_type = local_type;
-    tstate->exc_value = local_value;
-    tstate->exc_traceback = local_tb;
-    #endif
-    Py_XDECREF(tmp_type);
-    Py_XDECREF(tmp_value);
-    Py_XDECREF(tmp_tb);
-#elif __PYX_LIMITED_VERSION_HEX >= 0x030b0000
-    PyErr_SetHandledException(local_value);
-    Py_XDECREF(local_value);
-    Py_XDECREF(local_type);
-    Py_XDECREF(local_tb);
-#else
-    PyErr_SetExcInfo(local_type, local_value, local_tb);
-#endif
-    return 0;
-#if __PYX_LIMITED_VERSION_HEX <= 0x030C0000
-bad:
-    *type = 0;
-    *value = 0;
-    *tb = 0;
-    Py_XDECREF(local_type);
-    Py_XDECREF(local_value);
-    Py_XDECREF(local_tb);
-    return -1;
-#endif
-}
-
-/* SwapException */
-#if CYTHON_FAST_THREAD_STATE
-static CYTHON_INLINE void __Pyx__ExceptionSwap(PyThreadState *tstate, PyObject **type, PyObject **value, PyObject **tb) {
-    PyObject *tmp_type, *tmp_value, *tmp_tb;
-  #if CYTHON_USE_EXC_INFO_STACK && PY_VERSION_HEX >= 0x030B00a4
-    _PyErr_StackItem *exc_info = tstate->exc_info;
-    tmp_value = exc_info->exc_value;
-    exc_info->exc_value = *value;
-    if (tmp_value == NULL || tmp_value == Py_None) {
-        Py_XDECREF(tmp_value);
-        tmp_value = NULL;
-        tmp_type = NULL;
-        tmp_tb = NULL;
-    } else {
-        tmp_type = (PyObject*) Py_TYPE(tmp_value);
-        Py_INCREF(tmp_type);
-        #if CYTHON_COMPILING_IN_CPYTHON
-        tmp_tb = ((PyBaseExceptionObject*) tmp_value)->traceback;
-        Py_XINCREF(tmp_tb);
-        #else
-        tmp_tb = PyException_GetTraceback(tmp_value);
-        #endif
-    }
-  #elif CYTHON_USE_EXC_INFO_STACK
-    _PyErr_StackItem *exc_info = tstate->exc_info;
-    tmp_type = exc_info->exc_type;
-    tmp_value = exc_info->exc_value;
-    tmp_tb = exc_info->exc_traceback;
-    exc_info->exc_type = *type;
-    exc_info->exc_value = *value;
-    exc_info->exc_traceback = *tb;
-  #else
-    tmp_type = tstate->exc_type;
-    tmp_value = tstate->exc_value;
-    tmp_tb = tstate->exc_traceback;
-    tstate->exc_type = *type;
-    tstate->exc_value = *value;
-    tstate->exc_traceback = *tb;
-  #endif
-    *type = tmp_type;
-    *value = tmp_value;
-    *tb = tmp_tb;
-}
-#else
-static CYTHON_INLINE void __Pyx_ExceptionSwap(PyObject **type, PyObject **value, PyObject **tb) {
-    PyObject *tmp_type, *tmp_value, *tmp_tb;
-    PyErr_GetExcInfo(&tmp_type, &tmp_value, &tmp_tb);
-    PyErr_SetExcInfo(*type, *value, *tb);
-    *type = tmp_type;
-    *value = tmp_value;
-    *tb = tmp_tb;
-}
-#endif
-
-/* GetTopmostException */
-#if CYTHON_USE_EXC_INFO_STACK && CYTHON_FAST_THREAD_STATE
-static _PyErr_StackItem *
-__Pyx_PyErr_GetTopmostException(PyThreadState *tstate)
-{
-    _PyErr_StackItem *exc_info = tstate->exc_info;
-    while ((exc_info->exc_value == NULL || exc_info->exc_value == Py_None) &&
-           exc_info->previous_item != NULL)
-    {
-        exc_info = exc_info->previous_item;
-    }
-    return exc_info;
-}
-#endif
-
-/* SaveResetException */
-#if CYTHON_FAST_THREAD_STATE
-static CYTHON_INLINE void __Pyx__ExceptionSave(PyThreadState *tstate, PyObject **type, PyObject **value, PyObject **tb) {
-  #if CYTHON_USE_EXC_INFO_STACK && PY_VERSION_HEX >= 0x030B00a4
-    _PyErr_StackItem *exc_info = __Pyx_PyErr_GetTopmostException(tstate);
-    PyObject *exc_value = exc_info->exc_value;
-    if (exc_value == NULL || exc_value == Py_None) {
-        *value = NULL;
-        *type = NULL;
-        *tb = NULL;
-    } else {
-        *value = exc_value;
-        Py_INCREF(*value);
-        *type = (PyObject*) Py_TYPE(exc_value);
-        Py_INCREF(*type);
-        *tb = PyException_GetTraceback(exc_value);
-    }
-  #elif CYTHON_USE_EXC_INFO_STACK
-    _PyErr_StackItem *exc_info = __Pyx_PyErr_GetTopmostException(tstate);
-    *type = exc_info->exc_type;
-    *value = exc_info->exc_value;
-    *tb = exc_info->exc_traceback;
-    Py_XINCREF(*type);
-    Py_XINCREF(*value);
-    Py_XINCREF(*tb);
-  #else
-    *type = tstate->exc_type;
-    *value = tstate->exc_value;
-    *tb = tstate->exc_traceback;
-    Py_XINCREF(*type);
-    Py_XINCREF(*value);
-    Py_XINCREF(*tb);
-  #endif
-}
-static CYTHON_INLINE void __Pyx__ExceptionReset(PyThreadState *tstate, PyObject *type, PyObject *value, PyObject *tb) {
-  #if CYTHON_USE_EXC_INFO_STACK && PY_VERSION_HEX >= 0x030B00a4
-    _PyErr_StackItem *exc_info = tstate->exc_info;
-    PyObject *tmp_value = exc_info->exc_value;
-    exc_info->exc_value = value;
-    Py_XDECREF(tmp_value);
-    Py_XDECREF(type);
-    Py_XDECREF(tb);
-  #else
-    PyObject *tmp_type, *tmp_value, *tmp_tb;
-    #if CYTHON_USE_EXC_INFO_STACK
-    _PyErr_StackItem *exc_info = tstate->exc_info;
-    tmp_type = exc_info->exc_type;
-    tmp_value = exc_info->exc_value;
-    tmp_tb = exc_info->exc_traceback;
-    exc_info->exc_type = type;
-    exc_info->exc_value = value;
-    exc_info->exc_traceback = tb;
-    #else
-    tmp_type = tstate->exc_type;
-    tmp_value = tstate->exc_value;
-    tmp_tb = tstate->exc_traceback;
-    tstate->exc_type = type;
-    tstate->exc_value = value;
-    tstate->exc_traceback = tb;
-    #endif
-    Py_XDECREF(tmp_type);
-    Py_XDECREF(tmp_value);
-    Py_XDECREF(tmp_tb);
-  #endif
-}
-#endif
 
 /* LimitedApiGetTypeDict */
 #if CYTHON_COMPILING_IN_LIMITED_API
@@ -6086,6 +8001,550 @@ static int __Pyx_fix_up_extension_type_from_spec(PyType_Spec *spec, PyTypeObject
         PyType_Modified(type);
 #endif  // PY_VERSION_HEX > 0x030900B1
     return 0;
+}
+
+/* PyObjectCallNoArg */
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func) {
+    PyObject *arg[2] = {NULL, NULL};
+    return __Pyx_PyObject_FastCall(func, arg + 1, 0 | __Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET);
+}
+
+/* PyObjectCallOneArg */
+static CYTHON_INLINE PyObject* __Pyx_PyObject_CallOneArg(PyObject *func, PyObject *arg) {
+    PyObject *args[2] = {NULL, arg};
+    return __Pyx_PyObject_FastCall(func, args+1, 1 | __Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET);
+}
+
+/* PyObjectGetMethod */
+static int __Pyx_PyObject_GetMethod(PyObject *obj, PyObject *name, PyObject **method) {
+    PyObject *attr;
+#if CYTHON_UNPACK_METHODS && CYTHON_COMPILING_IN_CPYTHON && CYTHON_USE_PYTYPE_LOOKUP
+    __Pyx_TypeName type_name;
+    PyTypeObject *tp = Py_TYPE(obj);
+    PyObject *descr;
+    descrgetfunc f = NULL;
+    PyObject **dictptr, *dict;
+    int meth_found = 0;
+    assert (*method == NULL);
+    if (unlikely(tp->tp_getattro != PyObject_GenericGetAttr)) {
+        attr = __Pyx_PyObject_GetAttrStr(obj, name);
+        goto try_unpack;
+    }
+    if (unlikely(tp->tp_dict == NULL) && unlikely(PyType_Ready(tp) < 0)) {
+        return 0;
+    }
+    descr = _PyType_Lookup(tp, name);
+    if (likely(descr != NULL)) {
+        Py_INCREF(descr);
+#if defined(Py_TPFLAGS_METHOD_DESCRIPTOR) && Py_TPFLAGS_METHOD_DESCRIPTOR
+        if (__Pyx_PyType_HasFeature(Py_TYPE(descr), Py_TPFLAGS_METHOD_DESCRIPTOR))
+#else
+        #ifdef __Pyx_CyFunction_USED
+        if (likely(PyFunction_Check(descr) || __Pyx_IS_TYPE(descr, &PyMethodDescr_Type) || __Pyx_CyFunction_Check(descr)))
+        #else
+        if (likely(PyFunction_Check(descr) || __Pyx_IS_TYPE(descr, &PyMethodDescr_Type)))
+        #endif
+#endif
+        {
+            meth_found = 1;
+        } else {
+            f = Py_TYPE(descr)->tp_descr_get;
+            if (f != NULL && PyDescr_IsData(descr)) {
+                attr = f(descr, obj, (PyObject *)Py_TYPE(obj));
+                Py_DECREF(descr);
+                goto try_unpack;
+            }
+        }
+    }
+    dictptr = _PyObject_GetDictPtr(obj);
+    if (dictptr != NULL && (dict = *dictptr) != NULL) {
+        Py_INCREF(dict);
+        attr = __Pyx_PyDict_GetItemStr(dict, name);
+        if (attr != NULL) {
+            Py_INCREF(attr);
+            Py_DECREF(dict);
+            Py_XDECREF(descr);
+            goto try_unpack;
+        }
+        Py_DECREF(dict);
+    }
+    if (meth_found) {
+        *method = descr;
+        return 1;
+    }
+    if (f != NULL) {
+        attr = f(descr, obj, (PyObject *)Py_TYPE(obj));
+        Py_DECREF(descr);
+        goto try_unpack;
+    }
+    if (likely(descr != NULL)) {
+        *method = descr;
+        return 0;
+    }
+    type_name = __Pyx_PyType_GetFullyQualifiedName(tp);
+    PyErr_Format(PyExc_AttributeError,
+                 "'" __Pyx_FMT_TYPENAME "' object has no attribute '%U'",
+                 type_name, name);
+    __Pyx_DECREF_TypeName(type_name);
+    return 0;
+#else
+    attr = __Pyx_PyObject_GetAttrStr(obj, name);
+    goto try_unpack;
+#endif
+try_unpack:
+#if CYTHON_UNPACK_METHODS
+    if (likely(attr) && PyMethod_Check(attr) && likely(PyMethod_GET_SELF(attr) == obj)) {
+        PyObject *function = PyMethod_GET_FUNCTION(attr);
+        Py_INCREF(function);
+        Py_DECREF(attr);
+        *method = function;
+        return 1;
+    }
+#endif
+    *method = attr;
+    return 0;
+}
+
+/* PyObjectCallMethod0 */
+static PyObject* __Pyx_PyObject_CallMethod0(PyObject* obj, PyObject* method_name) {
+    PyObject *method = NULL, *result = NULL;
+    int is_method = __Pyx_PyObject_GetMethod(obj, method_name, &method);
+    if (likely(is_method)) {
+        result = __Pyx_PyObject_CallOneArg(method, obj);
+        Py_DECREF(method);
+        return result;
+    }
+    if (unlikely(!method)) goto bad;
+    result = __Pyx_PyObject_CallNoArg(method);
+    Py_DECREF(method);
+bad:
+    return result;
+}
+
+/* ValidateBasesTuple */
+#if CYTHON_COMPILING_IN_CPYTHON || CYTHON_COMPILING_IN_LIMITED_API || CYTHON_USE_TYPE_SPECS
+static int __Pyx_validate_bases_tuple(const char *type_name, Py_ssize_t dictoffset, PyObject *bases) {
+    Py_ssize_t i, n;
+#if CYTHON_ASSUME_SAFE_SIZE
+    n = PyTuple_GET_SIZE(bases);
+#else
+    n = PyTuple_Size(bases);
+    if (unlikely(n < 0)) return -1;
+#endif
+    for (i = 1; i < n; i++)
+    {
+        PyTypeObject *b;
+#if CYTHON_AVOID_BORROWED_REFS
+        PyObject *b0 = PySequence_GetItem(bases, i);
+        if (!b0) return -1;
+#elif CYTHON_ASSUME_SAFE_MACROS
+        PyObject *b0 = PyTuple_GET_ITEM(bases, i);
+#else
+        PyObject *b0 = PyTuple_GetItem(bases, i);
+        if (!b0) return -1;
+#endif
+        b = (PyTypeObject*) b0;
+        if (!__Pyx_PyType_HasFeature(b, Py_TPFLAGS_HEAPTYPE))
+        {
+            __Pyx_TypeName b_name = __Pyx_PyType_GetFullyQualifiedName(b);
+            PyErr_Format(PyExc_TypeError,
+                "base class '" __Pyx_FMT_TYPENAME "' is not a heap type", b_name);
+            __Pyx_DECREF_TypeName(b_name);
+#if CYTHON_AVOID_BORROWED_REFS
+            Py_DECREF(b0);
+#endif
+            return -1;
+        }
+        if (dictoffset == 0)
+        {
+            Py_ssize_t b_dictoffset = 0;
+#if CYTHON_USE_TYPE_SLOTS
+            b_dictoffset = b->tp_dictoffset;
+#else
+            PyObject *py_b_dictoffset = PyObject_GetAttrString((PyObject*)b, "__dictoffset__");
+            if (!py_b_dictoffset) goto dictoffset_return;
+            b_dictoffset = PyLong_AsSsize_t(py_b_dictoffset);
+            Py_DECREF(py_b_dictoffset);
+            if (b_dictoffset == -1 && PyErr_Occurred()) goto dictoffset_return;
+#endif
+            if (b_dictoffset) {
+                {
+                    __Pyx_TypeName b_name = __Pyx_PyType_GetFullyQualifiedName(b);
+                    PyErr_Format(PyExc_TypeError,
+                        "extension type '%.200s' has no __dict__ slot, "
+                        "but base type '" __Pyx_FMT_TYPENAME "' has: "
+                        "either add 'cdef dict __dict__' to the extension type "
+                        "or add '__slots__ = [...]' to the base type",
+                        type_name, b_name);
+                    __Pyx_DECREF_TypeName(b_name);
+                }
+#if !CYTHON_USE_TYPE_SLOTS
+              dictoffset_return:
+#endif
+#if CYTHON_AVOID_BORROWED_REFS
+                Py_DECREF(b0);
+#endif
+                return -1;
+            }
+        }
+#if CYTHON_AVOID_BORROWED_REFS
+        Py_DECREF(b0);
+#endif
+    }
+    return 0;
+}
+#endif
+
+/* PyType_Ready */
+CYTHON_UNUSED static int __Pyx_PyType_HasMultipleInheritance(PyTypeObject *t) {
+    while (t) {
+        PyObject *bases = __Pyx_PyType_GetSlot(t, tp_bases, PyObject*);
+        if (bases) {
+            return 1;
+        }
+        t = __Pyx_PyType_GetSlot(t, tp_base, PyTypeObject*);
+    }
+    return 0;
+}
+static int __Pyx_PyType_Ready(PyTypeObject *t) {
+#if CYTHON_USE_TYPE_SPECS || !CYTHON_COMPILING_IN_CPYTHON || defined(PYSTON_MAJOR_VERSION)
+    (void)__Pyx_PyObject_CallMethod0;
+#if CYTHON_USE_TYPE_SPECS
+    (void)__Pyx_validate_bases_tuple;
+#endif
+    return PyType_Ready(t);
+#else
+    int r;
+    if (!__Pyx_PyType_HasMultipleInheritance(t)) {
+        return PyType_Ready(t);
+    }
+    PyObject *bases = __Pyx_PyType_GetSlot(t, tp_bases, PyObject*);
+    if (bases && unlikely(__Pyx_validate_bases_tuple(t->tp_name, t->tp_dictoffset, bases) == -1))
+        return -1;
+#if !defined(PYSTON_MAJOR_VERSION)
+    {
+        int gc_was_enabled;
+    #if PY_VERSION_HEX >= 0x030A00b1
+        gc_was_enabled = PyGC_Disable();
+        (void)__Pyx_PyObject_CallMethod0;
+    #else
+        PyObject *ret, *py_status;
+        PyObject *gc = NULL;
+        #if (!CYTHON_COMPILING_IN_PYPY || PYPY_VERSION_NUM+0 >= 0x07030400) &&\
+                !CYTHON_COMPILING_IN_GRAAL
+        gc = PyImport_GetModule(__pyx_mstate_global->__pyx_kp_u_gc);
+        #endif
+        if (unlikely(!gc)) gc = PyImport_Import(__pyx_mstate_global->__pyx_kp_u_gc);
+        if (unlikely(!gc)) return -1;
+        py_status = __Pyx_PyObject_CallMethod0(gc, __pyx_mstate_global->__pyx_kp_u_isenabled);
+        if (unlikely(!py_status)) {
+            Py_DECREF(gc);
+            return -1;
+        }
+        gc_was_enabled = __Pyx_PyObject_IsTrue(py_status);
+        Py_DECREF(py_status);
+        if (gc_was_enabled > 0) {
+            ret = __Pyx_PyObject_CallMethod0(gc, __pyx_mstate_global->__pyx_kp_u_disable);
+            if (unlikely(!ret)) {
+                Py_DECREF(gc);
+                return -1;
+            }
+            Py_DECREF(ret);
+        } else if (unlikely(gc_was_enabled == -1)) {
+            Py_DECREF(gc);
+            return -1;
+        }
+    #endif
+        t->tp_flags |= Py_TPFLAGS_HEAPTYPE;
+#if PY_VERSION_HEX >= 0x030A0000
+        t->tp_flags |= Py_TPFLAGS_IMMUTABLETYPE;
+#endif
+#else
+        (void)__Pyx_PyObject_CallMethod0;
+#endif
+    r = PyType_Ready(t);
+#if !defined(PYSTON_MAJOR_VERSION)
+        t->tp_flags &= ~Py_TPFLAGS_HEAPTYPE;
+    #if PY_VERSION_HEX >= 0x030A00b1
+        if (gc_was_enabled)
+            PyGC_Enable();
+    #else
+        if (gc_was_enabled) {
+            PyObject *tp, *v, *tb;
+            PyErr_Fetch(&tp, &v, &tb);
+            ret = __Pyx_PyObject_CallMethod0(gc, __pyx_mstate_global->__pyx_kp_u_enable);
+            if (likely(ret || r == -1)) {
+                Py_XDECREF(ret);
+                PyErr_Restore(tp, v, tb);
+            } else {
+                Py_XDECREF(tp);
+                Py_XDECREF(v);
+                Py_XDECREF(tb);
+                r = -1;
+            }
+        }
+        Py_DECREF(gc);
+    #endif
+    }
+#endif
+    return r;
+#endif
+}
+
+/* SetVTable */
+static int __Pyx_SetVtable(PyTypeObject *type, void *vtable) {
+    PyObject *ob = PyCapsule_New(vtable, 0, 0);
+    if (unlikely(!ob))
+        goto bad;
+#if CYTHON_COMPILING_IN_LIMITED_API
+    if (unlikely(PyObject_SetAttr((PyObject *) type, __pyx_mstate_global->__pyx_n_u_pyx_vtable, ob) < 0))
+#else
+    if (unlikely(PyDict_SetItem(type->tp_dict, __pyx_mstate_global->__pyx_n_u_pyx_vtable, ob) < 0))
+#endif
+        goto bad;
+    Py_DECREF(ob);
+    return 0;
+bad:
+    Py_XDECREF(ob);
+    return -1;
+}
+
+/* GetVTable */
+static void* __Pyx_GetVtable(PyTypeObject *type) {
+    void* ptr;
+#if CYTHON_COMPILING_IN_LIMITED_API
+    PyObject *ob = PyObject_GetAttr((PyObject *)type, __pyx_mstate_global->__pyx_n_u_pyx_vtable);
+#else
+    PyObject *ob = PyObject_GetItem(type->tp_dict, __pyx_mstate_global->__pyx_n_u_pyx_vtable);
+#endif
+    if (!ob)
+        goto bad;
+    ptr = PyCapsule_GetPointer(ob, 0);
+    if (!ptr && !PyErr_Occurred())
+        PyErr_SetString(PyExc_RuntimeError, "invalid vtable found for imported type");
+    Py_DECREF(ob);
+    return ptr;
+bad:
+    Py_XDECREF(ob);
+    return NULL;
+}
+
+/* MergeVTables */
+static int __Pyx_MergeVtables(PyTypeObject *type) {
+    int i=0;
+    Py_ssize_t size;
+    void** base_vtables;
+    __Pyx_TypeName tp_base_name = NULL;
+    __Pyx_TypeName base_name = NULL;
+    void* unknown = (void*)-1;
+    PyObject* bases = __Pyx_PyType_GetSlot(type, tp_bases, PyObject*);
+    int base_depth = 0;
+    {
+        PyTypeObject* base = __Pyx_PyType_GetSlot(type, tp_base, PyTypeObject*);
+        while (base) {
+            base_depth += 1;
+            base = __Pyx_PyType_GetSlot(base, tp_base, PyTypeObject*);
+        }
+    }
+    base_vtables = (void**) PyMem_Malloc(sizeof(void*) * (size_t)(base_depth + 1));
+    base_vtables[0] = unknown;
+#if CYTHON_COMPILING_IN_LIMITED_API
+    size = PyTuple_Size(bases);
+    if (size < 0) goto other_failure;
+#else
+    size = PyTuple_GET_SIZE(bases);
+#endif
+    for (i = 1; i < size; i++) {
+        PyObject *basei;
+        void* base_vtable;
+#if CYTHON_AVOID_BORROWED_REFS
+        basei = PySequence_GetItem(bases, i);
+        if (unlikely(!basei)) goto other_failure;
+#elif !CYTHON_ASSUME_SAFE_MACROS
+        basei = PyTuple_GetItem(bases, i);
+        if (unlikely(!basei)) goto other_failure;
+#else
+        basei = PyTuple_GET_ITEM(bases, i);
+#endif
+        base_vtable = __Pyx_GetVtable((PyTypeObject*)basei);
+#if CYTHON_AVOID_BORROWED_REFS
+        Py_DECREF(basei);
+#endif
+        if (base_vtable != NULL) {
+            int j;
+            PyTypeObject* base = __Pyx_PyType_GetSlot(type, tp_base, PyTypeObject*);
+            for (j = 0; j < base_depth; j++) {
+                if (base_vtables[j] == unknown) {
+                    base_vtables[j] = __Pyx_GetVtable(base);
+                    base_vtables[j + 1] = unknown;
+                }
+                if (base_vtables[j] == base_vtable) {
+                    break;
+                } else if (base_vtables[j] == NULL) {
+                    goto bad;
+                }
+                base = __Pyx_PyType_GetSlot(base, tp_base, PyTypeObject*);
+            }
+        }
+    }
+    PyErr_Clear();
+    PyMem_Free(base_vtables);
+    return 0;
+bad:
+    {
+        PyTypeObject* basei = NULL;
+        PyTypeObject* tp_base = __Pyx_PyType_GetSlot(type, tp_base, PyTypeObject*);
+        tp_base_name = __Pyx_PyType_GetFullyQualifiedName(tp_base);
+#if CYTHON_AVOID_BORROWED_REFS
+        basei = (PyTypeObject*)PySequence_GetItem(bases, i);
+        if (unlikely(!basei)) goto really_bad;
+#elif !CYTHON_ASSUME_SAFE_MACROS
+        basei = (PyTypeObject*)PyTuple_GetItem(bases, i);
+        if (unlikely(!basei)) goto really_bad;
+#else
+        basei = (PyTypeObject*)PyTuple_GET_ITEM(bases, i);
+#endif
+        base_name = __Pyx_PyType_GetFullyQualifiedName(basei);
+#if CYTHON_AVOID_BORROWED_REFS
+        Py_DECREF(basei);
+#endif
+    }
+    PyErr_Format(PyExc_TypeError,
+        "multiple bases have vtable conflict: '" __Pyx_FMT_TYPENAME "' and '" __Pyx_FMT_TYPENAME "'", tp_base_name, base_name);
+#if CYTHON_AVOID_BORROWED_REFS || !CYTHON_ASSUME_SAFE_MACROS
+really_bad: // bad has failed!
+#endif
+    __Pyx_DECREF_TypeName(tp_base_name);
+    __Pyx_DECREF_TypeName(base_name);
+#if CYTHON_COMPILING_IN_LIMITED_API || CYTHON_AVOID_BORROWED_REFS || !CYTHON_ASSUME_SAFE_MACROS
+other_failure:
+#endif
+    PyMem_Free(base_vtables);
+    return -1;
+}
+
+/* DelItemOnTypeDict */
+static int __Pyx__DelItemOnTypeDict(PyTypeObject *tp, PyObject *k) {
+    int result;
+    PyObject *tp_dict;
+#if CYTHON_COMPILING_IN_LIMITED_API
+    tp_dict = __Pyx_GetTypeDict(tp);
+    if (unlikely(!tp_dict)) return -1;
+#else
+    tp_dict = tp->tp_dict;
+#endif
+    result = PyDict_DelItem(tp_dict, k);
+    if (likely(!result)) PyType_Modified(tp);
+    return result;
+}
+
+/* SetupReduce */
+static int __Pyx_setup_reduce_is_named(PyObject* meth, PyObject* name) {
+  int ret;
+  PyObject *name_attr;
+  name_attr = __Pyx_PyObject_GetAttrStrNoError(meth, __pyx_mstate_global->__pyx_n_u_name);
+  if (likely(name_attr)) {
+      ret = PyObject_RichCompareBool(name_attr, name, Py_EQ);
+  } else {
+      ret = -1;
+  }
+  if (unlikely(ret < 0)) {
+      PyErr_Clear();
+      ret = 0;
+  }
+  Py_XDECREF(name_attr);
+  return ret;
+}
+static int __Pyx_setup_reduce(PyObject* type_obj) {
+    int ret = 0;
+    PyObject *object_reduce = NULL;
+    PyObject *object_getstate = NULL;
+    PyObject *object_reduce_ex = NULL;
+    PyObject *reduce = NULL;
+    PyObject *reduce_ex = NULL;
+    PyObject *reduce_cython = NULL;
+    PyObject *setstate = NULL;
+    PyObject *setstate_cython = NULL;
+    PyObject *getstate = NULL;
+#if CYTHON_USE_PYTYPE_LOOKUP
+    getstate = _PyType_Lookup((PyTypeObject*)type_obj, __pyx_mstate_global->__pyx_n_u_getstate);
+#else
+    getstate = __Pyx_PyObject_GetAttrStrNoError(type_obj, __pyx_mstate_global->__pyx_n_u_getstate);
+    if (!getstate && PyErr_Occurred()) {
+        goto __PYX_BAD;
+    }
+#endif
+    if (getstate) {
+#if CYTHON_USE_PYTYPE_LOOKUP
+        object_getstate = _PyType_Lookup(&PyBaseObject_Type, __pyx_mstate_global->__pyx_n_u_getstate);
+#else
+        object_getstate = __Pyx_PyObject_GetAttrStrNoError((PyObject*)&PyBaseObject_Type, __pyx_mstate_global->__pyx_n_u_getstate);
+        if (!object_getstate && PyErr_Occurred()) {
+            goto __PYX_BAD;
+        }
+#endif
+        if (object_getstate != getstate) {
+            goto __PYX_GOOD;
+        }
+    }
+#if CYTHON_USE_PYTYPE_LOOKUP
+    object_reduce_ex = _PyType_Lookup(&PyBaseObject_Type, __pyx_mstate_global->__pyx_n_u_reduce_ex); if (!object_reduce_ex) goto __PYX_BAD;
+#else
+    object_reduce_ex = __Pyx_PyObject_GetAttrStr((PyObject*)&PyBaseObject_Type, __pyx_mstate_global->__pyx_n_u_reduce_ex); if (!object_reduce_ex) goto __PYX_BAD;
+#endif
+    reduce_ex = __Pyx_PyObject_GetAttrStr(type_obj, __pyx_mstate_global->__pyx_n_u_reduce_ex); if (unlikely(!reduce_ex)) goto __PYX_BAD;
+    if (reduce_ex == object_reduce_ex) {
+#if CYTHON_USE_PYTYPE_LOOKUP
+        object_reduce = _PyType_Lookup(&PyBaseObject_Type, __pyx_mstate_global->__pyx_n_u_reduce); if (!object_reduce) goto __PYX_BAD;
+#else
+        object_reduce = __Pyx_PyObject_GetAttrStr((PyObject*)&PyBaseObject_Type, __pyx_mstate_global->__pyx_n_u_reduce); if (!object_reduce) goto __PYX_BAD;
+#endif
+        reduce = __Pyx_PyObject_GetAttrStr(type_obj, __pyx_mstate_global->__pyx_n_u_reduce); if (unlikely(!reduce)) goto __PYX_BAD;
+        if (reduce == object_reduce || __Pyx_setup_reduce_is_named(reduce, __pyx_mstate_global->__pyx_n_u_reduce_cython)) {
+            reduce_cython = __Pyx_PyObject_GetAttrStrNoError(type_obj, __pyx_mstate_global->__pyx_n_u_reduce_cython);
+            if (likely(reduce_cython)) {
+                ret = __Pyx_SetItemOnTypeDict((PyTypeObject*)type_obj, __pyx_mstate_global->__pyx_n_u_reduce, reduce_cython); if (unlikely(ret < 0)) goto __PYX_BAD;
+                ret = __Pyx_DelItemOnTypeDict((PyTypeObject*)type_obj, __pyx_mstate_global->__pyx_n_u_reduce_cython); if (unlikely(ret < 0)) goto __PYX_BAD;
+            } else if (reduce == object_reduce || PyErr_Occurred()) {
+                goto __PYX_BAD;
+            }
+            setstate = __Pyx_PyObject_GetAttrStrNoError(type_obj, __pyx_mstate_global->__pyx_n_u_setstate);
+            if (!setstate) PyErr_Clear();
+            if (!setstate || __Pyx_setup_reduce_is_named(setstate, __pyx_mstate_global->__pyx_n_u_setstate_cython)) {
+                setstate_cython = __Pyx_PyObject_GetAttrStrNoError(type_obj, __pyx_mstate_global->__pyx_n_u_setstate_cython);
+                if (likely(setstate_cython)) {
+                    ret = __Pyx_SetItemOnTypeDict((PyTypeObject*)type_obj, __pyx_mstate_global->__pyx_n_u_setstate, setstate_cython); if (unlikely(ret < 0)) goto __PYX_BAD;
+                    ret = __Pyx_DelItemOnTypeDict((PyTypeObject*)type_obj, __pyx_mstate_global->__pyx_n_u_setstate_cython); if (unlikely(ret < 0)) goto __PYX_BAD;
+                } else if (!setstate || PyErr_Occurred()) {
+                    goto __PYX_BAD;
+                }
+            }
+            PyType_Modified((PyTypeObject*)type_obj);
+        }
+    }
+    goto __PYX_GOOD;
+__PYX_BAD:
+    if (!PyErr_Occurred()) {
+        __Pyx_TypeName type_obj_name =
+            __Pyx_PyType_GetFullyQualifiedName((PyTypeObject*)type_obj);
+        PyErr_Format(PyExc_RuntimeError,
+            "Unable to initialize pickling for " __Pyx_FMT_TYPENAME, type_obj_name);
+        __Pyx_DECREF_TypeName(type_obj_name);
+    }
+    ret = -1;
+__PYX_GOOD:
+#if !CYTHON_USE_PYTYPE_LOOKUP
+    Py_XDECREF(object_reduce);
+    Py_XDECREF(object_reduce_ex);
+    Py_XDECREF(object_getstate);
+    Py_XDECREF(getstate);
+#endif
+    Py_XDECREF(reduce);
+    Py_XDECREF(reduce_ex);
+    Py_XDECREF(reduce_cython);
+    Py_XDECREF(setstate);
+    Py_XDECREF(setstate_cython);
+    return ret;
 }
 
 /* FetchSharedCythonModule */
@@ -7407,32 +9866,6 @@ static PyObject *__Pyx_CyFunction_New(PyMethodDef *ml, int flags, PyObject* qual
     }
     return op;
 }
-
-/* PyDictVersioning */
-#if CYTHON_USE_DICT_VERSIONS && CYTHON_USE_TYPE_SLOTS
-static CYTHON_INLINE PY_UINT64_T __Pyx_get_tp_dict_version(PyObject *obj) {
-    PyObject *dict = Py_TYPE(obj)->tp_dict;
-    return likely(dict) ? __PYX_GET_DICT_VERSION(dict) : 0;
-}
-static CYTHON_INLINE PY_UINT64_T __Pyx_get_object_dict_version(PyObject *obj) {
-    PyObject **dictptr = NULL;
-    Py_ssize_t offset = Py_TYPE(obj)->tp_dictoffset;
-    if (offset) {
-#if CYTHON_COMPILING_IN_CPYTHON
-        dictptr = (likely(offset > 0)) ? (PyObject **) ((char *)obj + offset) : _PyObject_GetDictPtr(obj);
-#else
-        dictptr = _PyObject_GetDictPtr(obj);
-#endif
-    }
-    return (dictptr && *dictptr) ? __PYX_GET_DICT_VERSION(*dictptr) : 0;
-}
-static CYTHON_INLINE int __Pyx_object_dict_version_matches(PyObject* obj, PY_UINT64_T tp_dict_version, PY_UINT64_T obj_dict_version) {
-    PyObject *dict = Py_TYPE(obj)->tp_dict;
-    if (unlikely(!dict) || unlikely(tp_dict_version != __PYX_GET_DICT_VERSION(dict)))
-        return 0;
-    return obj_dict_version == __Pyx_get_object_dict_version(obj);
-}
-#endif
 
 /* CLineInTraceback */
 #if CYTHON_CLINE_IN_TRACEBACK && CYTHON_CLINE_IN_TRACEBACK_RUNTIME
