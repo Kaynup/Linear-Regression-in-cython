@@ -135,6 +135,11 @@ cdef class LinearRegressor:
 
             transpose_inplace(X, X_t, n_samples, n_features)
             matmul_c(X_t, X, X_t_X, n_features, n_samples, n_features)
+
+            # Small ridge regularization to diagonal of X_t_X to inverse matrix
+            for i in range(n_features):
+                X_t_X[i * n_features + i] += 1e-8
+            
             matvec_c(X_t, y, X_t_y, n_features, n_samples)
 
             if inverse(X_t_X, X_t_X_inv, n_features) != 0:

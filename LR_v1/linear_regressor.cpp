@@ -2377,7 +2377,7 @@ static const char __pyx_k_LR_v1_linear_regressor[] = "LR_v1.linear_regressor";
 static const char __pyx_k_LinearRegressor_predict[] = "LinearRegressor.predict";
 static const char __pyx_k_LR_v1_linear_regressor_pyx[] = "LR_v1/linear_regressor.pyx";
 static const char __pyx_k_LinearRegressor_coefficients[] = "LinearRegressor.coefficients";
-static const char __pyx_k_A_S_S_1A_AQ_1D_G1_s_5_1_j_m2Q_N[] = "\200A\330\010\035\230S\240\001\240\021\340\010\013\210:\220S\230\003\2301\230A\330\014\022\220*\230A\230Q\340\010 \240\003\2401\240D\250\001\250\021\330\010\014\210G\2201\330\014\017\210s\220!\2205\230\003\2301\330\020\026\220j\240\001\240\021\340\010\036\230m\2502\250Q\330\010\014\210N\230!\360\006\000\t\032\230\031\240&\250\001\250\032\2602\260[\300\002\300!\330\010\031\230\031\240&\250\001\250\032\2602\260Q\330\010\033\2309\240F\250!\250;\260b\270\n\300\"\300A\330\010\035\230Y\240f\250A\250[\270\002\270+\300R\300q\330\010\035\230Y\240f\250A\250[\270\002\270!\330\010!\240\031\250&\260\001\260\033\270B\270k\310\022\3101\340\010\013\2104\210r\220\023\220D\230\002\230#\230T\240\024\240S\250\004\250F\260#\260T\270\026\270s\300$\300a\330\014\020\220\001\220\024\220T\230\021\230$\230d\240!\2406\250\024\250Q\250h\260d\270!\2708\3004\300q\310\001\330\014\022\220+\230Q\230a\340\010\013\2104\210q\330\014\020\220\001\220\024\220Q\330\010\014\210H\220I\230V\2401\240K\250r\260\021\330\010\013\2104\210t\2201\330\014\022\220+\230Q\230a\340\010\t\330\014\020\220\005\220U\230!\2301\330\020\021\220\021\220\"\220B\220k\240\022\2405\250\001\330\020\024\220E\230\025\230a\230q\330\024\025\220Q\220b\230\002\230+\240R\240r\250\022\2505\260\004\260A\260R\260q\270\001\330\020\021\220\021\220%\220t\2301\230A\340\014\035\230Q\230c\240\025\240k\260\021\330\014\024\220A\220U\230#\230W\240L\260\013\2701\330\014\024\220A\220U\230#\230W\240L\260\001\340\014\017\210w\220a\220w\230k\250\034\260S\270\001\330\020\026\220j\240\001\240\021\340\014\024\220A\220[\240\007\240t\2507\260,\270a\340\014\023\2201\220D\230\005\230Q\230c\240\024\240U\250%\250q\260\001\360\006\000\r\021\220\001\220\024\220T\230\021\230$\230d\240!\2406\250\024\250Q\250h\260d\270!\2708\3004\300q\310\001";
+static const char __pyx_k_A_S_S_1A_AQ_1D_G1_s_5_1_j_m2Q_N[] = "\200A\330\010\035\230S\240\001\240\021\340\010\013\210:\220S\230\003\2301\230A\330\014\022\220*\230A\230Q\340\010 \240\003\2401\240D\250\001\250\021\330\010\014\210G\2201\330\014\017\210s\220!\2205\230\003\2301\330\020\026\220j\240\001\240\021\340\010\036\230m\2502\250Q\330\010\014\210N\230!\360\006\000\t\032\230\031\240&\250\001\250\032\2602\260[\300\002\300!\330\010\031\230\031\240&\250\001\250\032\2602\260Q\330\010\033\2309\240F\250!\250;\260b\270\n\300\"\300A\330\010\035\230Y\240f\250A\250[\270\002\270+\300R\300q\330\010\035\230Y\240f\250A\250[\270\002\270!\330\010!\240\031\250&\260\001\260\033\270B\270k\310\022\3101\340\010\013\2104\210r\220\023\220D\230\002\230#\230T\240\024\240S\250\004\250F\260#\260T\270\026\270s\300$\300a\330\014\020\220\001\220\024\220T\230\021\230$\230d\240!\2406\250\024\250Q\250h\260d\270!\2708\3004\300q\310\001\330\014\022\220+\230Q\230a\340\010\013\2104\210q\330\014\020\220\001\220\024\220Q\330\010\014\210H\220I\230V\2401\240K\250r\260\021\330\010\013\2104\210t\2201\330\014\022\220+\230Q\230a\340\010\t\330\014\020\220\005\220U\230!\2301\330\020\021\220\021\220\"\220B\220k\240\022\2405\250\001\330\020\024\220E\230\025\230a\230q\330\024\025\220Q\220b\230\002\230+\240R\240r\250\022\2505\260\004\260A\260R\260q\270\001\330\020\021\220\021\220%\220t\2301\230A\340\014\035\230Q\230c\240\025\240k\260\021\330\014\024\220A\220U\230#\230W\240L\260\013\2701\360\006\000\r\021\220\005\220U\230!\2301\330\020\025\220Q\220b\230\002\230+\240R\240v\250Q\340\014\024\220A\220U\230#\230W\240L\260\001\340\014\017\210w\220a\220w\230k\250\034\260S\270\001\330\020\026\220j\240\001\240\021\340\014\024\220A\220[\240\007\240t\2507\260,\270a\340\014\023\2201\220D\230\005\230Q\230c\240\024\240U\250%\250q\260\001\360\006\000\r\021\220\001\220\024\220T\230\021\230$\230d\240!\2406\250\024\250Q\250h\260d\270!\2708\3004\300q\310\001";
 static const char __pyx_k_LinearRegressor___reduce_cython[] = "LinearRegressor.__reduce_cython__";
 static const char __pyx_k_A_S_L_2T_Rq_ivQj_4r_D_T_Qa_U_1_B[] = "\200A\330\010\035\230S\240\001\240\021\330\010 \240\004\240L\260\002\260!\360\006\000\t\032\230\031\240&\250\001\250\032\2602\260T\270\034\300R\300q\330\010\036\230i\240v\250Q\250j\270\002\270!\340\010\013\2104\210r\220\023\220D\230\001\330\014\020\220\001\220\024\220T\230\021\230!\330\014\022\220+\230Q\230a\340\010\t\330\014\020\220\005\220U\230!\2301\330\020\021\220\021\220\"\220B\220d\230,\240b\250\005\250Q\330\020\024\220E\230\025\230a\230q\330\024\025\220Q\220b\230\002\230$\230l\250\"\250B\250b\260\005\260T\270\021\270\"\270A\270Q\340\014\024\220A\220S\230\004\230G\2408\250;\260d\270!\330\014\023\2201\220F\230!\2303\230d\240%\240u\250A\250Q\360\006\000\r\021\220\001\220\024\220T\230\021\230!";
 static const char __pyx_k_All_rows_in_X_must_have_the_same[] = "All rows in X must have the same number of features";
@@ -4016,7 +4016,7 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_fit(struct 
  * 
  *             transpose_inplace(X, X_t, n_samples, n_features)             # <<<<<<<<<<<<<<
  *             matmul_c(X_t, X, X_t_X, n_features, n_samples, n_features)
- *             matvec_c(X_t, y, X_t_y, n_features, n_samples)
+ * 
 */
     __pyx_f_5LR_v1_16linear_regressor_transpose_inplace(__pyx_v_X, __pyx_v_X_t, __pyx_v_n_samples, __pyx_v_n_features); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 136, __pyx_L18_error)
 
@@ -4024,32 +4024,55 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_fit(struct 
  * 
  *             transpose_inplace(X, X_t, n_samples, n_features)
  *             matmul_c(X_t, X, X_t_X, n_features, n_samples, n_features)             # <<<<<<<<<<<<<<
- *             matvec_c(X_t, y, X_t_y, n_features, n_samples)
  * 
+ *             # Small ridge regularization to diagonal of X_t_X to inverse matrix
 */
     __pyx_f_5LR_v1_16linear_regressor_matmul_c(__pyx_v_X_t, __pyx_v_X, __pyx_v_X_t_X, __pyx_v_n_features, __pyx_v_n_samples, __pyx_v_n_features); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 137, __pyx_L18_error)
 
-    /* "LR_v1/linear_regressor.pyx":138
- *             transpose_inplace(X, X_t, n_samples, n_features)
- *             matmul_c(X_t, X, X_t_X, n_features, n_samples, n_features)
+    /* "LR_v1/linear_regressor.pyx":140
+ * 
+ *             # Small ridge regularization to diagonal of X_t_X to inverse matrix
+ *             for i in range(n_features):             # <<<<<<<<<<<<<<
+ *                 X_t_X[i * n_features + i] += 1e-8
+ * 
+*/
+    __pyx_t_10 = __pyx_v_n_features;
+    __pyx_t_11 = __pyx_t_10;
+    for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
+      __pyx_v_i = __pyx_t_12;
+
+      /* "LR_v1/linear_regressor.pyx":141
+ *             # Small ridge regularization to diagonal of X_t_X to inverse matrix
+ *             for i in range(n_features):
+ *                 X_t_X[i * n_features + i] += 1e-8             # <<<<<<<<<<<<<<
+ * 
+ *             matvec_c(X_t, y, X_t_y, n_features, n_samples)
+*/
+      __pyx_t_13 = ((__pyx_v_i * __pyx_v_n_features) + __pyx_v_i);
+      (__pyx_v_X_t_X[__pyx_t_13]) = ((__pyx_v_X_t_X[__pyx_t_13]) + 1e-8);
+    }
+
+    /* "LR_v1/linear_regressor.pyx":143
+ *                 X_t_X[i * n_features + i] += 1e-8
+ * 
  *             matvec_c(X_t, y, X_t_y, n_features, n_samples)             # <<<<<<<<<<<<<<
  * 
  *             if inverse(X_t_X, X_t_X_inv, n_features) != 0:
 */
-    __pyx_f_5LR_v1_16linear_regressor_matvec_c(__pyx_v_X_t, __pyx_v_y, __pyx_v_X_t_y, __pyx_v_n_features, __pyx_v_n_samples); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 138, __pyx_L18_error)
+    __pyx_f_5LR_v1_16linear_regressor_matvec_c(__pyx_v_X_t, __pyx_v_y, __pyx_v_X_t_y, __pyx_v_n_features, __pyx_v_n_samples); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 143, __pyx_L18_error)
 
-    /* "LR_v1/linear_regressor.pyx":140
+    /* "LR_v1/linear_regressor.pyx":145
  *             matvec_c(X_t, y, X_t_y, n_features, n_samples)
  * 
  *             if inverse(X_t_X, X_t_X_inv, n_features) != 0:             # <<<<<<<<<<<<<<
  *                 raise ValueError("Matrix not invertible")
  * 
 */
-    __pyx_t_10 = __pyx_f_5LR_v1_16linear_regressor_inverse(__pyx_v_X_t_X, __pyx_v_X_t_X_inv, __pyx_v_n_features); if (unlikely(__pyx_t_10 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 140, __pyx_L18_error)
+    __pyx_t_10 = __pyx_f_5LR_v1_16linear_regressor_inverse(__pyx_v_X_t_X, __pyx_v_X_t_X_inv, __pyx_v_n_features); if (unlikely(__pyx_t_10 == ((int)-1) && PyErr_Occurred())) __PYX_ERR(0, 145, __pyx_L18_error)
     __pyx_t_7 = (__pyx_t_10 != 0);
     if (unlikely(__pyx_t_7)) {
 
-      /* "LR_v1/linear_regressor.pyx":141
+      /* "LR_v1/linear_regressor.pyx":146
  * 
  *             if inverse(X_t_X, X_t_X_inv, n_features) != 0:
  *                 raise ValueError("Matrix not invertible")             # <<<<<<<<<<<<<<
@@ -4065,14 +4088,14 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_fit(struct 
         __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_3, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 141, __pyx_L18_error)
+        if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 146, __pyx_L18_error)
         __Pyx_GOTREF(__pyx_t_1);
       }
       __Pyx_Raise(__pyx_t_1, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __PYX_ERR(0, 141, __pyx_L18_error)
+      __PYX_ERR(0, 146, __pyx_L18_error)
 
-      /* "LR_v1/linear_regressor.pyx":140
+      /* "LR_v1/linear_regressor.pyx":145
  *             matvec_c(X_t, y, X_t_y, n_features, n_samples)
  * 
  *             if inverse(X_t_X, X_t_X_inv, n_features) != 0:             # <<<<<<<<<<<<<<
@@ -4081,16 +4104,16 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_fit(struct 
 */
     }
 
-    /* "LR_v1/linear_regressor.pyx":143
+    /* "LR_v1/linear_regressor.pyx":148
  *                 raise ValueError("Matrix not invertible")
  * 
  *             matvec_c(X_t_X_inv, X_t_y, self.beta, n_features, n_features)             # <<<<<<<<<<<<<<
  * 
  *             return [self.beta[i] for i in range(n_features)]
 */
-    __pyx_f_5LR_v1_16linear_regressor_matvec_c(__pyx_v_X_t_X_inv, __pyx_v_X_t_y, __pyx_v_self->beta, __pyx_v_n_features, __pyx_v_n_features); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 143, __pyx_L18_error)
+    __pyx_f_5LR_v1_16linear_regressor_matvec_c(__pyx_v_X_t_X_inv, __pyx_v_X_t_y, __pyx_v_self->beta, __pyx_v_n_features, __pyx_v_n_features); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 148, __pyx_L18_error)
 
-    /* "LR_v1/linear_regressor.pyx":145
+    /* "LR_v1/linear_regressor.pyx":150
  *             matvec_c(X_t_X_inv, X_t_y, self.beta, n_features, n_features)
  * 
  *             return [self.beta[i] for i in range(n_features)]             # <<<<<<<<<<<<<<
@@ -4099,15 +4122,15 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_fit(struct 
 */
     __Pyx_XDECREF(__pyx_r);
     { /* enter inner scope */
-      __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 145, __pyx_L18_error)
+      __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 150, __pyx_L18_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_t_10 = __pyx_v_n_features;
       __pyx_t_11 = __pyx_t_10;
       for (__pyx_t_12 = 0; __pyx_t_12 < __pyx_t_11; __pyx_t_12+=1) {
         __pyx_7genexpr__pyx_v_i = __pyx_t_12;
-        __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->beta[__pyx_7genexpr__pyx_v_i])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 145, __pyx_L18_error)
+        __pyx_t_3 = PyFloat_FromDouble((__pyx_v_self->beta[__pyx_7genexpr__pyx_v_i])); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 150, __pyx_L18_error)
         __Pyx_GOTREF(__pyx_t_3);
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_3))) __PYX_ERR(0, 145, __pyx_L18_error)
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_3))) __PYX_ERR(0, 150, __pyx_L18_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       }
     } /* exit inner scope */
@@ -4116,7 +4139,7 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_fit(struct 
     goto __pyx_L17_return;
   }
 
-  /* "LR_v1/linear_regressor.pyx":148
+  /* "LR_v1/linear_regressor.pyx":153
  * 
  *         finally:
  *             free(X); free(y); free(X_t); free(X_t_X); free(X_t_y); free(X_t_X_inv)             # <<<<<<<<<<<<<<
@@ -4330,7 +4353,7 @@ static PyObject *__pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_4fit(struc
   return __pyx_r;
 }
 
-/* "LR_v1/linear_regressor.pyx":150
+/* "LR_v1/linear_regressor.pyx":155
  *             free(X); free(y); free(X_t); free(X_t_X); free(X_t_y); free(X_t_X_inv)
  * 
  *     cpdef list coefficients(self):             # <<<<<<<<<<<<<<
@@ -4377,7 +4400,7 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_coefficient
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_mstate_global->__pyx_n_u_coefficients); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 150, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_mstate_global->__pyx_n_u_coefficients); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 155, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!__Pyx_IsSameCFunction(__pyx_t_1, (void(*)(void)) __pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_7coefficients)) {
         __Pyx_XDECREF(__pyx_r);
@@ -4401,10 +4424,10 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_coefficient
           __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (1-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 150, __pyx_L1_error)
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 155, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
         }
-        if (!(likely(PyList_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("list", __pyx_t_2))) __PYX_ERR(0, 150, __pyx_L1_error)
+        if (!(likely(PyList_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("list", __pyx_t_2))) __PYX_ERR(0, 155, __pyx_L1_error)
         __pyx_r = ((PyObject*)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4423,7 +4446,7 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_coefficient
     #endif
   }
 
-  /* "LR_v1/linear_regressor.pyx":151
+  /* "LR_v1/linear_regressor.pyx":156
  * 
  *     cpdef list coefficients(self):
  *         return [self.beta[i] for i in range(self.n_features)]             # <<<<<<<<<<<<<<
@@ -4432,15 +4455,15 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_coefficient
 */
   __Pyx_XDECREF(__pyx_r);
   { /* enter inner scope */
-    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 151, __pyx_L1_error)
+    __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 156, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_6 = __pyx_v_self->n_features;
     __pyx_t_7 = __pyx_t_6;
     for (__pyx_t_8 = 0; __pyx_t_8 < __pyx_t_7; __pyx_t_8+=1) {
       __pyx_8genexpr1__pyx_v_i = __pyx_t_8;
-      __pyx_t_2 = PyFloat_FromDouble((__pyx_v_self->beta[__pyx_8genexpr1__pyx_v_i])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 151, __pyx_L1_error)
+      __pyx_t_2 = PyFloat_FromDouble((__pyx_v_self->beta[__pyx_8genexpr1__pyx_v_i])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 156, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_2))) __PYX_ERR(0, 151, __pyx_L1_error)
+      if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_2))) __PYX_ERR(0, 156, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     }
   } /* exit inner scope */
@@ -4448,7 +4471,7 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_coefficient
   __pyx_t_1 = 0;
   goto __pyx_L0;
 
-  /* "LR_v1/linear_regressor.pyx":150
+  /* "LR_v1/linear_regressor.pyx":155
  *             free(X); free(y); free(X_t); free(X_t_X); free(X_t_y); free(X_t_X_inv)
  * 
  *     cpdef list coefficients(self):             # <<<<<<<<<<<<<<
@@ -4521,7 +4544,7 @@ static PyObject *__pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_6coefficie
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("coefficients", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_coefficients(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 150, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_coefficients(__pyx_v_self, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 155, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -4538,7 +4561,7 @@ static PyObject *__pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_6coefficie
   return __pyx_r;
 }
 
-/* "LR_v1/linear_regressor.pyx":153
+/* "LR_v1/linear_regressor.pyx":158
  *         return [self.beta[i] for i in range(self.n_features)]
  * 
  *     cpdef list predict(self, list X_py):             # <<<<<<<<<<<<<<
@@ -4606,7 +4629,7 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(str
     if (unlikely(!__Pyx_object_dict_version_matches(((PyObject *)__pyx_v_self), __pyx_tp_dict_version, __pyx_obj_dict_version))) {
       PY_UINT64_T __pyx_typedict_guard = __Pyx_get_tp_dict_version(((PyObject *)__pyx_v_self));
       #endif
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_mstate_global->__pyx_n_u_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 153, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(((PyObject *)__pyx_v_self), __pyx_mstate_global->__pyx_n_u_predict); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       if (!__Pyx_IsSameCFunction(__pyx_t_1, (void(*)(void)) __pyx_pw_5LR_v1_16linear_regressor_15LinearRegressor_9predict)) {
         __Pyx_XDECREF(__pyx_r);
@@ -4630,10 +4653,10 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(str
           __pyx_t_2 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
           __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
           __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 153, __pyx_L1_error)
+          if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 158, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_2);
         }
-        if (!(likely(PyList_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("list", __pyx_t_2))) __PYX_ERR(0, 153, __pyx_L1_error)
+        if (!(likely(PyList_CheckExact(__pyx_t_2))||((__pyx_t_2) == Py_None) || __Pyx_RaiseUnexpectedTypeError("list", __pyx_t_2))) __PYX_ERR(0, 158, __pyx_L1_error)
         __pyx_r = ((PyObject*)__pyx_t_2);
         __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -4652,7 +4675,7 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(str
     #endif
   }
 
-  /* "LR_v1/linear_regressor.pyx":154
+  /* "LR_v1/linear_regressor.pyx":159
  * 
  *     cpdef list predict(self, list X_py):
  *         cdef int n_samples = len(X_py)             # <<<<<<<<<<<<<<
@@ -4661,12 +4684,12 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(str
 */
   if (unlikely(__pyx_v_X_py == Py_None)) {
     PyErr_SetString(PyExc_TypeError, "object of type 'NoneType' has no len()");
-    __PYX_ERR(0, 154, __pyx_L1_error)
+    __PYX_ERR(0, 159, __pyx_L1_error)
   }
-  __pyx_t_6 = __Pyx_PyList_GET_SIZE(__pyx_v_X_py); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 154, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyList_GET_SIZE(__pyx_v_X_py); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 159, __pyx_L1_error)
   __pyx_v_n_samples = __pyx_t_6;
 
-  /* "LR_v1/linear_regressor.pyx":155
+  /* "LR_v1/linear_regressor.pyx":160
  *     cpdef list predict(self, list X_py):
  *         cdef int n_samples = len(X_py)
  *         cdef int raw_features = self.n_features - 1             # <<<<<<<<<<<<<<
@@ -4675,7 +4698,7 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(str
 */
   __pyx_v_raw_features = (__pyx_v_self->n_features - 1);
 
-  /* "LR_v1/linear_regressor.pyx":158
+  /* "LR_v1/linear_regressor.pyx":163
  *         cdef int i, j
  * 
  *         cdef double* X = <double*>malloc(n_samples * self.n_features * sizeof(double))             # <<<<<<<<<<<<<<
@@ -4684,7 +4707,7 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(str
 */
   __pyx_v_X = ((double *)malloc(((__pyx_v_n_samples * __pyx_v_self->n_features) * (sizeof(double)))));
 
-  /* "LR_v1/linear_regressor.pyx":159
+  /* "LR_v1/linear_regressor.pyx":164
  * 
  *         cdef double* X = <double*>malloc(n_samples * self.n_features * sizeof(double))
  *         cdef double* y_pred = <double*>malloc(n_samples * sizeof(double))             # <<<<<<<<<<<<<<
@@ -4693,7 +4716,7 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(str
 */
   __pyx_v_y_pred = ((double *)malloc((__pyx_v_n_samples * (sizeof(double)))));
 
-  /* "LR_v1/linear_regressor.pyx":161
+  /* "LR_v1/linear_regressor.pyx":166
  *         cdef double* y_pred = <double*>malloc(n_samples * sizeof(double))
  * 
  *         if not X or not y_pred:             # <<<<<<<<<<<<<<
@@ -4711,7 +4734,7 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(str
   __pyx_L4_bool_binop_done:;
   if (unlikely(__pyx_t_7)) {
 
-    /* "LR_v1/linear_regressor.pyx":162
+    /* "LR_v1/linear_regressor.pyx":167
  * 
  *         if not X or not y_pred:
  *             free(X); free(y_pred)             # <<<<<<<<<<<<<<
@@ -4721,7 +4744,7 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(str
     free(__pyx_v_X);
     free(__pyx_v_y_pred);
 
-    /* "LR_v1/linear_regressor.pyx":163
+    /* "LR_v1/linear_regressor.pyx":168
  *         if not X or not y_pred:
  *             free(X); free(y_pred)
  *             raise MemoryError("Allocation failed")             # <<<<<<<<<<<<<<
@@ -4737,14 +4760,14 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(str
       __pyx_t_1 = __Pyx_PyObject_FastCall(__pyx_t_4, __pyx_callargs+__pyx_t_5, (2-__pyx_t_5) | (__pyx_t_5*__Pyx_PY_VECTORCALL_ARGUMENTS_OFFSET));
       __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 163, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 168, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
     }
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __PYX_ERR(0, 163, __pyx_L1_error)
+    __PYX_ERR(0, 168, __pyx_L1_error)
 
-    /* "LR_v1/linear_regressor.pyx":161
+    /* "LR_v1/linear_regressor.pyx":166
  *         cdef double* y_pred = <double*>malloc(n_samples * sizeof(double))
  * 
  *         if not X or not y_pred:             # <<<<<<<<<<<<<<
@@ -4753,7 +4776,7 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(str
 */
   }
 
-  /* "LR_v1/linear_regressor.pyx":165
+  /* "LR_v1/linear_regressor.pyx":170
  *             raise MemoryError("Allocation failed")
  * 
  *         try:             # <<<<<<<<<<<<<<
@@ -4762,7 +4785,7 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(str
 */
   /*try:*/ {
 
-    /* "LR_v1/linear_regressor.pyx":166
+    /* "LR_v1/linear_regressor.pyx":171
  * 
  *         try:
  *             for i in range(n_samples):             # <<<<<<<<<<<<<<
@@ -4774,7 +4797,7 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(str
     for (__pyx_t_11 = 0; __pyx_t_11 < __pyx_t_10; __pyx_t_11+=1) {
       __pyx_v_i = __pyx_t_11;
 
-      /* "LR_v1/linear_regressor.pyx":167
+      /* "LR_v1/linear_regressor.pyx":172
  *         try:
  *             for i in range(n_samples):
  *                 X[i * self.n_features + 0] = 1.0             # <<<<<<<<<<<<<<
@@ -4783,7 +4806,7 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(str
 */
       (__pyx_v_X[((__pyx_v_i * __pyx_v_self->n_features) + 0)]) = 1.0;
 
-      /* "LR_v1/linear_regressor.pyx":168
+      /* "LR_v1/linear_regressor.pyx":173
  *             for i in range(n_samples):
  *                 X[i * self.n_features + 0] = 1.0
  *                 for j in range(raw_features):             # <<<<<<<<<<<<<<
@@ -4795,7 +4818,7 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(str
       for (__pyx_t_14 = 0; __pyx_t_14 < __pyx_t_13; __pyx_t_14+=1) {
         __pyx_v_j = __pyx_t_14;
 
-        /* "LR_v1/linear_regressor.pyx":169
+        /* "LR_v1/linear_regressor.pyx":174
  *                 X[i * self.n_features + 0] = 1.0
  *                 for j in range(raw_features):
  *                     X[i * self.n_features + j + 1] = X_py[i][j]             # <<<<<<<<<<<<<<
@@ -4804,26 +4827,26 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(str
 */
         if (unlikely(__pyx_v_X_py == Py_None)) {
           PyErr_SetString(PyExc_TypeError, "'NoneType' object is not subscriptable");
-          __PYX_ERR(0, 169, __pyx_L7_error)
+          __PYX_ERR(0, 174, __pyx_L7_error)
         }
-        __pyx_t_1 = __Pyx_GetItemInt(__Pyx_PyList_GET_ITEM(__pyx_v_X_py, __pyx_v_i), __pyx_v_j, int, 1, __Pyx_PyLong_From_int, 0, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 169, __pyx_L7_error)
+        __pyx_t_1 = __Pyx_GetItemInt(__Pyx_PyList_GET_ITEM(__pyx_v_X_py, __pyx_v_i), __pyx_v_j, int, 1, __Pyx_PyLong_From_int, 0, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 174, __pyx_L7_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_15 = __Pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_15 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 169, __pyx_L7_error)
+        __pyx_t_15 = __Pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_15 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 174, __pyx_L7_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         (__pyx_v_X[(((__pyx_v_i * __pyx_v_self->n_features) + __pyx_v_j) + 1)]) = __pyx_t_15;
       }
     }
 
-    /* "LR_v1/linear_regressor.pyx":171
+    /* "LR_v1/linear_regressor.pyx":176
  *                     X[i * self.n_features + j + 1] = X_py[i][j]
  * 
  *             matvec_c(X, self.beta, y_pred, n_samples, self.n_features)             # <<<<<<<<<<<<<<
  *             return [y_pred[i] for i in range(n_samples)]
  * 
 */
-    __pyx_f_5LR_v1_16linear_regressor_matvec_c(__pyx_v_X, __pyx_v_self->beta, __pyx_v_y_pred, __pyx_v_n_samples, __pyx_v_self->n_features); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 171, __pyx_L7_error)
+    __pyx_f_5LR_v1_16linear_regressor_matvec_c(__pyx_v_X, __pyx_v_self->beta, __pyx_v_y_pred, __pyx_v_n_samples, __pyx_v_self->n_features); if (unlikely(PyErr_Occurred())) __PYX_ERR(0, 176, __pyx_L7_error)
 
-    /* "LR_v1/linear_regressor.pyx":172
+    /* "LR_v1/linear_regressor.pyx":177
  * 
  *             matvec_c(X, self.beta, y_pred, n_samples, self.n_features)
  *             return [y_pred[i] for i in range(n_samples)]             # <<<<<<<<<<<<<<
@@ -4832,15 +4855,15 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(str
 */
     __Pyx_XDECREF(__pyx_r);
     { /* enter inner scope */
-      __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 172, __pyx_L7_error)
+      __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 177, __pyx_L7_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_t_9 = __pyx_v_n_samples;
       __pyx_t_10 = __pyx_t_9;
       for (__pyx_t_11 = 0; __pyx_t_11 < __pyx_t_10; __pyx_t_11+=1) {
         __pyx_8genexpr2__pyx_v_i = __pyx_t_11;
-        __pyx_t_4 = PyFloat_FromDouble((__pyx_v_y_pred[__pyx_8genexpr2__pyx_v_i])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 172, __pyx_L7_error)
+        __pyx_t_4 = PyFloat_FromDouble((__pyx_v_y_pred[__pyx_8genexpr2__pyx_v_i])); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 177, __pyx_L7_error)
         __Pyx_GOTREF(__pyx_t_4);
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_4))) __PYX_ERR(0, 172, __pyx_L7_error)
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_4))) __PYX_ERR(0, 177, __pyx_L7_error)
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       }
     } /* exit inner scope */
@@ -4849,7 +4872,7 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(str
     goto __pyx_L6_return;
   }
 
-  /* "LR_v1/linear_regressor.pyx":175
+  /* "LR_v1/linear_regressor.pyx":180
  * 
  *         finally:
  *             free(X); free(y_pred)             # <<<<<<<<<<<<<<
@@ -4900,7 +4923,7 @@ static PyObject *__pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(str
     }
   }
 
-  /* "LR_v1/linear_regressor.pyx":153
+  /* "LR_v1/linear_regressor.pyx":158
  *         return [self.beta[i] for i in range(self.n_features)]
  * 
  *     cpdef list predict(self, list X_py):             # <<<<<<<<<<<<<<
@@ -4961,32 +4984,32 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   {
     PyObject ** const __pyx_pyargnames[] = {&__pyx_mstate_global->__pyx_n_u_X_py,0};
     const Py_ssize_t __pyx_kwds_len = (__pyx_kwds) ? __Pyx_NumKwargs_FASTCALL(__pyx_kwds) : 0;
-    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 153, __pyx_L3_error)
+    if (unlikely(__pyx_kwds_len) < 0) __PYX_ERR(0, 158, __pyx_L3_error)
     if (__pyx_kwds_len > 0) {
       switch (__pyx_nargs) {
         case  1:
         values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 153, __pyx_L3_error)
+        if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 158, __pyx_L3_error)
         CYTHON_FALLTHROUGH;
         case  0: break;
         default: goto __pyx_L5_argtuple_error;
       }
       const Py_ssize_t kwd_pos_args = __pyx_nargs;
-      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "predict", 0) < 0) __PYX_ERR(0, 153, __pyx_L3_error)
+      if (__Pyx_ParseKeywords(__pyx_kwds, __pyx_kwvalues, __pyx_pyargnames, 0, values, kwd_pos_args, __pyx_kwds_len, "predict", 0) < 0) __PYX_ERR(0, 158, __pyx_L3_error)
       for (Py_ssize_t i = __pyx_nargs; i < 1; i++) {
-        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("predict", 1, 1, 1, i); __PYX_ERR(0, 153, __pyx_L3_error) }
+        if (unlikely(!values[i])) { __Pyx_RaiseArgtupleInvalid("predict", 1, 1, 1, i); __PYX_ERR(0, 158, __pyx_L3_error) }
       }
     } else if (unlikely(__pyx_nargs != 1)) {
       goto __pyx_L5_argtuple_error;
     } else {
       values[0] = __Pyx_ArgRef_FASTCALL(__pyx_args, 0);
-      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 153, __pyx_L3_error)
+      if (!CYTHON_ASSUME_SAFE_MACROS && unlikely(!values[0])) __PYX_ERR(0, 158, __pyx_L3_error)
     }
     __pyx_v_X_py = ((PyObject*)values[0]);
   }
   goto __pyx_L6_skip;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("predict", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 153, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("predict", 1, 1, 1, __pyx_nargs); __PYX_ERR(0, 158, __pyx_L3_error)
   __pyx_L6_skip:;
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L3_error:;
@@ -4997,7 +5020,7 @@ PyObject *__pyx_args, PyObject *__pyx_kwds
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_X_py), (&PyList_Type), 1, "X_py", 1))) __PYX_ERR(0, 153, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_X_py), (&PyList_Type), 1, "X_py", 1))) __PYX_ERR(0, 158, __pyx_L1_error)
   __pyx_r = __pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_8predict(((struct __pyx_obj_5LR_v1_16linear_regressor_LinearRegressor *)__pyx_v_self), __pyx_v_X_py);
 
   /* function exit code */
@@ -5026,7 +5049,7 @@ static PyObject *__pyx_pf_5LR_v1_16linear_regressor_15LinearRegressor_8predict(s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("predict", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = __pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(__pyx_v_self, __pyx_v_X_py, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __pyx_t_1 = __pyx_f_5LR_v1_16linear_regressor_15LinearRegressor_predict(__pyx_v_self, __pyx_v_X_py, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_r = __pyx_t_1;
   __pyx_t_1 = 0;
@@ -5802,28 +5825,28 @@ __Pyx_RefNannySetupContext("PyInit_linear_regressor", 0);
   if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor, __pyx_mstate_global->__pyx_n_u_fit, __pyx_t_2) < 0) __PYX_ERR(0, 97, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "LR_v1/linear_regressor.pyx":150
+  /* "LR_v1/linear_regressor.pyx":155
  *             free(X); free(y); free(X_t); free(X_t_X); free(X_t_y); free(X_t_X_inv)
  * 
  *     cpdef list coefficients(self):             # <<<<<<<<<<<<<<
  *         return [self.beta[i] for i in range(self.n_features)]
  * 
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_5LR_v1_16linear_regressor_15LinearRegressor_7coefficients, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_LinearRegressor_coefficients, NULL, __pyx_mstate_global->__pyx_n_u_LR_v1_linear_regressor, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 150, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_5LR_v1_16linear_regressor_15LinearRegressor_7coefficients, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_LinearRegressor_coefficients, NULL, __pyx_mstate_global->__pyx_n_u_LR_v1_linear_regressor, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[1])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 155, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor, __pyx_mstate_global->__pyx_n_u_coefficients, __pyx_t_2) < 0) __PYX_ERR(0, 150, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor, __pyx_mstate_global->__pyx_n_u_coefficients, __pyx_t_2) < 0) __PYX_ERR(0, 155, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "LR_v1/linear_regressor.pyx":153
+  /* "LR_v1/linear_regressor.pyx":158
  *         return [self.beta[i] for i in range(self.n_features)]
  * 
  *     cpdef list predict(self, list X_py):             # <<<<<<<<<<<<<<
  *         cdef int n_samples = len(X_py)
  *         cdef int raw_features = self.n_features - 1
 */
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_5LR_v1_16linear_regressor_15LinearRegressor_9predict, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_LinearRegressor_predict, NULL, __pyx_mstate_global->__pyx_n_u_LR_v1_linear_regressor, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 153, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_5LR_v1_16linear_regressor_15LinearRegressor_9predict, __Pyx_CYFUNCTION_CCLASS, __pyx_mstate_global->__pyx_n_u_LinearRegressor_predict, NULL, __pyx_mstate_global->__pyx_n_u_LR_v1_linear_regressor, __pyx_mstate_global->__pyx_d, ((PyObject *)__pyx_mstate_global->__pyx_codeobj_tab[2])); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor, __pyx_mstate_global->__pyx_n_u_predict, __pyx_t_2) < 0) __PYX_ERR(0, 153, __pyx_L1_error)
+  if (__Pyx_SetItemOnTypeDict(__pyx_mstate_global->__pyx_ptype_5LR_v1_16linear_regressor_LinearRegressor, __pyx_mstate_global->__pyx_n_u_predict, __pyx_t_2) < 0) __PYX_ERR(0, 158, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "(tree fragment)":1
@@ -6029,17 +6052,17 @@ static int __Pyx_CreateCodeObjects(__pyx_mstatetype *__pyx_mstate) {
   PyObject* tuple_dedup_map = PyDict_New();
   if (unlikely(!tuple_dedup_map)) return -1;
   {
-    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 97, 567};
+    const __Pyx_PyCode_New_function_description descr = {3, 0, 0, 3, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 97, 597};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_X_py, __pyx_mstate->__pyx_n_u_y_py};
     __pyx_mstate_global->__pyx_codeobj_tab[0] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_LR_v1_linear_regressor_pyx, __pyx_mstate->__pyx_n_u_fit, __pyx_k_A_S_S_1A_AQ_1D_G1_s_5_1_j_m2Q_N, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[0])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 150, 27};
+    const __Pyx_PyCode_New_function_description descr = {1, 0, 0, 1, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 155, 27};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self};
     __pyx_mstate_global->__pyx_codeobj_tab[1] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_LR_v1_linear_regressor_pyx, __pyx_mstate->__pyx_n_u_coefficients, __pyx_k_A_q_E_T_e1D, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[1])) goto bad;
   }
   {
-    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 153, 225};
+    const __Pyx_PyCode_New_function_description descr = {2, 0, 0, 2, (unsigned int)(CO_OPTIMIZED|CO_NEWLOCALS), 158, 225};
     PyObject* const varnames[] = {__pyx_mstate->__pyx_n_u_self, __pyx_mstate->__pyx_n_u_X_py};
     __pyx_mstate_global->__pyx_codeobj_tab[2] = __Pyx_PyCode_New(descr, varnames, __pyx_mstate->__pyx_kp_u_LR_v1_linear_regressor_pyx, __pyx_mstate->__pyx_n_u_predict, __pyx_k_A_S_L_2T_Rq_ivQj_4r_D_T_Qa_U_1_B, tuple_dedup_map); if (unlikely(!__pyx_mstate_global->__pyx_codeobj_tab[2])) goto bad;
   }
